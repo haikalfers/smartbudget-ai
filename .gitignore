@@ -1,0 +1,16 @@
+# API Keys — JANGAN pernah di-commit
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.pyc
+*.pkl
+*.joblib
+.env
+
+# Data user (opsional)
+data/user_*.csv
+
+# Virtual environment
+venv/
+env/
