@@ -1,21 +1,26 @@
 # utils/classifier_utils.py
 
+import joblib
+import os
 import streamlit as st
 
-# Cache hasil klasifikasi supaya kata yang sama
-# tidak memanggil API berulang kali
-@st.cache_data(ttl=3600)
-def classify_expense(description: str) -> str:
-    """
-    Klasifikasi dengan cache — deskripsi yang sama
-    tidak akan memanggil API lagi selama 1 jam.
-    """
-    from utils.llm_utils import get_llm_response
-    
-    system = """Kamu adalah classifier pengeluaran mahasiswa.
-Klasifikasikan ke salah satu kategori ini SAJA:
-Makan, Transport, Pendidikan, Hiburan, Kesehatan, Belanja, Tagihan, Lainnya.
-Jawab dengan 1 kata kategori saja, tanpa penjelasan."""
-    
-    result = get_llm_response(description, system_prompt=system)
-    return result.strip()
+@st.cache_resource
+def load_classifier():
+    """Load model classifier — di-cache supaya tidak reload tiap interaksi"""
+    model_path = "models/classifier.pkl"
+    if not os.path.exists(model_path):
+        raise FileNotFoundError(
+            "Model classifier belum ada. "
+            "Jalankan dulu: python models/train_classifier.py"
+        )
+    return joblib.load(model_path)
+
+def predict_category(deskripsi: str) -> str:
+    """Prediksi kategori dari deskripsi transaksi"""
+    model = load_classifier()
+    return model.predict([deskripsi.lower()])[0]
+
+def predict_category_batch(deskripsi_list: list) -> list:
+    """Prediksi kategori untuk banyak transaksi sekaligus"""
+    model = load_classifier()
+    return model.predict([d.lower() for d in deskripsi_list]).tolist()
