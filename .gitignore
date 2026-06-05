@@ -1,16 +1,34 @@
-# API Keys — JANGAN pernah di-commit
+# Streamlit secrets (JANGAN pernah commit ini!)
 .streamlit/secrets.toml
 
 # Python
 __pycache__/
 *.pyc
-*.pkl
-*.joblib
-.env
-
-# Data user (opsional)
-data/user_*.csv
+*.pyo
+*.pyd
+.Python
+*.py[cod]
 
 # Virtual environment
 venv/
 env/
+.venv/
+.env
+
+# Data (opsional, uncomment jika data sensitif)
+# data/dataset_transaksi.csv
+
+# Model files (besar, bisa diregenerasi)
+# models/*.pkl
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
