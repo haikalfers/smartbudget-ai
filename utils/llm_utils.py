@@ -17,7 +17,7 @@ def get_llm_response(prompt: str, system_prompt: str = "") -> str:
         messages.append({"role": "user", "content": prompt})
         
         response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
+            model="llama-3.3-70b-versatile",
             messages=messages,
             max_tokens=1024,
             temperature=0.7

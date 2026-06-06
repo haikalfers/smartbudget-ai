@@ -19,9 +19,27 @@ from utils.data_utils import (
     get_summary,
 )
 
+from utils.chat_history_utils import (
+    load_chat_history,
+    save_chat_history,
+    clear_chat_history
+)
+
 # ─── Setup ─────────────────────────────────────────────────────────────────────
 st.set_page_config(page_title="AI Advisor | SmartBudget AI", page_icon="💬", layout="wide")
 init_session_state()
+
+if "chat_history" not in st.session_state:
+
+    st.session_state.chat_history = (
+        load_chat_history()
+    )
+
+elif not st.session_state.chat_history:
+
+    st.session_state.chat_history = (
+        load_chat_history()
+    )
 
 st.title("💬 AI Financial Advisor")
 st.markdown("Tanyakan apa saja tentang keuanganmu — AI akan menganalisis datamu secara real-time.")
@@ -64,11 +82,98 @@ quick_prompts = {
     col4: "Apakah kondisi keuanganku sehat?",
 }
 
-for col, prompt in quick_prompts.items():
-    with col:
-        if st.button(prompt, use_container_width=True):
-            st.session_state.chat_history.append({"role": "user", "content": prompt})
+# for col, prompt in quick_prompts.items():
+#     with col:
 
+#         if st.button(prompt, use_container_width=True):
+
+#             st.session_state.chat_history.append({
+#                 "role": "user",
+#                 "content": prompt
+#             })
+
+#             if GROQ_READY and not df.empty:
+
+#                 try:
+
+#                     response = chat_with_advisor(
+#                         user_input=prompt,
+#                         chat_history=st.session_state.chat_history[:-1],
+#                         df=df
+#                     )
+
+#                 except Exception as e:
+
+#                     response = f"Terjadi error: {str(e)}"
+
+#             elif df.empty:
+
+#                 response = (
+#                     "Belum ada data transaksi untuk dianalisis. "
+#                     "Silakan tambahkan transaksi terlebih dahulu."
+#                 )
+
+#             else:
+
+#                 response = (
+#                     "AI Advisor belum siap digunakan. "
+#                     "Periksa konfigurasi Groq API."
+#                 )
+
+#             st.session_state.chat_history.append({
+#                 "role": "assistant",
+#                 "content": response
+#             })
+
+#             st.rerun()
+
+def process_prompt(prompt):
+
+    st.session_state.chat_history.append({
+        "role": "user",
+        "content": prompt
+    })
+
+    save_chat_history(
+        st.session_state.chat_history
+    )
+
+    try:
+
+        response = chat_with_advisor(
+            user_input=prompt,
+            chat_history=st.session_state.chat_history[:-1],
+            df=df
+        )
+
+    except Exception as e:
+
+        response = f"Terjadi error: {str(e)}"
+
+    st.session_state.chat_history.append({
+        "role": "assistant",
+        "content": response
+    })
+
+    save_chat_history(
+        st.session_state.chat_history
+    )
+
+    st.rerun()
+
+for idx, (col, prompt) in enumerate(
+    quick_prompts.items()
+):
+
+    with col:
+
+        if st.button(
+            prompt,
+            key=f"btn_{idx}_{prompt[:10]}",
+            use_container_width=True
+        ):
+            process_prompt(prompt)
+            
 st.divider()
 
 # ─── Chat Interface ────────────────────────────────────────────────────────────
@@ -96,6 +201,10 @@ user_input = st.chat_input("Tanya tentang keuanganmu...")
 if user_input:
     # Tambah pesan user ke history
     st.session_state.chat_history.append({"role": "user", "content": user_input})
+
+    save_chat_history(
+        st.session_state.chat_history
+    )
 
     with st.chat_message("user"):
         st.markdown(user_input)
@@ -133,8 +242,19 @@ if user_input:
 
     st.session_state.chat_history.append({"role": "assistant", "content": response})
 
+    save_chat_history(
+        st.session_state.chat_history
+    )
+
 # ─── Tombol Reset Chat ──────────────────────────────────────────────────────────
-if st.session_state.chat_history:
-    if st.button("🗑️ Hapus Riwayat Chat"):
-        st.session_state.chat_history = []
-        st.rerun()
+if st.button("🗑️ Hapus Riwayat Chat"):
+
+    st.session_state.chat_history = []
+
+    clear_chat_history()
+
+    st.success(
+        "Riwayat chat berhasil dihapus."
+    )
+
+    st.rerun()
