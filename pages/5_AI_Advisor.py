@@ -1,16 +1,11 @@
 """
 pages/5_AI_Advisor.py
-Halaman Chatbot AI Advisor dengan Groq API + 2 Tools (Agentic AI).
-👤 Dikerjakan oleh: Ketua
-
-INSTRUKSI KETUA:
-- Buat utils/groq_tools.py dengan fungsi analyze_spending() dan get_budget_recommendation()
-- Pastikan GROQ_API_KEY ada di .streamlit/secrets.toml
-- Ini halaman inti yang menunjukkan agentic AI system (wajib untuk penilaian)
-- Deadline internal: 13 Juni
+Halaman Chatbot AI Advisor — UI/UX didesain ulang.
 """
 
 import streamlit as st
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.data_utils import (
     init_session_state,
     load_transactions,
@@ -18,33 +13,76 @@ from utils.data_utils import (
     format_rupiah,
     get_summary,
 )
-
 from utils.chat_history_utils import (
     load_chat_history,
     save_chat_history,
-    clear_chat_history
+    clear_chat_history,
 )
+from styles import GLOBAL_CSS
+from components.sidebar import render_sidebar
 
 # ─── Setup ─────────────────────────────────────────────────────────────────────
 st.set_page_config(page_title="AI Advisor | SmartBudget AI", page_icon="💬", layout="wide")
 init_session_state()
+render_sidebar()
+st.markdown(GLOBAL_CSS, unsafe_allow_html=True)
 
-if "chat_history" not in st.session_state:
+# Extra styles khusus halaman ini
+st.markdown("""
+<style>
+.quick-btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 1.25rem;
+}
+.chat-container {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    min-height: 420px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    margin-bottom: 0.75rem;
+}
+[data-testid="stChatMessage"] {
+    background: transparent !important;
+    padding: 6px 0 !important;
+}
+[data-testid="stChatMessage"][data-testid*="user"] > div {
+    background: #eff6ff !important;
+    border-radius: 12px 12px 4px 12px !important;
+    padding: 10px 14px !important;
+}
+[data-testid="stChatMessageContent"] {
+    font-size: 0.9rem !important;
+    line-height: 1.65 !important;
+}
+.stChatInputContainer {
+    border-radius: 10px !important;
+    border: 1px solid #cbd5e1 !important;
+}
+.context-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.825rem;
+    color: #64748b;
+    font-family: 'DM Mono', monospace;
+    white-space: pre-wrap;
+    max-height: 180px;
+    overflow-y: auto;
+}
+</style>
+""", unsafe_allow_html=True)
 
-    st.session_state.chat_history = (
-        load_chat_history()
-    )
+# ─── Chat History Init ─────────────────────────────────────────────────────────
+if "chat_history" not in st.session_state or not st.session_state.chat_history:
+    st.session_state.chat_history = load_chat_history()
 
-elif not st.session_state.chat_history:
-
-    st.session_state.chat_history = (
-        load_chat_history()
-    )
-
-st.title("💬 AI Financial Advisor")
-st.markdown("Tanyakan apa saja tentang keuanganmu — AI akan menganalisis datamu secara real-time.")
-
-# ─── Import Tools (Ketua isi ini) ──────────────────────────────────────────────
+# ─── Import AI Tools ───────────────────────────────────────────────────────────
 try:
     from utils.groq_tools import (
         analyze_spending,
@@ -55,206 +93,201 @@ try:
 except ImportError:
     GROQ_READY = False
 
-# ─── Tampilkan Ringkasan Konteks ───────────────────────────────────────────────
+# ─── Load Data ─────────────────────────────────────────────────────────────────
 df = load_transactions()
 summary = get_summary(df)
 
-with st.expander("📊 Data keuanganmu yang dilihat AI", expanded=False):
-    if df.empty:
-        st.info("Belum ada data transaksi.")
-    else:
-        col1, col2, col3 = st.columns(3)
-        col1.metric("💳 Saldo", format_rupiah(summary["saldo"]))
-        col2.metric("📥 Pemasukan", format_rupiah(summary["total_pemasukan"]))
-        col3.metric("📤 Pengeluaran", format_rupiah(summary["total_pengeluaran"]))
-        st.text(get_context_for_ai(df))
+# ─── Layout: Sidebar kiri (konteks) + Main (chat) ─────────────────────────────
+col_main, col_side = st.columns([2.5, 1], gap="large")
 
-st.divider()
+with col_side:
+    # ── Header Sidebar Kanan ───────────────────────────────────────────────────
+    st.markdown("""
+    <div style="font-size:0.85rem;font-weight:700;color:#0a1628;margin-bottom:10px">
+        📊 Data Keuanganmu
+    </div>
+    """, unsafe_allow_html=True)
 
-# ─── Quick Action Buttons ──────────────────────────────────────────────────────
-st.subheader("⚡ Tanya Cepat")
-col1, col2, col3, col4 = st.columns(4)
+    # Metric mini cards
+    saldo = summary["saldo"]
+    saldo_color = "#16a34a" if saldo >= 0 else "#dc2626"
 
-quick_prompts = {
-    col1: "Analisis pola pengeluaranku bulan ini",
-    col2: "Berikan rekomendasi penghematan untukku",
-    col3: "Kategori apa yang paling boros?",
-    col4: "Apakah kondisi keuanganku sehat?",
-}
+    st.markdown(f"""
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:1rem">
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;box-shadow:0 1px 2px rgba(0,0,0,0.04)">
+            <div style="font-size:0.68rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px">Saldo</div>
+            <div style="font-size:1rem;font-weight:700;color:{saldo_color}">{format_rupiah(saldo)}</div>
+        </div>
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;box-shadow:0 1px 2px rgba(0,0,0,0.04)">
+            <div style="font-size:0.68rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px">Pemasukan</div>
+            <div style="font-size:1rem;font-weight:700;color:#16a34a">{format_rupiah(summary["total_pemasukan"])}</div>
+        </div>
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;box-shadow:0 1px 2px rgba(0,0,0,0.04)">
+            <div style="font-size:0.68rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px">Pengeluaran</div>
+            <div style="font-size:1rem;font-weight:700;color:#dc2626">{format_rupiah(summary["total_pengeluaran"])}</div>
+        </div>
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:9px;padding:10px 12px;box-shadow:0 1px 2px rgba(0,0,0,0.04)">
+            <div style="font-size:0.68rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px">Total Transaksi</div>
+            <div style="font-size:1rem;font-weight:700;color:#0a1628">{summary["jumlah_transaksi"]}</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-# for col, prompt in quick_prompts.items():
-#     with col:
-
-#         if st.button(prompt, use_container_width=True):
-
-#             st.session_state.chat_history.append({
-#                 "role": "user",
-#                 "content": prompt
-#             })
-
-#             if GROQ_READY and not df.empty:
-
-#                 try:
-
-#                     response = chat_with_advisor(
-#                         user_input=prompt,
-#                         chat_history=st.session_state.chat_history[:-1],
-#                         df=df
-#                     )
-
-#                 except Exception as e:
-
-#                     response = f"Terjadi error: {str(e)}"
-
-#             elif df.empty:
-
-#                 response = (
-#                     "Belum ada data transaksi untuk dianalisis. "
-#                     "Silakan tambahkan transaksi terlebih dahulu."
-#                 )
-
-#             else:
-
-#                 response = (
-#                     "AI Advisor belum siap digunakan. "
-#                     "Periksa konfigurasi Groq API."
-#                 )
-
-#             st.session_state.chat_history.append({
-#                 "role": "assistant",
-#                 "content": response
-#             })
-
-#             st.rerun()
-
-def process_prompt(prompt):
-
-    st.session_state.chat_history.append({
-        "role": "user",
-        "content": prompt
-    })
-
-    save_chat_history(
-        st.session_state.chat_history
-    )
-
-    try:
-
-        response = chat_with_advisor(
-            user_input=prompt,
-            chat_history=st.session_state.chat_history[:-1],
-            df=df
-        )
-
-    except Exception as e:
-
-        response = f"Terjadi error: {str(e)}"
-
-    st.session_state.chat_history.append({
-        "role": "assistant",
-        "content": response
-    })
-
-    save_chat_history(
-        st.session_state.chat_history
-    )
-
-    st.rerun()
-
-for idx, (col, prompt) in enumerate(
-    quick_prompts.items()
-):
-
-    with col:
-
-        if st.button(
-            prompt,
-            key=f"btn_{idx}_{prompt[:10]}",
-            use_container_width=True
-        ):
-            process_prompt(prompt)
-            
-st.divider()
-
-# ─── Chat Interface ────────────────────────────────────────────────────────────
-st.subheader("💬 Chat")
-
-# Tampilkan riwayat chat
-chat_container = st.container()
-with chat_container:
-    if not st.session_state.chat_history:
+    # ── Status AI ──────────────────────────────────────────────────────────────
+    if GROQ_READY:
         st.markdown("""
-        <div style='text-align:center; color:#888; padding: 2rem;'>
-            👋 Halo! Saya AI Financial Advisor SmartBudget.<br>
-            Tanyakan apa saja tentang keuanganmu!<br><br>
-            <i>Contoh: "Kenapa pengeluaranku meningkat?" atau "Bagaimana cara hemat lebih banyak?"</i>
+        <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:9px;padding:10px 12px;margin-bottom:1rem">
+            <div style="font-size:0.75rem;font-weight:600;color:#166534;display:flex;align-items:center;gap:5px">
+                <span style="width:7px;height:7px;background:#22c55e;border-radius:50%;display:inline-block"></span>
+                AI Advisor Aktif
+            </div>
+            <div style="font-size:0.72rem;color:#4ade80;margin-top:2px;color:#16a34a">Groq API terhubung</div>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        st.markdown("""
+        <div style="background:#fef3c7;border:1px solid #fde047;border-radius:9px;padding:10px 12px;margin-bottom:1rem">
+            <div style="font-size:0.75rem;font-weight:600;color:#92400e;display:flex;align-items:center;gap:5px">
+                <span style="width:7px;height:7px;background:#f59e0b;border-radius:50%;display:inline-block"></span>
+                Mode Demo
+            </div>
+            <div style="font-size:0.72rem;color:#92400e;margin-top:2px">Konfigurasi Groq API untuk mengaktifkan AI</div>
         </div>
         """, unsafe_allow_html=True)
 
-    for message in st.session_state.chat_history:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+    # ── Konteks Data (collapsible) ─────────────────────────────────────────────
+    with st.expander("🔍 Lihat Konteks Data AI", expanded=False):
+        if df.empty:
+            st.caption("Belum ada data transaksi.")
+        else:
+            st.code(get_context_for_ai(df), language=None)
 
-# ─── Input Chat ────────────────────────────────────────────────────────────────
-user_input = st.chat_input("Tanya tentang keuanganmu...")
+    # ── Hapus Riwayat ──────────────────────────────────────────────────────────
+    st.markdown("<br>", unsafe_allow_html=True)
+    if st.button("🗑️  Hapus Riwayat Chat", use_container_width=True):
+        st.session_state.chat_history = []
+        clear_chat_history()
+        st.toast("Riwayat chat dihapus!", icon="✅")
+        st.rerun()
 
-if user_input:
-    # Tambah pesan user ke history
-    st.session_state.chat_history.append({"role": "user", "content": user_input})
+# ─── Main: Header + Quick Actions + Chat ──────────────────────────────────────
+with col_main:
+    st.markdown("""
+    <div class="sb-page-header">
+        <h1>💬 AI Financial Advisor</h1>
+        <p>Tanyakan apa saja tentang keuanganmu — AI menganalisis datamu secara real-time.</p>
+    </div>
+    """, unsafe_allow_html=True)
 
-    save_chat_history(
-        st.session_state.chat_history
-    )
+    # ── Quick Action Buttons ───────────────────────────────────────────────────
+    st.markdown('<div style="font-size:0.85rem;font-weight:600;color:#0a1628;margin-bottom:10px">⚡ Tanya Cepat</div>', unsafe_allow_html=True)
 
-    with st.chat_message("user"):
-        st.markdown(user_input)
+    quick_prompts = [
+        ("📊", "Analisis pola pengeluaranku bulan ini"),
+        ("💰", "Berikan rekomendasi penghematan untukku"),
+        ("🔥", "Kategori apa yang paling boros?"),
+        ("❤️", "Apakah kondisi keuanganku sehat?"),
+    ]
 
-    # Proses respon AI
-    with st.chat_message("assistant"):
-        if not GROQ_READY:
-            # Placeholder jika groq_tools.py belum dibuat
-            st.warning("⚙️ **Ketua:** `utils/groq_tools.py` belum tersedia. Implementasikan fungsi chatbot di sana.")
-            response = "Maaf, AI Advisor sedang dalam tahap pengembangan. Silakan cek kembali nanti."
+    def process_prompt(prompt: str):
+        st.session_state.chat_history.append({"role": "user", "content": prompt})
+        save_chat_history(st.session_state.chat_history)
+
+        if GROQ_READY and not df.empty:
+            try:
+                response = chat_with_advisor(
+                    user_input=prompt,
+                    chat_history=st.session_state.chat_history[:-1],
+                    df=df,
+                )
+            except Exception as e:
+                response = f"Terjadi error: {str(e)}"
         elif df.empty:
             response = (
-                "Halo! Saya belum bisa memberikan analisis karena kamu belum memiliki data transaksi. "
-                "Yuk mulai catat keuanganmu di halaman **Input Transaksi** terlebih dahulu! 📝"
+                "Halo! Saya belum bisa memberikan analisis karena kamu belum memiliki "
+                "data transaksi. Yuk mulai catat keuanganmu di halaman **Input Transaksi** terlebih dahulu! 📝"
             )
-            st.markdown(response)
         else:
-            # TODO Ketua: Panggil chat_with_advisor dari groq_tools.py
-            # response = chat_with_advisor(
-            #     user_input=user_input,
-            #     chat_history=st.session_state.chat_history[:-1],
-            #     df=df,
-            # )
-            with st.spinner("AI sedang menganalisis keuanganmu..."):
-                try:
-                    response = chat_with_advisor(
-                        user_input=user_input,
-                        chat_history=st.session_state.chat_history[:-1],
-                        df=df,
-                    )
-                    st.markdown(response)
-                except Exception as e:
-                    response = f"Terjadi error: {str(e)}"
-                    st.error(response)
+            response = (
+                "Maaf, AI Advisor sedang dalam mode demo. "
+                "Konfigurasi Groq API di `.streamlit/secrets.toml` untuk mengaktifkan fitur ini."
+            )
 
-    st.session_state.chat_history.append({"role": "assistant", "content": response})
+        st.session_state.chat_history.append({"role": "assistant", "content": response})
+        save_chat_history(st.session_state.chat_history)
+        st.rerun()
 
-    save_chat_history(
-        st.session_state.chat_history
-    )
+    q1, q2 = st.columns(2)
+    q3, q4 = st.columns(2)
 
-# ─── Tombol Reset Chat ──────────────────────────────────────────────────────────
-if st.button("🗑️ Hapus Riwayat Chat"):
+    for col, (icon, prompt) in zip([q1, q2, q3, q4], quick_prompts):
+        with col:
+            if st.button(
+                f"{icon}  {prompt}",
+                key=f"quick_{prompt[:15]}",
+                use_container_width=True,
+            ):
+                process_prompt(prompt)
 
-    st.session_state.chat_history = []
+    st.markdown("<br>", unsafe_allow_html=True)
 
-    clear_chat_history()
+    # ── Chat Messages ──────────────────────────────────────────────────────────
+    st.markdown('<div style="font-size:0.85rem;font-weight:600;color:#0a1628;margin-bottom:10px">💬 Chat</div>', unsafe_allow_html=True)
 
-    st.success(
-        "Riwayat chat berhasil dihapus."
-    )
+    chat_area = st.container()
+    with chat_area:
+        if not st.session_state.chat_history:
+            st.markdown("""
+            <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:2.5rem;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.06)">
+                <div style="font-size:2.5rem;margin-bottom:10px">🤖</div>
+                <div style="font-size:0.95rem;font-weight:600;color:#0a1628;margin-bottom:6px">Halo! Saya AI Financial Advisor SmartBudget.</div>
+                <div style="font-size:0.85rem;color:#64748b;line-height:1.7">
+                    Tanyakan apa saja tentang keuanganmu!<br>
+                    <span style="color:#94a3b8;font-style:italic">Contoh: "Kenapa pengeluaranku meningkat?" atau "Bagaimana cara hemat lebih banyak?"</span>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+        else:
+            for message in st.session_state.chat_history:
+                with st.chat_message(message["role"]):
+                    st.markdown(message["content"])
 
-    st.rerun()
+    # ── Chat Input ─────────────────────────────────────────────────────────────
+    user_input = st.chat_input("Tanya tentang keuanganmu...")
+
+    if user_input:
+        st.session_state.chat_history.append({"role": "user", "content": user_input})
+        save_chat_history(st.session_state.chat_history)
+
+        with st.chat_message("user"):
+            st.markdown(user_input)
+
+        with st.chat_message("assistant"):
+            if not GROQ_READY:
+                response = (
+                    "Maaf, AI Advisor sedang dalam mode demo. "
+                    "Konfigurasi Groq API di `.streamlit/secrets.toml` untuk mengaktifkan fitur ini."
+                )
+                st.warning("⚙️ `utils/groq_tools.py` belum tersedia atau Groq API belum dikonfigurasi.")
+                st.markdown(response)
+            elif df.empty:
+                response = (
+                    "Halo! Saya belum bisa memberikan analisis karena kamu belum memiliki "
+                    "data transaksi. Yuk mulai catat keuanganmu di halaman **Input Transaksi** terlebih dahulu! 📝"
+                )
+                st.markdown(response)
+            else:
+                with st.spinner("AI sedang menganalisis keuanganmu..."):
+                    try:
+                        response = chat_with_advisor(
+                            user_input=user_input,
+                            chat_history=st.session_state.chat_history[:-1],
+                            df=df,
+                        )
+                        st.markdown(response)
+                    except Exception as e:
+                        response = f"Terjadi error: {str(e)}"
+                        st.error(response)
+
+        st.session_state.chat_history.append({"role": "assistant", "content": response})
+        save_chat_history(st.session_state.chat_history)
