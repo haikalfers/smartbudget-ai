@@ -16,7 +16,7 @@ st.set_page_config(
 )
 
 # ─── Init Session State (selalu dipanggil di app.py) ─────────────────────────
-from utils.data_utils import init_session_state, load_transactions, get_summary, format_rupiah
+from utils.data_utils import init_session_state, load_sample_data, hitung_ringkasan, format_rupiah, format_singkat, KOLOM_TRANSAKSI, get_transaksi
 init_session_state()
 
 # ─── Auto-train Models (Opsi 3: fallback jika .pkl tidak ada) ────────────────
@@ -127,10 +127,10 @@ with st.sidebar:
 
     st.divider()
 
-    # Quick stats
-    df_all = st.session_state.get("transaksi", None)
-    if df_all is not None and not df_all.empty:
-        ring = hitung_ringkasan(df_all)
+  # Quick stats
+    df_sidebar = get_transaksi()
+    if not df_sidebar.empty:
+        ring = hitung_ringkasan(df_sidebar)
         st.markdown("#### 📊 Ringkasan Cepat")
         col1, col2 = st.columns(2)
         with col1:
@@ -148,7 +148,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Cek apakah ada data
-df = st.session_state.transaksi
+df = get_transaksi()
 
 if df.empty:
     # ── Tampilan Welcome ─────────────────────────────────────────────────────
