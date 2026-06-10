@@ -138,12 +138,12 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
     
-    st.page_link("app.py", label="🏠  Beranda", icon="🏠")
-    st.page_link("pages/1_Dashboard.py", label="📊  Dashboard", icon="📊")
-    st.page_link("pages/2_Input_Transaksi.py", label="➕  Input Transaksi", icon="➕")
-    st.page_link("pages/3_Analisis.py", label="📈  Analisis", icon="📈")
-    st.page_link("pages/4_Prediksi.py", label="🔮  Prediksi", icon="🔮")
-    st.page_link("pages/5_AI_Advisor.py", label="💬  AI Advisor", icon="💬")
+    st.page_link("app.py", label="Beranda", icon="🏠")
+    st.page_link("pages/1_Dashboard.py", label="Dashboard", icon="📊")
+    st.page_link("pages/2_Input_Transaksi.py", label="Input Transaksi", icon="➕")
+    st.page_link("pages/3_Analisis.py", label="Analisis", icon="📈")
+    st.page_link("pages/4_Prediksi.py", label="Prediksi", icon="🔮")
+    st.page_link("pages/5_AI_Advisor.py", label="AI Advisor", icon="💬")
 
     st.divider()
     df_sidebar = load_transactions()
