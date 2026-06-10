@@ -108,26 +108,48 @@ with st.sidebar:
     # Cek model klasifikasi
     try:
         from utils.classifier_utils import is_classifier_ready
-        _status["Classifier"] = ("✅ Siap", "ok") if is_classifier_ready() else ("⚠️ Belum dilatih", "warn")
+        _status["Classifier"] = ("✅ Siap", "ok") if is_classifier_ready() else ("⚠️ Belum", "warn")
     except ImportError:
-        _status["Classifier"] = ("❌ Error import", "err")
+        _status["Classifier"] = ("❌ Error", "err")
 
     # Cek model prediksi
     try:
         from utils.predictor_utils import is_predictor_ready
-        _status["Predictor"] = ("✅ Siap", "ok") if is_predictor_ready() else ("⚠️ Belum dilatih", "warn")
+        _status["Predictor"] = ("✅ Siap", "ok") if is_predictor_ready() else ("⚠️ Belum", "warn")
     except ImportError:
-        _status["Predictor"] = ("❌ Error import", "err")
+        _status["Predictor"] = ("❌ Error", "err")
 
     # Cek Groq API
     try:
         _groq_key = st.secrets.get("GROQ_API_KEY", "")
-        _status["Groq API"] = ("✅ Key tersedia", "ok") if _groq_key else ("⚠️ Key belum diset", "warn")
+        _status["Groq API"] = ("✅ Ada", "ok") if _groq_key else ("⚠️ Belum", "warn")
     except Exception:
-        _status["Groq API"] = ("⚠️ Secrets belum dikonfigurasi", "warn")
+        _status["Groq API"] = ("⚠️ Error", "warn")
+
+    # Render status dengan styling yang lebih baik
+    st.markdown("""
+    <style>
+    .status-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 8px;
+        margin: 3px 0;
+        background: rgba(255,255,255,0.05);
+        border-radius: 6px;
+        font-size: 0.8rem;
+        word-break: break-word;
+    }
+    .status-label { font-weight: 500; color: rgba(255,255,255,0.7); flex: 1; }
+    .status-badge { font-weight: 600; white-space: nowrap; margin-left: 8px; }
+    </style>
+    """, unsafe_allow_html=True)
 
     for nama, (teks, level) in _status.items():
-        st.markdown(f"`{nama}` {teks}")
+        st.markdown(
+            f'<div class="status-item"><span class="status-label">{nama}</span><span class="status-badge">{teks}</span></div>',
+            unsafe_allow_html=True
+        )
 
     st.divider()
 
