@@ -21,6 +21,11 @@ env/
 # Model files (besar, bisa diregenerasi)
 # models/*.pkl
 
+# Data files (di-generate atau privat)
+data/dataset_transaksi.csv
+data/sample_data.csv
+data/training_klasifikasi.csv
+
 # IDE
 .vscode/
 .idea/

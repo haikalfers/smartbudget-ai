@@ -1,229 +1,253 @@
 """
-app.py
-SmartBudget AI — Halaman Home yang didesain ulang.
+app.py — Entry point SmartBudget AI
+Halaman utama (Home/Landing) + inisialisasi global session state.
 """
 
 import streamlit as st
-from utils.data_utils import init_session_state, load_transactions
-from styles import GLOBAL_CSS
-from components.sidebar import render_sidebar
+import pandas as pd
+from datetime import datetime
 
-# ─── Setup ─────────────────────────────────────────────────────────────────────
+# ─── Konfigurasi Halaman ──────────────────────────────────────────────────────
 st.set_page_config(
     page_title="SmartBudget AI",
     page_icon="💰",
-    layout="centered",
+    layout="wide",
     initial_sidebar_state="expanded",
 )
 
+# ─── Init Session State (selalu dipanggil di app.py) ─────────────────────────
+from utils.data_utils import init_session_state, load_sample_data, hitung_ringkasan, format_rupiah, format_singkat
 init_session_state()
-st.markdown(GLOBAL_CSS, unsafe_allow_html=True)
 
-# ─── Sidebar ───────────────────────────────────────────────────────────────────
+# ─── Auto-train Models (Opsi 3: fallback jika .pkl tidak ada) ────────────────
+# .pkl di-commit ke GitHub → startup normal cepat.
+# Kode ini hanya jalan jika file .pkl tidak ditemukan (misalnya Streamlit Cloud
+# restart setelah idle, atau fresh clone tanpa model files).
+import os, subprocess
+
+def auto_train_if_needed():
+    """Generate dataset & train models jika file .pkl belum tersedia."""
+    if not os.path.exists("data/sample_data.csv") or \
+       not os.path.exists("data/training_klasifikasi.csv"):
+        subprocess.run(["python", "data/generate_dataset.py"], check=True)
+
+    if not os.path.exists("models/classifier.pkl"):
+        subprocess.run(["python", "models/train_classifier.py"], check=True)
+
+    if not os.path.exists("models/predictor.pkl"):
+        subprocess.run(["python", "models/train_predictor.py"], check=True)
+
+if "models_ready" not in st.session_state:
+    _perlu_train = (
+        not os.path.exists("models/classifier.pkl") or
+        not os.path.exists("models/predictor.pkl")
+    )
+    if _perlu_train:
+        with st.spinner("⚙️ Menyiapkan model AI (hanya sekali)..."):
+            try:
+                auto_train_if_needed()
+                st.session_state.models_ready = True
+            except Exception as _e:
+                st.warning(f"⚠️ Model training gagal: {_e}. Beberapa fitur mungkin tidak tersedia.")
+                st.session_state.models_ready = False
+    else:
+        st.session_state.models_ready = True
+
+# ─── CSS Global ───────────────────────────────────────────────────────────────
+st.markdown("""
+<style>
+    /* Metric cards */
+    [data-testid="metric-container"] {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 12px;
+        padding: 16px;
+        border: 1px solid #e0e0e0;
+    }
+    /* Sidebar branding */
+    .sidebar-brand {
+        text-align: center;
+        padding: 10px 0 20px 0;
+        border-bottom: 1px solid #e0e0e0;
+        margin-bottom: 10px;
+    }
+    /* Status badge */
+    .badge-ok   { background: #d4edda; color: #155724; padding: 3px 10px; border-radius: 20px; font-size: 0.85em; }
+    .badge-warn { background: #fff3cd; color: #856404; padding: 3px 10px; border-radius: 20px; font-size: 0.85em; }
+    .badge-err  { background: #f8d7da; color: #721c24; padding: 3px 10px; border-radius: 20px; font-size: 0.85em; }
+    /* Hero section */
+    .hero-container {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        padding: 40px;
+        color: white;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .hero-container h1 { font-size: 2.5rem; margin: 0; }
+    .hero-container p  { font-size: 1.1rem; opacity: 0.9; margin-top: 8px; }
+</style>
+""", unsafe_allow_html=True)
+
+# ─── Sidebar ──────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("""
-    <div style="padding: 8px 0 16px;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
-            <div style="width:36px;height:36px;background:linear-gradient(135deg,#1e6ab3,#0f4c81);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px">💰</div>
-            <div>
-                <div style="font-size:1.1rem;font-weight:700;color:#fff">SmartBudget AI</div>
-                <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);margin-top:1px">Kelola keuangan dengan cerdas</div>
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.divider()
-    
-    transactions = load_transactions()
-    if not transactions.empty:
-        total_pemasukan = transactions[transactions["tipe"] == "Pemasukan"]["jumlah"].sum()
-        total_pengeluaran = transactions[transactions["tipe"] == "Pengeluaran"]["jumlah"].sum()
-        saldo = total_pemasukan - total_pengeluaran
-        saldo_color = "#4ade80" if saldo >= 0 else "#f87171"
-        
-        st.markdown(f"""
-        <div style="background:rgba(255,255,255,0.08);border-radius:10px;padding:14px;margin-bottom:8px">
-            <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Saldo Saat Ini</div>
-            <div style="font-size:1.6rem;font-weight:700;color:{saldo_color}">Rp {saldo:,.0f}</div>
-            <div style="display:flex;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.1)">
-                <div>
-                    <div style="font-size:0.68rem;color:rgba(255,255,255,0.45)">↑ Masuk</div>
-                    <div style="font-size:0.8rem;color:#4ade80;font-weight:600">Rp {total_pemasukan:,.0f}</div>
-                </div>
-                <div>
-                    <div style="font-size:0.68rem;color:rgba(255,255,255,0.45)">↓ Keluar</div>
-                    <div style="font-size:0.8rem;color:#f87171;font-weight:600">Rp {total_pengeluaran:,.0f}</div>
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-    else:
-        st.markdown("""
-        <div style="background:rgba(255,255,255,0.08);border-radius:10px;padding:14px;text-align:center">
-            <div style="font-size:1.5rem;margin-bottom:6px">📭</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.6)">Belum ada transaksi</div>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    st.markdown("""
-    <div style="margin-top:20px">
-        <div style="font-size:0.68rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;padding:0 4px">Menu</div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.page_link("app.py", label="🏠  Beranda", width='stretch')
-    st.page_link("pages/1_Dashboard.py", label="📊  Dashboard", width='stretch')
-    st.page_link("pages/2_Input_Transaksi.py", label="➕  Input Transaksi", width='stretch')
-    st.page_link("pages/3_Analisis.py", label="📈  Analisis", width='stretch')
-    st.page_link("pages/4_Prediksi.py", label="🔮  Prediksi", width='stretch')
-    st.page_link("pages/5_AI_Advisor.py", label="💬  AI Advisor", width='stretch')
-    
-    st.divider()
-    st.markdown("""
-    <div style="font-size:0.7rem;color:rgba(255,255,255,0.3);text-align:center;padding:4px 0">
-        SmartBudget AI v2.0<br>Studi Independen Data Science
+    <div class="sidebar-brand">
+        <h2>💰 SmartBudget AI</h2>
+        <p style="color: #666; font-size: 0.85em; margin: 0;">Manajemen Keuangan Mahasiswa</p>
     </div>
     """, unsafe_allow_html=True)
 
-# ─── Hero Section ──────────────────────────────────────────────────────────────
-transactions = load_transactions()
-total_pemasukan = transactions[transactions["tipe"] == "Pemasukan"]["jumlah"].sum() if not transactions.empty else 0
-total_pengeluaran = transactions[transactions["tipe"] == "Pengeluaran"]["jumlah"].sum() if not transactions.empty else 0
-saldo = total_pemasukan - total_pengeluaran
-total_tx = len(transactions)
+    # Status sistem
+    st.markdown("#### 🔧 Status Sistem")
+    _status = {}
 
-st.markdown(f"""
-<div style="background:linear-gradient(135deg,#0a1628 0%,#0f4c81 60%,#1e6ab3 100%);border-radius:16px;padding:2rem 2.5rem;margin-bottom:1.5rem;position:relative;overflow:hidden">
-    <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:rgba(255,255,255,0.04);border-radius:50%"></div>
-    <div style="position:absolute;bottom:-60px;right:80px;width:150px;height:150px;background:rgba(255,255,255,0.04);border-radius:50%"></div>
-    <div style="position:relative;z-index:1">
-        <div style="font-size:0.75rem;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px">Selamat datang kembali 👋</div>
-        <h1 style="font-size:1.8rem;font-weight:800;color:#fff;margin:0 0 6px">SmartBudget AI</h1>
-        <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin:0 0 1.5rem">Aplikasi manajemen keuangan cerdas — powered by Machine Learning & Generative AI</p>
-        <div style="display:flex;gap:2rem;flex-wrap:wrap">
-            <div>
-                <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.05em">Total Transaksi</div>
-                <div style="font-size:1.4rem;font-weight:700;color:#fff">{total_tx}</div>
-            </div>
-            <div style="width:1px;background:rgba(255,255,255,0.15)"></div>
-            <div>
-                <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.05em">Pemasukan</div>
-                <div style="font-size:1.4rem;font-weight:700;color:#4ade80">Rp {total_pemasukan:,.0f}</div>
-            </div>
-            <div style="width:1px;background:rgba(255,255,255,0.15)"></div>
-            <div>
-                <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.05em">Pengeluaran</div>
-                <div style="font-size:1.4rem;font-weight:700;color:#f87171">Rp {total_pengeluaran:,.0f}</div>
-            </div>
-            <div style="width:1px;background:rgba(255,255,255,0.15)"></div>
-            <div>
-                <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.05em">Saldo</div>
-                <div style="font-size:1.4rem;font-weight:700;color:{'#4ade80' if saldo >= 0 else '#f87171'}">Rp {saldo:,.0f}</div>
-            </div>
-        </div>
-    </div>
+    # Cek model klasifikasi
+    try:
+        from utils.classifier_utils import is_classifier_ready
+        _status["Classifier"] = ("✅ Siap", "ok") if is_classifier_ready() else ("⚠️ Belum dilatih", "warn")
+    except ImportError:
+        _status["Classifier"] = ("❌ Error import", "err")
+
+    # Cek model prediksi
+    try:
+        from utils.predictor_utils import is_predictor_ready
+        _status["Predictor"] = ("✅ Siap", "ok") if is_predictor_ready() else ("⚠️ Belum dilatih", "warn")
+    except ImportError:
+        _status["Predictor"] = ("❌ Error import", "err")
+
+    # Cek Groq API
+    try:
+        _groq_key = st.secrets.get("GROQ_API_KEY", "")
+        _status["Groq API"] = ("✅ Key tersedia", "ok") if _groq_key else ("⚠️ Key belum diset", "warn")
+    except Exception:
+        _status["Groq API"] = ("⚠️ Secrets belum dikonfigurasi", "warn")
+
+    for nama, (teks, level) in _status.items():
+        st.markdown(f"`{nama}` {teks}")
+
+    st.divider()
+
+    # Quick stats
+    df_all = st.session_state.transaksi
+    if not df_all.empty:
+        ring = hitung_ringkasan(df_all)
+        st.markdown("#### 📊 Ringkasan Cepat")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.metric("Saldo", format_singkat(ring["saldo"]))
+        with col2:
+            st.metric("Transaksi", ring["jumlah_transaksi"])
+        st.metric("Total Pengeluaran", format_singkat(ring["total_pengeluaran"]))
+
+# ─── Konten Utama ─────────────────────────────────────────────────────────────
+st.markdown("""
+<div class="hero-container">
+    <h1>💰 SmartBudget AI</h1>
+    <p>Aplikasi manajemen keuangan cerdas untuk mahasiswa — berbasis AI & Machine Learning</p>
 </div>
 """, unsafe_allow_html=True)
 
-# ─── Feature Cards ─────────────────────────────────────────────────────────────
-st.markdown("""<div style="font-size:1rem;font-weight:700;color:#0a1628;margin-bottom:1rem">🚀 Fitur Utama</div>""", unsafe_allow_html=True)
+# Cek apakah ada data
+df = st.session_state.transaksi
 
-col1, col2, col3 = st.columns(3)
+if df.empty:
+    # ── Tampilan Welcome ─────────────────────────────────────────────────────
+    st.info("👋 Selamat datang! Belum ada data transaksi. Mulai dengan input transaksi atau load data sampel.")
 
-# with col1:
-#     st.markdown("""
-#     <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.25rem;height:100%;box-shadow:0 1px 3px rgba(0,0,0,0.06)">
-#         <div style="width:40px;height:40px;background:#dbeafe;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px">📊</div>
-#         <div style="font-size:1rem;font-weight:700;color:#0a1628;margin-bottom:6px">Dashboard & Analisis</div>
-#         <div style="font-size:0.85rem;color:#64748b;line-height:1.6">Visualisasi pola pengeluaran dengan grafik interaktif. Pantau tren keuanganmu secara real-time.</div>
-#     </div>
-#     """, unsafe_allow_html=True)
-#     st.page_link("pages/1_Dashboard.py", label="Buka Dashboard →", icon="📊")
-with col1:
-    with st.container(border=True):
+    col1, col2, col3 = st.columns(3)
 
-        st.markdown("""
-        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.25rem;height:100%;box-shadow:0 1px 3px rgba(0,0,0,0.06)">
-            <div style="width:40px;height:40px;background:#dbeafe;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px">📊</div>
-            <div style="font-size:1rem;font-weight:700;color:#0a1628;margin-bottom:6px">Dashboard & Analisis</div>
-            <div style="font-size:0.85rem;color:#64748b;line-height:1.6">Visualisasi pola pengeluaran dengan grafik interaktif. Pantau tren keuanganmu secara real-time.</div>
-        </div>
-        """, unsafe_allow_html=True)
+    with col1:
+        st.markdown("### ➕ Mulai Input")
+        st.markdown("Catat pemasukan dan pengeluaranmu secara manual dengan klasifikasi AI otomatis.")
+        st.page_link("pages/2_Input_Transaksi.py", label="Input Transaksi →", icon="➕")
 
-        if st.button(
-            "📊 Buka Dashboard",
-            key="go_dashboard",
-            width='stretch'
-        ):
-            st.switch_page("pages/1_Dashboard.py")
+    with col2:
+        st.markdown("### 📂 Load Data Sampel")
+        st.markdown("Coba fitur aplikasi dengan data sampel 3 bulan yang sudah tersedia.")
+        if st.button("🔄 Load Data Sampel", use_container_width=True):
+            if load_sample_data():
+                st.success("✅ Data sampel berhasil dimuat!")
+                st.rerun()
+            else:
+                st.error("❌ File sample_data.csv tidak ditemukan. Jalankan `python data/generate_dataset.py` terlebih dahulu.")
 
-with col2:
-    with st.container(border=True):
+    with col3:
+        st.markdown("### 💬 Tanya AI Advisor")
+        st.markdown("Chat dengan AI Advisor untuk saran keuangan personal berbasis datamu.")
+        st.page_link("pages/5_AI_Advisor.py", label="Buka AI Advisor →", icon="💬")
 
-        st.markdown("""
-        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.25rem;height:100%;box-shadow:0 1px 3px rgba(0,0,0,0.06)">
-            <div style="width:40px;height:40px;background:#fef3c7;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px">🔮</div>
-            <div style="font-size:1rem;font-weight:700;color:#0a1628;margin-bottom:6px">Prediksi Keuangan</div>
-            <div style="font-size:0.85rem;color:#64748b;line-height:1.6">Model ML memprediksi kondisi keuanganmu ke depan berdasarkan pola historis transaksi.</div>
-        </div>
-        """, unsafe_allow_html=True)
+    st.divider()
 
-        if st.button(
-            "🔮 Lihat Prediksi",
-            key="go_prediksi",
-            width='stretch'
-        ):
-            st.switch_page("pages/4_Prediksi.py")
+    # Fitur overview
+    st.markdown("### ✨ Fitur Unggulan")
+    f1, f2, f3, f4 = st.columns(4)
+    with f1:
+        st.markdown("**🤖 Klasifikasi Otomatis**\n\nPengeluaran dikategorikan otomatis pakai ML (TF-IDF + Logistic Regression)")
+    with f2:
+        st.markdown("**📊 Dashboard Interaktif**\n\nVisualisasi Plotly lengkap: pie chart, tren bulanan, perbandingan")
+    with f3:
+        st.markdown("**🔮 Prediksi Keuangan**\n\nForecast kondisi keuangan ke depan dengan Polynomial Regression")
+    with f4:
+        st.markdown("**💬 AI Advisor**\n\nChatbot cerdas dengan 2 agentic tools — analisis & rekomendasi real-time")
 
-with col3:
-    with st.container(border=True):
+else:
+    # ── Dashboard Mini (ada data) ────────────────────────────────────────────
+    ring = hitung_ringkasan(df)
 
-        st.markdown("""
-        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.25rem;height:100%;box-shadow:0 1px 3px rgba(0,0,0,0.06)">
-            <div style="width:40px;height:40px;background:#dcfce7;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px">💬</div>
-            <div style="font-size:1rem;font-weight:700;color:#0a1628;margin-bottom:6px">AI Advisor</div>
-            <div style="font-size:0.85rem;color:#64748b;line-height:1.6">Chatbot AI yang menganalisis transaksimu dan memberikan rekomendasi keuangan personal.</div>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("### 📊 Ringkasan Keuangan")
+    m1, m2, m3, m4 = st.columns(4)
+    with m1:
+        st.metric("💚 Total Pemasukan", format_rupiah(ring["total_pemasukan"]))
+    with m2:
+        delta_color = "inverse" if ring["total_pengeluaran"] > ring["total_pemasukan"] else "normal"
+        st.metric("🔴 Total Pengeluaran", format_rupiah(ring["total_pengeluaran"]))
+    with m3:
+        saldo_delta = "📈 Surplus" if ring["saldo"] >= 0 else "📉 Defisit"
+        st.metric("💰 Saldo", format_rupiah(ring["saldo"]), saldo_delta)
+    with m4:
+        st.metric("📝 Total Transaksi", ring["jumlah_transaksi"])
 
-        if st.button(
-            "💬 Tanya AI",
-            key="go_ai_advisor",
-            width='stretch'
-        ):
-            st.switch_page("pages/5_AI_Advisor.py")
+    st.divider()
 
-st.markdown("<br>", unsafe_allow_html=True)
+    # Tabel transaksi terbaru
+    st.markdown("### 🕐 Transaksi Terbaru")
+    df_sorted = df.sort_values("tanggal", ascending=False).head(5).copy()
+    df_sorted["tanggal"] = df_sorted["tanggal"].dt.strftime("%d %b %Y")
+    df_sorted["jumlah"] = df_sorted["jumlah"].apply(format_rupiah)
+    df_sorted["tipe"] = df_sorted["tipe"].apply(
+        lambda x: "🟢 " + x if x == "Pemasukan" else "🔴 " + x
+    )
+    st.dataframe(
+        df_sorted[["tanggal", "deskripsi", "kategori", "tipe", "jumlah"]],
+        use_container_width=True,
+        hide_index=True,
+    )
 
-# ─── Getting Started ───────────────────────────────────────────────────────────
-if transactions.empty:
-    st.markdown("""
-    <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:1.5rem;box-shadow:0 1px 3px rgba(0,0,0,0.06)">
-        <div style="font-size:1rem;font-weight:700;color:#0a1628;margin-bottom:1rem">⚡ Mulai Sekarang</div>
-        <div style="display:flex;flex-direction:column;gap:12px">
-            <div style="display:flex;align-items:center;gap:12px">
-                <div style="min-width:28px;height:28px;background:#dbeafe;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#0f4c81">1</div>
-                <div style="font-size:0.875rem;color:#334155">Catat pemasukan & pengeluaranmu di <strong>Input Transaksi</strong></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:12px">
-                <div style="min-width:28px;height:28px;background:#dbeafe;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#0f4c81">2</div>
-                <div style="font-size:0.875rem;color:#334155">Lihat visualisasi pola keuanganmu di <strong>Dashboard</strong></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:12px">
-                <div style="min-width:28px;height:28px;background:#dbeafe;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#0f4c81">3</div>
-                <div style="font-size:0.875rem;color:#334155">Analisis breakdown kategori di halaman <strong>Analisis</strong></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:12px">
-                <div style="min-width:28px;height:28px;background:#dbeafe;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#0f4c81">4</div>
-                <div style="font-size:0.875rem;color:#334155">Proyeksikan masa depan keuanganmu di <strong>Prediksi</strong></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:12px">
-                <div style="min-width:28px;height:28px;background:#dbeafe;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#0f4c81">5</div>
-                <div style="font-size:0.875rem;color:#334155">Minta saran personal dari <strong>AI Advisor</strong></div>
-            </div>
-        </div>
+    col_a, col_b, col_c = st.columns(3)
+    with col_a:
+        st.page_link("pages/1_Dashboard.py",          label="📊 Lihat Dashboard Lengkap →")
+    with col_b:
+        st.page_link("pages/4_Prediksi.py",           label="🔮 Lihat Prediksi Keuangan →")
+    with col_c:
+        st.page_link("pages/5_AI_Advisor.py",         label="💬 Chat dengan AI Advisor →")
+
+    # Tombol reset
+    with st.expander("⚙️ Opsi Data"):
+        if st.button("🗑️ Hapus Semua Data", type="secondary"):
+            from utils.data_utils import KOLOM_TRANSAKSI
+            st.session_state.transaksi = pd.DataFrame(columns=KOLOM_TRANSAKSI)
+            st.session_state.next_id = 1
+            st.session_state.chat_history = []
+            st.success("Data berhasil dihapus.")
+            st.rerun()
+
+# ─── Footer ───────────────────────────────────────────────────────────────────
+st.divider()
+st.markdown(
+    f"""
+    <div style="text-align:center; color:#999; font-size:0.82em">
+    SmartBudget AI · Studi Independen Data Science & Generative AI · PT Celerates · {datetime.now().year}
     </div>
-    """, unsafe_allow_html=True)
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.page_link("pages/2_Input_Transaksi.py", label="➕ Mulai Catat Transaksi Pertamamu", icon="➕")
+    """,
+    unsafe_allow_html=True,
+)
