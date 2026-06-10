@@ -76,6 +76,20 @@ st.markdown("""
     max-height: 180px;
     overflow-y: auto;
 }
+.history-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0a1628;
+    margin: 1rem 0 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.history-divider {
+    border: none;
+    border-top: 1px dashed #e2e8f0;
+    margin: 6px 0;
+}
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
@@ -122,7 +136,7 @@ except ImportError:
 df = load_transactions()
 summary = get_summary(df)
 
-# ─── Layout: Sidebar kiri (konteks) + Main (chat) ─────────────────────────────
+# ─── Layout: Main (chat) + Sidebar kanan (konteks) ────────────────────────────
 col_main, col_side = st.columns([2.5, 1], gap="large")
 
 with col_side:
@@ -166,7 +180,7 @@ with col_side:
                 <span style="width:7px;height:7px;background:#22c55e;border-radius:50%;display:inline-block"></span>
                 AI Advisor Aktif
             </div>
-            <div style="font-size:0.72rem;color:#4ade80;margin-top:2px;color:#16a34a">Groq API terhubung</div>
+            <div style="font-size:0.72rem;margin-top:2px;color:#16a34a">Groq API terhubung</div>
         </div>
         """, unsafe_allow_html=True)
     else:
@@ -189,13 +203,13 @@ with col_side:
 
     # ── Hapus Riwayat ──────────────────────────────────────────────────────────
     st.markdown("<br>", unsafe_allow_html=True)
-    if st.button("🗑️  Hapus Riwayat Chat", width='stretch'):
+    if st.button("🗑️  Hapus Riwayat Chat", use_container_width=True):
         st.session_state.chat_history = []
         clear_chat_history()
         st.toast("Riwayat chat dihapus!", icon="✅")
         st.rerun()
 
-# ─── Main: Header + Quick Actions + Chat ──────────────────────────────────────
+# ─── Main: Header + Input + Quick Actions + Riwayat ──────────────────────────
 with col_main:
     st.markdown("""
     <div class="sb-page-header">
@@ -204,7 +218,10 @@ with col_main:
     </div>
     """, unsafe_allow_html=True)
 
-    # ── Quick Action Buttons ───────────────────────────────────────────────────
+    # ── [1] Chat Input — PALING ATAS ──────────────────────────────────────────
+    user_input = st.chat_input("Tanya tentang keuanganmu...")
+
+    # ── [2] Quick Action Buttons ───────────────────────────────────────────────
     st.markdown('<div style="font-size:0.85rem;font-weight:600;color:#0a1628;margin-bottom:10px">⚡ Tanya Cepat</div>', unsafe_allow_html=True)
 
     quick_prompts = [
@@ -250,69 +267,82 @@ with col_main:
             if st.button(
                 f"{icon}  {prompt}",
                 key=f"quick_{prompt[:15]}",
-                width='stretch',
+                use_container_width=True,
             ):
                 process_prompt(prompt)
 
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    # ── Chat Messages ──────────────────────────────────────────────────────────
-    st.markdown('<div style="font-size:0.85rem;font-weight:600;color:#0a1628;margin-bottom:10px">💬 Chat</div>', unsafe_allow_html=True)
-
-    chat_area = st.container()
-    with chat_area:
-        if not st.session_state.chat_history:
-            st.markdown("""
-            <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:2.5rem;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.06)">
-                <div style="font-size:2.5rem;margin-bottom:10px">🤖</div>
-                <div style="font-size:0.95rem;font-weight:600;color:#0a1628;margin-bottom:6px">Halo! Saya AI Financial Advisor SmartBudget.</div>
-                <div style="font-size:0.85rem;color:#64748b;line-height:1.7">
-                    Tanyakan apa saja tentang keuanganmu!<br>
-                    <span style="color:#94a3b8;font-style:italic">Contoh: "Kenapa pengeluaranku meningkat?" atau "Bagaimana cara hemat lebih banyak?"</span>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-        else:
-            for message in st.session_state.chat_history:
-                with st.chat_message(message["role"]):
-                    st.markdown(message["content"])
-
-    # ── Chat Input ─────────────────────────────────────────────────────────────
-    user_input = st.chat_input("Tanya tentang keuanganmu...")
-
+    # ── [3] Proses user_input dari chat_input ──────────────────────────────────
     if user_input:
         st.session_state.chat_history.append({"role": "user", "content": user_input})
         save_chat_history(st.session_state.chat_history)
 
-        with st.chat_message("user"):
-            st.markdown(user_input)
-
-        with st.chat_message("assistant"):
-            if not GROQ_READY:
-                response = (
-                    "Maaf, AI Advisor sedang dalam mode demo. "
-                    "Konfigurasi Groq API di `.streamlit/secrets.toml` untuk mengaktifkan fitur ini."
-                )
-                st.warning("⚙️ `utils/groq_tools.py` belum tersedia atau Groq API belum dikonfigurasi.")
-                st.markdown(response)
-            elif df.empty:
-                response = (
-                    "Halo! Saya belum bisa memberikan analisis karena kamu belum memiliki "
-                    "data transaksi. Yuk mulai catat keuanganmu di halaman **Input Transaksi** terlebih dahulu! 📝"
-                )
-                st.markdown(response)
-            else:
-                with st.spinner("AI sedang menganalisis keuanganmu..."):
-                    try:
-                        response = chat_with_advisor(
-                            user_input=user_input,
-                            chat_history=st.session_state.chat_history[:-1],
-                            df=df,
-                        )
-                        st.markdown(response)
-                    except Exception as e:
-                        response = f"Terjadi error: {str(e)}"
-                        st.error(response)
+        if not GROQ_READY:
+            response = (
+                "Maaf, AI Advisor sedang dalam mode demo. "
+                "Konfigurasi Groq API di `.streamlit/secrets.toml` untuk mengaktifkan fitur ini."
+            )
+        elif df.empty:
+            response = (
+                "Halo! Saya belum bisa memberikan analisis karena kamu belum memiliki "
+                "data transaksi. Yuk mulai catat keuanganmu di halaman **Input Transaksi** terlebih dahulu! 📝"
+            )
+        else:
+            with st.spinner("AI sedang menganalisis keuanganmu..."):
+                try:
+                    response = chat_with_advisor(
+                        user_input=user_input,
+                        chat_history=st.session_state.chat_history[:-1],
+                        df=df,
+                    )
+                except Exception as e:
+                    response = f"Terjadi error: {str(e)}"
 
         st.session_state.chat_history.append({"role": "assistant", "content": response})
         save_chat_history(st.session_state.chat_history)
+        st.rerun()
+
+    # ── [4] Riwayat Chat — TERBARU DI ATAS ────────────────────────────────────
+    st.markdown('<div class="history-label">💬 Riwayat Chat <span style="font-size:0.75rem;font-weight:400;color:#94a3b8">(terbaru di atas)</span></div>', unsafe_allow_html=True)
+
+    if not st.session_state.chat_history:
+        st.markdown("""
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:2.5rem;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.06)">
+            <div style="font-size:2.5rem;margin-bottom:10px">🤖</div>
+            <div style="font-size:0.95rem;font-weight:600;color:#0a1628;margin-bottom:6px">Halo! Saya AI Financial Advisor SmartBudget.</div>
+            <div style="font-size:0.85rem;color:#64748b;line-height:1.7">
+                Tanyakan apa saja tentang keuanganmu!<br>
+                <span style="color:#94a3b8;font-style:italic">Contoh: "Kenapa pengeluaranku meningkat?" atau "Bagaimana cara hemat lebih banyak?"</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        # Pasangkan pesan user + assistant jadi satu pasang (pair),
+        # lalu tampilkan dari pasang terbaru ke terlama.
+        history = st.session_state.chat_history
+
+        # Bangun list pasangan (user_msg, assistant_msg)
+        pairs = []
+        i = 0
+        while i < len(history):
+            if history[i]["role"] == "user":
+                user_msg = history[i]
+                assistant_msg = history[i + 1] if (i + 1 < len(history) and history[i + 1]["role"] == "assistant") else None
+                pairs.append((user_msg, assistant_msg))
+                i += 2 if assistant_msg else 1
+            else:
+                # assistant tanpa pasangan user (edge case)
+                pairs.append((None, history[i]))
+                i += 1
+
+        # Tampilkan dari pasang terbaru ke terlama
+        for idx, (user_msg, assistant_msg) in enumerate(reversed(pairs)):
+            if idx > 0:
+                st.markdown('<hr class="history-divider">', unsafe_allow_html=True)
+
+            # Tampilkan assistant dulu (karena sudah dibalik, assistant = respons dari user di bawahnya)
+            if assistant_msg:
+                with st.chat_message("assistant"):
+                    st.markdown(assistant_msg["content"])
+            if user_msg:
+                with st.chat_message("user"):
+                    st.markdown(user_msg["content"])
