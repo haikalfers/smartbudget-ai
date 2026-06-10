@@ -17,6 +17,8 @@ st.set_page_config(
 
 # ─── Init Session State (selalu dipanggil di app.py) ─────────────────────────
 from utils.data_utils import init_session_state, get_summary, format_rupiah, load_transactions
+from styles import GLOBAL_CSS
+from utils.init_styles import apply_global_styles
 init_session_state()
 
 # ─── Auto-train Models (Opsi 3: fallback jika .pkl tidak ada) ────────────────
@@ -54,6 +56,8 @@ if "models_ready" not in st.session_state:
         st.session_state.models_ready = True
 
 # ─── CSS Global ───────────────────────────────────────────────────────────────
+apply_global_styles()  # Load GLOBAL_CSS dari styles.py
+
 st.markdown("""
 <style>
     /* Metric cards */

@@ -20,12 +20,13 @@ from utils.data_utils import (
 )
 from styles import GLOBAL_CSS, PLOTLY_THEME
 from components.sidebar import render_sidebar
+from utils.init_styles import apply_global_styles
 
 # ─── Setup ─────────────────────────────────────────────────────────────────────
 st.set_page_config(page_title="Analisis | SmartBudget AI", page_icon="📈", layout="centered")
 init_session_state()
 render_sidebar()
-st.markdown(GLOBAL_CSS, unsafe_allow_html=True)
+apply_global_styles()
 
 # ─── Page Header ───────────────────────────────────────────────────────────────
 st.markdown("""
