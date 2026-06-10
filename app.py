@@ -128,8 +128,8 @@ with st.sidebar:
     st.divider()
 
     # Quick stats
-    df_all = st.session_state.transaksi
-    if not df_all.empty:
+    df_all = st.session_state.get("transaksi", None)
+    if df_all is not None and not df_all.empty:
         ring = hitung_ringkasan(df_all)
         st.markdown("#### 📊 Ringkasan Cepat")
         col1, col2 = st.columns(2)
