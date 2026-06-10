@@ -46,6 +46,17 @@ def load_predictor():
         return None
 
 
+def is_predictor_ready() -> bool:
+    """Cek apakah model predictor sudah siap digunakan."""
+    if not os.path.exists(MODEL_PATH):
+        return False
+    try:
+        load_predictor()
+        return True
+    except Exception:
+        return False
+
+
 def calculate_volatility(series):
 
     if len(series) < 3:

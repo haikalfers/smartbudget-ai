@@ -292,3 +292,49 @@ def chat_with_advisor(
     )
 
     return response.choices[0].message.content
+
+
+# ─── Tools Definition (untuk agentic system) ──────────────────────────────────
+TOOLS_DEFINITION = [
+    {
+        "type": "function",
+        "function": {
+            "name": "analyze_spending",
+            "description": "Analyze user's spending patterns and financial situation",
+            "parameters": {
+                "type": "object",
+                "properties": {}
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_budget_recommendation",
+            "description": "Get budget recommendations and savings tips based on spending",
+            "parameters": {
+                "type": "object",
+                "properties": {}
+            }
+        }
+    }
+]
+
+
+def jalankan_tool(tool_name: str, df: pd.DataFrame = None) -> str:
+    """
+    Execute a tool function based on tool name.
+    
+    Args:
+        tool_name: Name of the tool to execute
+        df: Optional DataFrame for analysis
+    
+    Returns:
+        Tool result as string
+    """
+    if tool_name == "analyze_spending":
+        return analyze_spending(df)
+    elif tool_name == "get_budget_recommendation":
+        return get_budget_recommendation(df)
+    else:
+        return f"Tool '{tool_name}' not found"

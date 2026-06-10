@@ -157,6 +157,10 @@ def update_transaction(
     return save_transactions(df)
 
 
+# ─── Alias untuk backward compatibility ────────────────────────────────────────
+tambah_transaksi = add_transaction  # Alias untuk nama fungsi lama
+
+
 # ─── Analisis & Agregasi ───────────────────────────────────────────────────────
 def get_summary(df: pd.DataFrame) -> dict:
     """

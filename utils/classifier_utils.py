@@ -24,3 +24,19 @@ def predict_category_batch(deskripsi_list: list) -> list:
     """Prediksi kategori untuk banyak transaksi sekaligus"""
     model = load_classifier()
     return model.predict([d.lower() for d in deskripsi_list]).tolist()
+
+
+# ─── Alias dan helper untuk backward compatibility ────────────────────────────
+klasifikasi_teks = predict_category  # Alias untuk nama fungsi lama
+
+
+def is_classifier_ready() -> bool:
+    """Cek apakah model classifier sudah siap digunakan."""
+    model_path = "models/classifier.pkl"
+    if not os.path.exists(model_path):
+        return False
+    try:
+        load_classifier()
+        return True
+    except Exception:
+        return False
