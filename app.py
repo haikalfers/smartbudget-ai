@@ -16,7 +16,7 @@ st.set_page_config(
 )
 
 # ─── Init Session State (selalu dipanggil di app.py) ─────────────────────────
-from utils.data_utils import init_session_state, load_sample_data, hitung_ringkasan, format_rupiah, format_singkat, KOLOM_TRANSAKSI, get_transaksi
+from utils.data_utils import init_session_state, get_summary, format_rupiah, load_transactions
 init_session_state()
 
 # ─── Auto-train Models (Opsi 3: fallback jika .pkl tidak ada) ────────────────
@@ -128,16 +128,16 @@ with st.sidebar:
     st.divider()
 
   # Quick stats
-    df_sidebar = get_transaksi()
+    df_sidebar = load_transactions()
     if not df_sidebar.empty:
-        ring = hitung_ringkasan(df_sidebar)
+        ring = get_summary(df_sidebar)
         st.markdown("#### 📊 Ringkasan Cepat")
         col1, col2 = st.columns(2)
         with col1:
-            st.metric("Saldo", format_singkat(ring["saldo"]))
+            st.metric("Saldo", format_rupiah(ring["saldo"]))
         with col2:
             st.metric("Transaksi", ring["jumlah_transaksi"])
-        st.metric("Total Pengeluaran", format_singkat(ring["total_pengeluaran"]))
+        st.metric("Total Pengeluaran", format_rupiah(ring["total_pengeluaran"]))
 
 # ─── Konten Utama ─────────────────────────────────────────────────────────────
 st.markdown("""
@@ -148,7 +148,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Cek apakah ada data
-df = get_transaksi()
+df = load_transactions()
 
 if df.empty:
     # ── Tampilan Welcome ─────────────────────────────────────────────────────
@@ -165,11 +165,23 @@ if df.empty:
         st.markdown("### 📂 Load Data Sampel")
         st.markdown("Coba fitur aplikasi dengan data sampel 3 bulan yang sudah tersedia.")
         if st.button("🔄 Load Data Sampel", use_container_width=True):
-            if load_sample_data():
-                st.success("✅ Data sampel berhasil dimuat!")
+            # Buat sample data jika belum ada
+            try:
+                from utils.data_utils import add_transaction
+                # Buat beberapa transaksi sample
+                sample_dates = pd.date_range(start='2024-04-01', periods=10)
+                for i, date in enumerate(sample_dates):
+                    add_transaction(
+                        tanggal=date.date(),
+                        deskripsi=f"Sample Transaksi {i+1}",
+                        jumlah=50000 + (i*10000),
+                        tipe="Pengeluaran" if i % 2 == 0 else "Pemasukan",
+                        kategori="Makanan & Minuman" if i % 2 == 0 else "Uang Saku"
+                    )
+                st.success("✅ Data sampel berhasil dibuat!")
                 st.rerun()
-            else:
-                st.error("❌ File sample_data.csv tidak ditemukan. Jalankan `python data/generate_dataset.py` terlebih dahulu.")
+            except Exception as e:
+                st.error(f"❌ Error: {e}")
 
     with col3:
         st.markdown("### 💬 Tanya AI Advisor")
@@ -192,7 +204,7 @@ if df.empty:
 
 else:
     # ── Dashboard Mini (ada data) ────────────────────────────────────────────
-    ring = hitung_ringkasan(df)
+    ring = get_summary(df)
 
     st.markdown("### 📊 Ringkasan Keuangan")
     m1, m2, m3, m4 = st.columns(4)
@@ -234,9 +246,9 @@ else:
     # Tombol reset
     with st.expander("⚙️ Opsi Data"):
         if st.button("🗑️ Hapus Semua Data", type="secondary"):
-            from utils.data_utils import KOLOM_TRANSAKSI
-            st.session_state.transaksi = pd.DataFrame(columns=KOLOM_TRANSAKSI)
-            st.session_state.next_id = 1
+            from utils.data_utils import save_transactions
+            empty_df = pd.DataFrame(columns=["id", "tanggal", "deskripsi", "jumlah", "tipe", "kategori"])
+            save_transactions(empty_df)
             st.session_state.chat_history = []
             st.success("Data berhasil dihapus.")
             st.rerun()
