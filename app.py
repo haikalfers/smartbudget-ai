@@ -16,7 +16,7 @@ st.set_page_config(
 )
 
 # ─── Init Session State (selalu dipanggil di app.py) ─────────────────────────
-from utils.data_utils import init_session_state, load_sample_data, hitung_ringkasan, format_rupiah, format_singkat
+from utils.data_utils import init_session_state, load_transactions, get_summary, format_rupiah
 init_session_state()
 
 # ─── Auto-train Models (Opsi 3: fallback jika .pkl tidak ada) ────────────────
