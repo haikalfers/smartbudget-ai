@@ -23,7 +23,7 @@ from styles import GLOBAL_CSS
 from components.sidebar import render_sidebar
 
 # ─── Setup ─────────────────────────────────────────────────────────────────────
-st.set_page_config(page_title="Input Transaksi | SmartBudget AI", page_icon="➕", layout="wide")
+st.set_page_config(page_title="Input Transaksi | SmartBudget AI", page_icon="➕", layout="centered")
 init_session_state()
 render_sidebar()
 st.markdown(GLOBAL_CSS, unsafe_allow_html=True)
@@ -55,6 +55,7 @@ st.markdown("""
 with st.expander("➕  Tambah Transaksi Baru", expanded=True):
     st.markdown("<br>", unsafe_allow_html=True)
     
+    # Responsive form layout: CSS media queries handle stacking
     col_form1, col_form2 = st.columns(2, gap="large")
     
     with col_form1:
@@ -103,7 +104,7 @@ with st.expander("➕  Tambah Transaksi Baru", expanded=True):
         submitted = st.button(
             "💾  Simpan Transaksi",
             type="primary",
-            use_container_width=True,
+            width='stretch',
         )
     
     if submitted:
@@ -195,8 +196,10 @@ st.markdown("""
 # ─── Table Rows ────────────────────────────────────────────────────────────────
 st.markdown('<div style="border:1px solid #e2e8f0;border-top:none;border-radius:0 0 10px 10px;overflow:hidden;background:#fff;">', unsafe_allow_html=True)
 
-for i, (_, row) in enumerate(df_page.iterrows()):
+for i, (idx, row) in enumerate(df_page.iterrows()):
+    # Gunakan kombinasi page + row index untuk key yang unik
     rid = int(row["id"]) if ("id" in row and pd.notnull(row["id"])) else int(start + i)
+    unique_key = f"{page}_{i}_{rid}"  # Kombinasi unik untuk setiap transaksi
     
     tipe_icon = "📥" if row["tipe"] == "Pemasukan" else "📤"
     jumlah_color = "#16a34a" if row["tipe"] == "Pemasukan" else "#dc2626"
@@ -234,10 +237,10 @@ for i, (_, row) in enumerate(df_page.iterrows()):
     with col6:
         c_edit, c_del = st.columns(2)
         with c_edit:
-            if st.button("✏️", key=f"edit_{rid}", help="Edit transaksi"):
+            if st.button("✏️", key=f"edit_{unique_key}", help="Edit transaksi"):
                 st.session_state[f"edit_mode_{rid}"] = True
         with c_del:
-            if st.button("🗑️", key=f"del_{rid}", help="Hapus transaksi"):
+            if st.button("🗑️", key=f"del_{unique_key}", help="Hapus transaksi"):
                 if delete_transaction(rid):
                     st.toast("Transaksi dihapus!", icon="✅")
                     st.rerun()
@@ -270,9 +273,9 @@ for i, (_, row) in enumerate(df_page.iterrows()):
             
             col_save, col_cancel = st.columns(2)
             with col_save:
-                save_edit = st.form_submit_button("💾 Simpan Perubahan", type="primary", use_container_width=True)
+                save_edit = st.form_submit_button("💾 Simpan Perubahan", type="primary", width='stretch')
             with col_cancel:
-                cancel_edit = st.form_submit_button("❌ Batal", use_container_width=True)
+                cancel_edit = st.form_submit_button("❌ Batal", width='stretch')
             
             if save_edit:
                 update_transaction(rid, e_tanggal, e_deskripsi, e_jumlah, e_tipe, e_kategori)
@@ -289,7 +292,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 nav_l, nav_back, nav_mid, nav_next, nav_r = st.columns([3, 1.2, 0.8, 1.2, 3])
 
 with nav_back:
-    if st.button("← Sebelumnya", disabled=(page == 0), use_container_width=True):
+    if st.button("← Sebelumnya", disabled=(page == 0), width='stretch'):
         st.session_state["tx_page"] -= 1
         st.rerun()
 
@@ -300,6 +303,6 @@ with nav_mid:
     )
 
 with nav_next:
-    if st.button("Berikutnya →", disabled=(page >= total_pages - 1), use_container_width=True):
+    if st.button("Berikutnya →", disabled=(page >= total_pages - 1), width='stretch'):
         st.session_state["tx_page"] += 1
         st.rerun()

@@ -1,616 +1,617 @@
-tanggal,deskripsi,jumlah,tipe,kategori
-2025-03-02,isi bensin pertamax,11000,Pengeluaran,Transport
-2025-03-02,beli kopi susu,18000,Pengeluaran,Makan
-2025-03-02,beli buku referensi,292000,Pengeluaran,Pendidikan
-2025-03-02,makan malam warung,42000,Pengeluaran,Makan
-2025-03-03,beli roti bakar,10000,Pengeluaran,Makan
-2025-03-04,naik angkot,38000,Pengeluaran,Transport
-2025-03-04,beli jus buah,43000,Pengeluaran,Makan
-2025-03-04,bayar listrik kos,220000,Pengeluaran,Tagihan
-2025-03-04,naik gojek ke kampus,15000,Pengeluaran,Transport
-2025-03-04,beli kopi susu,30000,Pengeluaran,Makan
-2025-03-05,beli baju olahraga,104000,Pengeluaran,Belanja
-2025-03-05,beli paracetamol,76000,Pengeluaran,Kesehatan
-2025-03-05,bayar kursus online,342000,Pengeluaran,Pendidikan
-2025-03-05,beli buku referensi,181000,Pengeluaran,Pendidikan
-2025-03-06,beli mie ayam,33000,Pengeluaran,Makan
-2025-03-06,beli kuota internet belajar,392000,Pengeluaran,Pendidikan
-2025-03-06,main bowling,131000,Pengeluaran,Hiburan
-2025-03-06,beli komik,159000,Pengeluaran,Hiburan
-2025-03-06,beli martabak,37000,Pengeluaran,Makan
-2025-03-07,beli tas ransel,154000,Pengeluaran,Belanja
-2025-03-07,beli obat maag,45000,Pengeluaran,Kesehatan
-2025-03-07,beli roti bakar,10000,Pengeluaran,Makan
-2025-03-07,beli nasi padang,13000,Pengeluaran,Makan
-2025-03-07,bayar seminar,392000,Pengeluaran,Pendidikan
-2025-03-08,makan di warteg,38000,Pengeluaran,Makan
-2025-03-08,beli kuota xl,776000,Pengeluaran,Tagihan
-2025-03-08,naik ojek online,76000,Pengeluaran,Transport
-2025-03-08,beli masker kesehatan,74000,Pengeluaran,Kesehatan
-2025-03-08,bayar bensin motor,18000,Pengeluaran,Transport
-2025-03-08,bayar konsultasi dokter,126000,Pengeluaran,Kesehatan
-2025-03-08,naik angkot,29000,Pengeluaran,Transport
-2025-03-08,makan di kantin,9000,Pengeluaran,Makan
-2025-03-08,beli kertas hvs,29000,Pengeluaran,Pendidikan
-2025-03-09,bayar disney plus,41000,Pengeluaran,Hiburan
-2025-03-09,top up gopay,783000,Pengeluaran,Tagihan
-2025-03-09,bayar cicilan hp,691000,Pengeluaran,Tagihan
-2025-03-09,makan siang warteg,44000,Pengeluaran,Makan
-2025-03-09,print skripsi,193000,Pengeluaran,Pendidikan
-2025-03-09,naik bus trans,58000,Pengeluaran,Transport
-2025-03-10,makan siang warteg,23000,Pengeluaran,Makan
-2025-03-10,print skripsi,199000,Pengeluaran,Pendidikan
-2025-03-10,jajan gorengan,34000,Pengeluaran,Makan
-2025-03-10,beli baju di shopee,344000,Pengeluaran,Belanja
-2025-03-10,bayar kartu pelajar,517000,Pengeluaran,Tagihan
-2025-03-10,beli jus buah,15000,Pengeluaran,Makan
-2025-03-10,beli token busway,65000,Pengeluaran,Transport
-2025-03-10,beli hand sanitizer,40000,Pengeluaran,Kesehatan
-2025-03-10,bayar langganan aplikasi,163000,Pengeluaran,Tagihan
-2025-03-11,bayar youtube premium,131000,Pengeluaran,Hiburan
-2025-03-11,jajan gorengan,18000,Pengeluaran,Makan
-2025-03-11,beli earphone,206000,Pengeluaran,Belanja
-2025-03-11,grab motor ke rumah sakit,25000,Pengeluaran,Transport
-2025-03-11,bayar youtube premium,98000,Pengeluaran,Hiburan
-2025-03-12,beli ayam geprek,25000,Pengeluaran,Makan
-2025-03-12,bayar langganan aplikasi,318000,Pengeluaran,Tagihan
-2025-03-12,beli obat flu di apotek,187000,Pengeluaran,Kesehatan
-2025-03-12,uang lembur kerja part time,1950000,Pemasukan,Pemasukan
-2025-03-12,beli pecel lele,28000,Pengeluaran,Makan
-2025-03-12,beli pecel lele,13000,Pengeluaran,Makan
-2025-03-12,beli powerbank,200000,Pengeluaran,Belanja
-2025-03-12,beli alat tulis,207000,Pengeluaran,Pendidikan
-2025-03-12,beli kopi susu,36000,Pengeluaran,Makan
-2025-03-13,beli tiket konser,155000,Pengeluaran,Hiburan
-2025-03-13,beli sepatu tokopedia,358000,Pengeluaran,Belanja
-2025-03-13,makan di warteg,30000,Pengeluaran,Makan
-2025-03-13,bayar langganan aplikasi,404000,Pengeluaran,Tagihan
-2025-03-13,beli tinta printer,74000,Pengeluaran,Pendidikan
-2025-03-13,beli roti bakar,23000,Pengeluaran,Makan
-2025-03-13,sarapan nasi uduk,15000,Pengeluaran,Makan
-2025-03-13,beli sate,9000,Pengeluaran,Makan
-2025-03-13,beli buku kuliah,21000,Pengeluaran,Pendidikan
-2025-03-13,beli mie ayam,44000,Pengeluaran,Makan
-2025-03-14,beli martabak,45000,Pengeluaran,Makan
-2025-03-14,grab motor ke mall,63000,Pengeluaran,Transport
-2025-03-14,beli suplemen,60000,Pengeluaran,Kesehatan
-2025-03-14,beli sabun mandi,238000,Pengeluaran,Belanja
-2025-03-14,naik gojek ke kampus,47000,Pengeluaran,Transport
-2025-03-14,bayar parkir motor,61000,Pengeluaran,Transport
-2025-03-14,beli buku kuliah,325000,Pengeluaran,Pendidikan
-2025-03-15,makan siang warteg,38000,Pengeluaran,Makan
-2025-03-15,beli hand sanitizer,157000,Pengeluaran,Kesehatan
-2025-03-15,bayar listrik kos,478000,Pengeluaran,Tagihan
-2025-03-15,beli vitamin c,92000,Pengeluaran,Kesehatan
-2025-03-15,naik kereta commuter,6000,Pengeluaran,Transport
-2025-03-15,grab motor ke rumah sakit,54000,Pengeluaran,Transport
-2025-03-15,beli indomie,11000,Pengeluaran,Makan
-2025-03-15,beli merchandise anime,144000,Pengeluaran,Hiburan
-2025-03-16,beli tinta printer,382000,Pengeluaran,Pendidikan
-2025-03-16,jajan gorengan,25000,Pengeluaran,Makan
-2025-03-16,beli tas ransel,243000,Pengeluaran,Belanja
-2025-03-16,beli baju di shopee,377000,Pengeluaran,Belanja
-2025-03-17,naik ojek online,69000,Pengeluaran,Transport
-2025-03-17,beli jurnal ilmiah,34000,Pengeluaran,Pendidikan
-2025-03-17,uang bulanan dari orang tua,1700000,Pemasukan,Pemasukan
-2025-03-17,bayaran freelance desain,1750000,Pemasukan,Pemasukan
-2025-03-17,gojek ke kos,79000,Pengeluaran,Transport
-2025-03-17,bayar konsultasi dokter,167000,Pengeluaran,Kesehatan
-2025-03-17,naik kereta commuter,64000,Pengeluaran,Transport
-2025-03-18,beli token busway,48000,Pengeluaran,Transport
-2025-03-18,isi bensin pertamax,78000,Pengeluaran,Transport
-2025-03-18,beli tinta printer,500000,Pengeluaran,Pendidikan
-2025-03-18,beli sate,26000,Pengeluaran,Makan
-2025-03-18,beli martabak,16000,Pengeluaran,Makan
-2025-03-18,naik kereta commuter,50000,Pengeluaran,Transport
-2025-03-18,gojek ke kos,15000,Pengeluaran,Transport
-2025-03-18,print dan jilid laporan,230000,Pengeluaran,Pendidikan
-2025-03-18,beli indomie,11000,Pengeluaran,Makan
-2025-03-18,beli obat maag,115000,Pengeluaran,Kesehatan
-2025-03-18,bayar dokter umum,150000,Pengeluaran,Kesehatan
-2025-03-19,beli sate,37000,Pengeluaran,Makan
-2025-03-19,bayar spp semester,110000,Pengeluaran,Pendidikan
-2025-03-19,uang saku tambahan,750000,Pemasukan,Pemasukan
-2025-03-19,beli bubble tea,43000,Pengeluaran,Makan
-2025-03-19,naik kereta commuter,16000,Pengeluaran,Transport
-2025-03-19,gojek ke kos,20000,Pengeluaran,Transport
-2025-03-19,beli game steam,194000,Pengeluaran,Hiburan
-2025-03-19,bayar air pdam,654000,Pengeluaran,Tagihan
-2025-03-20,fotokopi materi kuliah,401000,Pengeluaran,Pendidikan
-2025-03-20,beli shampo,59000,Pengeluaran,Belanja
-2025-03-20,gojek ke kos,37000,Pengeluaran,Transport
-2025-03-20,beli token busway,31000,Pengeluaran,Transport
-2025-03-20,beli charger laptop,339000,Pengeluaran,Belanja
-2025-03-20,beli tas ransel,74000,Pengeluaran,Belanja
-2025-03-20,beli tiket konser,78000,Pengeluaran,Hiburan
-2025-03-20,beli baju olahraga,196000,Pengeluaran,Belanja
-2025-03-20,bayar kursus online,13000,Pengeluaran,Pendidikan
-2025-03-20,beli bubble tea,30000,Pengeluaran,Makan
-2025-03-20,bayar youtube premium,168000,Pengeluaran,Hiburan
-2025-03-21,beli sandal,310000,Pengeluaran,Belanja
-2025-03-21,grab motor ke mall,12000,Pengeluaran,Transport
-2025-03-21,karaoke bersama teman,88000,Pengeluaran,Hiburan
-2025-03-21,makan di warteg,21000,Pengeluaran,Makan
-2025-03-21,makan di warteg,22000,Pengeluaran,Makan
-2025-03-21,makan siang warteg,15000,Pengeluaran,Makan
-2025-03-21,beli deterjen,260000,Pengeluaran,Belanja
-2025-03-21,beli suplemen,173000,Pengeluaran,Kesehatan
-2025-03-22,naik angkot,19000,Pengeluaran,Transport
-2025-03-22,naik kereta commuter,63000,Pengeluaran,Transport
-2025-03-22,beli aksesoris hp,64000,Pengeluaran,Belanja
-2025-03-22,beli mie ayam,30000,Pengeluaran,Makan
-2025-03-22,bayar bensin motor,39000,Pengeluaran,Transport
-2025-03-22,isi bensin pertamax,6000,Pengeluaran,Transport
-2025-03-22,beli buku kuliah,87000,Pengeluaran,Pendidikan
-2025-03-22,main billiard,79000,Pengeluaran,Hiburan
-2025-03-22,beli kertas hvs,91000,Pengeluaran,Pendidikan
-2025-03-22,isi bensin pertamax,62000,Pengeluaran,Transport
-2025-03-22,isi bensin pertalite,75000,Pengeluaran,Transport
-2025-03-22,naik ojek online,13000,Pengeluaran,Transport
-2025-03-22,beasiswa prestasi,950000,Pemasukan,Pemasukan
-2025-03-23,beli kertas hvs,440000,Pengeluaran,Pendidikan
-2025-03-23,beli paracetamol,136000,Pengeluaran,Kesehatan
-2025-03-23,grab motor ke rumah sakit,29000,Pengeluaran,Transport
-2025-03-23,beli nasi padang,29000,Pengeluaran,Makan
-2025-03-23,beli sepatu tokopedia,51000,Pengeluaran,Belanja
-2025-03-23,beli jus buah,44000,Pengeluaran,Makan
-2025-03-23,sarapan nasi uduk,34000,Pengeluaran,Makan
-2025-03-23,isi bensin pertamax,53000,Pengeluaran,Transport
-2025-03-24,bayar air pdam,190000,Pengeluaran,Tagihan
-2025-03-24,beli alat mandi,41000,Pengeluaran,Belanja
-2025-03-24,isi pulsa telkomsel,456000,Pengeluaran,Tagihan
-2025-03-24,bayar wifi indihome,458000,Pengeluaran,Tagihan
-2025-03-25,beli suplemen,99000,Pengeluaran,Kesehatan
-2025-03-25,bayar konsultasi dokter,77000,Pengeluaran,Kesehatan
-2025-03-25,bayar kos bulanan,791000,Pengeluaran,Tagihan
-2025-03-25,makan di warteg,13000,Pengeluaran,Makan
-2025-03-25,beli aksesoris hp,35000,Pengeluaran,Belanja
-2025-03-25,gojek ke kos,18000,Pengeluaran,Transport
-2025-03-26,beli token busway,69000,Pengeluaran,Transport
-2025-03-26,beli sate,20000,Pengeluaran,Makan
-2025-03-26,main billiard,149000,Pengeluaran,Hiburan
-2025-03-26,bayar bensin motor,55000,Pengeluaran,Transport
-2025-03-26,beli tas ransel,354000,Pengeluaran,Belanja
-2025-03-27,top up gopay,743000,Pengeluaran,Tagihan
-2025-03-27,makan di kantin,11000,Pengeluaran,Makan
-2025-03-27,main game arcade,191000,Pengeluaran,Hiburan
-2025-03-27,beli kuota xl,436000,Pengeluaran,Tagihan
-2025-03-28,grab car ke stasiun,66000,Pengeluaran,Transport
-2025-03-28,beli buku referensi,38000,Pengeluaran,Pendidikan
-2025-03-28,bayar kos bulanan,28000,Pengeluaran,Tagihan
-2025-03-29,beli martabak,36000,Pengeluaran,Makan
-2025-03-29,main game arcade,141000,Pengeluaran,Hiburan
-2025-03-29,beli indomie,37000,Pengeluaran,Makan
-2025-03-29,beli mie ayam,45000,Pengeluaran,Makan
-2025-03-29,beli deterjen,398000,Pengeluaran,Belanja
-2025-03-29,beli roti bakar,20000,Pengeluaran,Makan
-2025-03-29,bayar air pdam,676000,Pengeluaran,Tagihan
-2025-03-29,makan di kantin,29000,Pengeluaran,Makan
-2025-03-30,bayar seminar,329000,Pengeluaran,Pendidikan
-2025-03-30,beli sate,35000,Pengeluaran,Makan
-2025-03-30,beli sabun mandi,210000,Pengeluaran,Belanja
-2025-03-30,isi bensin pertamax,78000,Pengeluaran,Transport
-2025-03-30,beli alat tulis,314000,Pengeluaran,Pendidikan
-2025-03-30,beli roti bakar,30000,Pengeluaran,Makan
-2025-03-30,isi bensin pertalite,35000,Pengeluaran,Transport
-2025-03-30,beli hand sanitizer,168000,Pengeluaran,Kesehatan
-2025-03-30,bayar kursus online,269000,Pengeluaran,Pendidikan
-2025-03-30,bayar dokter umum,87000,Pengeluaran,Kesehatan
-2025-03-31,beli sepatu tokopedia,380000,Pengeluaran,Belanja
-2025-03-31,isi saldo e-money,626000,Pengeluaran,Tagihan
-2025-03-31,bayar air pdam,331000,Pengeluaran,Tagihan
-2025-03-31,nonton film bioskop,30000,Pengeluaran,Hiburan
-2025-03-31,beli roti bakar,13000,Pengeluaran,Makan
-2025-04-01,beli kopi susu,18000,Pengeluaran,Makan
-2025-04-01,beli mie ayam,11000,Pengeluaran,Makan
-2025-04-01,beli nasi padang,31000,Pengeluaran,Makan
-2025-04-01,hasil jualan online,1750000,Pemasukan,Pemasukan
-2025-04-01,bayar puskesmas,156000,Pengeluaran,Kesehatan
-2025-04-01,grab car ke stasiun,63000,Pengeluaran,Transport
-2025-04-01,beli nasi padang,18000,Pengeluaran,Makan
-2025-04-01,beli bakso,28000,Pengeluaran,Makan
-2025-04-01,makan di kantin,14000,Pengeluaran,Makan
-2025-04-01,grab motor ke mall,50000,Pengeluaran,Transport
-2025-04-02,naik angkot,42000,Pengeluaran,Transport
-2025-04-02,beli roti bakar,40000,Pengeluaran,Makan
-2025-04-02,uang saku tambahan,1900000,Pemasukan,Pemasukan
-2025-04-02,makan malam warung,35000,Pengeluaran,Makan
-2025-04-02,print dan jilid laporan,26000,Pengeluaran,Pendidikan
-2025-04-02,beli jus buah,39000,Pengeluaran,Makan
-2025-04-02,bayar iuran kos,359000,Pengeluaran,Tagihan
-2025-04-02,nonton bioskop,87000,Pengeluaran,Hiburan
-2025-04-02,beli suplemen,186000,Pengeluaran,Kesehatan
-2025-04-02,beli pecel lele,39000,Pengeluaran,Makan
-2025-04-02,naik angkot,19000,Pengeluaran,Transport
-2025-04-02,isi bensin pertamax,66000,Pengeluaran,Transport
-2025-04-02,beli bakso,13000,Pengeluaran,Makan
-2025-04-02,makan siang warteg,10000,Pengeluaran,Makan
-2025-04-03,naik bus trans,23000,Pengeluaran,Transport
-2025-04-03,beli indomie,38000,Pengeluaran,Makan
-2025-04-04,makan di kantin,41000,Pengeluaran,Makan
-2025-04-04,bayar puskesmas,128000,Pengeluaran,Kesehatan
-2025-04-04,beli tiket konser,139000,Pengeluaran,Hiburan
-2025-04-04,naik gojek ke kampus,20000,Pengeluaran,Transport
-2025-04-04,beli nasi padang,34000,Pengeluaran,Makan
-2025-04-05,grab car ke stasiun,21000,Pengeluaran,Transport
-2025-04-05,beli roti bakar,23000,Pengeluaran,Makan
-2025-04-05,print skripsi,83000,Pengeluaran,Pendidikan
-2025-04-06,grab motor ke rumah sakit,63000,Pengeluaran,Transport
-2025-04-06,beli paracetamol,11000,Pengeluaran,Kesehatan
-2025-04-06,beli charger laptop,80000,Pengeluaran,Belanja
-2025-04-06,beli indomie,30000,Pengeluaran,Makan
-2025-04-06,beli powerbank,65000,Pengeluaran,Belanja
-2025-04-07,fotokopi materi kuliah,200000,Pengeluaran,Pendidikan
-2025-04-07,beli ayam geprek,15000,Pengeluaran,Makan
-2025-04-07,fotokopi materi kuliah,295000,Pengeluaran,Pendidikan
-2025-04-07,bayar spp semester,412000,Pengeluaran,Pendidikan
-2025-04-07,beli roti bakar,29000,Pengeluaran,Makan
-2025-04-07,beli merchandise anime,137000,Pengeluaran,Hiburan
-2025-04-07,beli token busway,41000,Pengeluaran,Transport
-2025-04-07,bayar iuran kos,504000,Pengeluaran,Tagihan
-2025-04-07,bayar langganan aplikasi,646000,Pengeluaran,Tagihan
-2025-04-07,beli sate,17000,Pengeluaran,Makan
-2025-04-07,naik ojek online,70000,Pengeluaran,Transport
-2025-04-07,beli paracetamol,159000,Pengeluaran,Kesehatan
-2025-04-08,gojek ke kos,60000,Pengeluaran,Transport
-2025-04-08,bayar spotify premium,65000,Pengeluaran,Hiburan
-2025-04-08,naik ojek online,67000,Pengeluaran,Transport
-2025-04-08,bayar parkir motor,75000,Pengeluaran,Transport
-2025-04-08,beli earphone,97000,Pengeluaran,Belanja
-2025-04-08,main billiard,157000,Pengeluaran,Hiburan
-2025-04-09,beli nasi padang,27000,Pengeluaran,Makan
-2025-04-09,isi bensin pertalite,21000,Pengeluaran,Transport
-2025-04-09,beli baju olahraga,233000,Pengeluaran,Belanja
-2025-04-10,grab car ke stasiun,41000,Pengeluaran,Transport
-2025-04-10,bayar iuran kos,543000,Pengeluaran,Tagihan
-2025-04-10,makan di warteg,13000,Pengeluaran,Makan
-2025-04-10,beli pecel lele,36000,Pengeluaran,Makan
-2025-04-10,jajan gorengan,31000,Pengeluaran,Makan
-2025-04-10,beli kopi susu,12000,Pengeluaran,Makan
-2025-04-11,fotokopi materi kuliah,387000,Pengeluaran,Pendidikan
-2025-04-11,bayar air pdam,722000,Pengeluaran,Tagihan
-2025-04-11,bayar bensin motor,46000,Pengeluaran,Transport
-2025-04-11,beli tiket konser,152000,Pengeluaran,Hiburan
-2025-04-11,beli mie ayam,21000,Pengeluaran,Makan
-2025-04-12,beli mie ayam,13000,Pengeluaran,Makan
-2025-04-12,naik ojek online,40000,Pengeluaran,Transport
-2025-04-12,beli kuota internet belajar,78000,Pengeluaran,Pendidikan
-2025-04-12,beli masker kesehatan,164000,Pengeluaran,Kesehatan
-2025-04-12,beli indomie,33000,Pengeluaran,Makan
-2025-04-12,beli indomie,44000,Pengeluaran,Makan
-2025-04-12,naik angkot,38000,Pengeluaran,Transport
-2025-04-12,print skripsi,219000,Pengeluaran,Pendidikan
-2025-04-13,naik ojek online,77000,Pengeluaran,Transport
-2025-04-13,beli martabak,15000,Pengeluaran,Makan
-2025-04-13,isi saldo e-money,178000,Pengeluaran,Tagihan
-2025-04-13,beli baju di shopee,114000,Pengeluaran,Belanja
-2025-04-13,beli ayam geprek,35000,Pengeluaran,Makan
-2025-04-13,beli mie ayam,35000,Pengeluaran,Makan
-2025-04-13,beli baju di shopee,364000,Pengeluaran,Belanja
-2025-04-13,makan di kantin,34000,Pengeluaran,Makan
-2025-04-13,makan siang warteg,17000,Pengeluaran,Makan
-2025-04-13,beli sate,45000,Pengeluaran,Makan
-2025-04-13,bayar disney plus,36000,Pengeluaran,Hiburan
-2025-04-14,beli kuota xl,411000,Pengeluaran,Tagihan
-2025-04-14,beli ayam geprek,38000,Pengeluaran,Makan
-2025-04-14,naik bus trans,59000,Pengeluaran,Transport
-2025-04-14,beli jus buah,27000,Pengeluaran,Makan
-2025-04-14,beli martabak,22000,Pengeluaran,Makan
-2025-04-15,naik ojek online,35000,Pengeluaran,Transport
-2025-04-15,beli sepatu tokopedia,266000,Pengeluaran,Belanja
-2025-04-15,beli roti bakar,30000,Pengeluaran,Makan
-2025-04-15,isi pulsa telkomsel,720000,Pengeluaran,Tagihan
-2025-04-15,beli paracetamol,21000,Pengeluaran,Kesehatan
-2025-04-15,beli kopi susu,26000,Pengeluaran,Makan
-2025-04-15,beli bubble tea,38000,Pengeluaran,Makan
-2025-04-15,bayar netflix,43000,Pengeluaran,Hiburan
-2025-04-16,beli celana jeans,28000,Pengeluaran,Belanja
-2025-04-16,makan di kantin,27000,Pengeluaran,Makan
-2025-04-16,naik gojek ke kampus,43000,Pengeluaran,Transport
-2025-04-16,isi saldo e-money,348000,Pengeluaran,Tagihan
-2025-04-16,beli bubble tea,15000,Pengeluaran,Makan
-2025-04-16,beli bakso,11000,Pengeluaran,Makan
-2025-04-17,beli bubble tea,32000,Pengeluaran,Makan
-2025-04-17,beli jus buah,10000,Pengeluaran,Makan
-2025-04-17,bayar kartu pelajar,203000,Pengeluaran,Tagihan
-2025-04-17,beli sepatu tokopedia,247000,Pengeluaran,Belanja
-2025-04-17,beli ayam geprek,41000,Pengeluaran,Makan
-2025-04-18,karaoke bersama teman,58000,Pengeluaran,Hiburan
-2025-04-18,naik angkot,38000,Pengeluaran,Transport
-2025-04-18,beli es teh,32000,Pengeluaran,Makan
-2025-04-18,bayar langganan aplikasi,58000,Pengeluaran,Tagihan
-2025-04-18,naik gojek ke kampus,12000,Pengeluaran,Transport
-2025-04-18,beli sepatu tokopedia,379000,Pengeluaran,Belanja
-2025-04-19,beli tinta printer,330000,Pengeluaran,Pendidikan
-2025-04-19,sarapan nasi uduk,30000,Pengeluaran,Makan
-2025-04-19,beli powerbank,300000,Pengeluaran,Belanja
-2025-04-19,beli vitamin c,44000,Pengeluaran,Kesehatan
-2025-04-19,naik kereta commuter,76000,Pengeluaran,Transport
-2025-04-20,naik kereta commuter,20000,Pengeluaran,Transport
-2025-04-20,beli jus buah,33000,Pengeluaran,Makan
-2025-04-20,beli bakso,28000,Pengeluaran,Makan
-2025-04-21,beli sate,33000,Pengeluaran,Makan
-2025-04-21,top up gopay,714000,Pengeluaran,Tagihan
-2025-04-21,nonton bioskop,73000,Pengeluaran,Hiburan
-2025-04-21,isi pulsa telkomsel,190000,Pengeluaran,Tagihan
-2025-04-21,beli kuota xl,76000,Pengeluaran,Tagihan
-2025-04-22,beli bakso,37000,Pengeluaran,Makan
-2025-04-22,isi bensin pertamax,53000,Pengeluaran,Transport
-2025-04-22,beli kopi susu,23000,Pengeluaran,Makan
-2025-04-22,beli earphone,185000,Pengeluaran,Belanja
-2025-04-23,beli sate,18000,Pengeluaran,Makan
-2025-04-23,makan malam warung,23000,Pengeluaran,Makan
-2025-04-23,gojek ke kos,25000,Pengeluaran,Transport
-2025-04-23,bayar air pdam,194000,Pengeluaran,Tagihan
-2025-04-23,main billiard,136000,Pengeluaran,Hiburan
-2025-04-24,uang lembur kerja part time,1100000,Pemasukan,Pemasukan
-2025-04-24,fotokopi materi kuliah,12000,Pengeluaran,Pendidikan
-2025-04-24,beli sepatu tokopedia,259000,Pengeluaran,Belanja
-2025-04-24,beli hand sanitizer,148000,Pengeluaran,Kesehatan
-2025-04-24,bayar listrik kos,605000,Pengeluaran,Tagihan
-2025-04-24,beli flashdisk,48000,Pengeluaran,Pendidikan
-2025-04-24,naik angkot,76000,Pengeluaran,Transport
-2025-04-24,beli tinta printer,86000,Pengeluaran,Pendidikan
-2025-04-25,beli jus buah,34000,Pengeluaran,Makan
-2025-04-25,beli tinta printer,311000,Pengeluaran,Pendidikan
-2025-04-25,beli merchandise anime,193000,Pengeluaran,Hiburan
-2025-04-25,beli ayam geprek,31000,Pengeluaran,Makan
-2025-04-25,bayar iuran kos,319000,Pengeluaran,Tagihan
-2025-04-25,nonton bioskop,43000,Pengeluaran,Hiburan
-2025-04-25,beli hand sanitizer,195000,Pengeluaran,Kesehatan
-2025-04-26,makan di warteg,18000,Pengeluaran,Makan
-2025-04-26,naik ojek online,11000,Pengeluaran,Transport
-2025-04-26,beli kopi susu,14000,Pengeluaran,Makan
-2025-04-26,bayar seminar,73000,Pengeluaran,Pendidikan
-2025-04-26,grab motor ke mall,10000,Pengeluaran,Transport
-2025-04-27,bayar seminar,472000,Pengeluaran,Pendidikan
-2025-04-27,naik bus trans,41000,Pengeluaran,Transport
-2025-04-27,beli bakso,24000,Pengeluaran,Makan
-2025-04-27,beli vitamin c,199000,Pengeluaran,Kesehatan
-2025-04-27,beli suplemen,128000,Pengeluaran,Kesehatan
-2025-04-27,grab motor ke mall,18000,Pengeluaran,Transport
-2025-04-27,bayar spotify premium,34000,Pengeluaran,Hiburan
-2025-04-27,fotokopi materi kuliah,249000,Pengeluaran,Pendidikan
-2025-04-27,bayar spotify premium,196000,Pengeluaran,Hiburan
-2025-04-27,beli kopi susu,31000,Pengeluaran,Makan
-2025-04-28,bayar seminar,397000,Pengeluaran,Pendidikan
-2025-04-28,bayar disney plus,144000,Pengeluaran,Hiburan
-2025-04-28,jajan gorengan,13000,Pengeluaran,Makan
-2025-04-28,makan malam warung,23000,Pengeluaran,Makan
-2025-04-28,bayar kartu pelajar,98000,Pengeluaran,Tagihan
-2025-04-29,beli sabun mandi,166000,Pengeluaran,Belanja
-2025-04-29,beasiswa prestasi,600000,Pemasukan,Pemasukan
-2025-04-29,top up gopay,282000,Pengeluaran,Tagihan
-2025-04-29,naik bus trans,21000,Pengeluaran,Transport
-2025-04-29,beli tas ransel,125000,Pengeluaran,Belanja
-2025-04-29,jajan gorengan,12000,Pengeluaran,Makan
-2025-04-29,beli jurnal ilmiah,69000,Pengeluaran,Pendidikan
-2025-04-29,beli komik,184000,Pengeluaran,Hiburan
-2025-04-30,beli sate,40000,Pengeluaran,Makan
-2025-04-30,naik bus trans,20000,Pengeluaran,Transport
-2025-04-30,beli kuota internet belajar,207000,Pengeluaran,Pendidikan
-2025-04-30,beli ayam geprek,17000,Pengeluaran,Makan
-2025-04-30,beli celana jeans,284000,Pengeluaran,Belanja
-2025-05-01,isi bensin pertalite,76000,Pengeluaran,Transport
-2025-05-01,beli alat mandi,169000,Pengeluaran,Belanja
-2025-05-01,naik bus trans,72000,Pengeluaran,Transport
-2025-05-01,grab car ke stasiun,14000,Pengeluaran,Transport
-2025-05-01,beli earphone,390000,Pengeluaran,Belanja
-2025-05-01,beli bubble tea,28000,Pengeluaran,Makan
-2025-05-01,bayar parkir motor,44000,Pengeluaran,Transport
-2025-05-02,beli shampo,302000,Pengeluaran,Belanja
-2025-05-02,beli tas ransel,222000,Pengeluaran,Belanja
-2025-05-02,beli baju di shopee,356000,Pengeluaran,Belanja
-2025-05-02,beli jus buah,29000,Pengeluaran,Makan
-2025-05-02,beli pecel lele,33000,Pengeluaran,Makan
-2025-05-03,beli alat mandi,366000,Pengeluaran,Belanja
-2025-05-03,isi saldo e-money,360000,Pengeluaran,Tagihan
-2025-05-03,naik angkot,29000,Pengeluaran,Transport
-2025-05-03,bayar kartu pelajar,774000,Pengeluaran,Tagihan
-2025-05-03,beli indomie,41000,Pengeluaran,Makan
-2025-05-03,isi bensin pertamax,62000,Pengeluaran,Transport
-2025-05-03,bayar cicilan hp,748000,Pengeluaran,Tagihan
-2025-05-04,beli sate,42000,Pengeluaran,Makan
-2025-05-04,bayar kartu pelajar,179000,Pengeluaran,Tagihan
-2025-05-04,bayar kartu pelajar,181000,Pengeluaran,Tagihan
-2025-05-04,beli mie ayam,9000,Pengeluaran,Makan
-2025-05-04,beli masker kesehatan,52000,Pengeluaran,Kesehatan
-2025-05-04,bayar kos bulanan,436000,Pengeluaran,Tagihan
-2025-05-04,bayar wifi indihome,554000,Pengeluaran,Tagihan
-2025-05-04,beli obat flu di apotek,169000,Pengeluaran,Kesehatan
-2025-05-04,makan siang warteg,28000,Pengeluaran,Makan
-2025-05-04,naik gojek ke kampus,42000,Pengeluaran,Transport
-2025-05-05,makan di warteg,34000,Pengeluaran,Makan
-2025-05-05,grab motor ke mall,57000,Pengeluaran,Transport
-2025-05-05,naik ojek online,40000,Pengeluaran,Transport
-2025-05-05,transfer dari orang tua,1750000,Pemasukan,Pemasukan
-2025-05-05,beli martabak,39000,Pengeluaran,Makan
-2025-05-05,beli ayam geprek,30000,Pengeluaran,Makan
-2025-05-05,beli tinta printer,473000,Pengeluaran,Pendidikan
-2025-05-06,makan malam warung,32000,Pengeluaran,Makan
-2025-05-06,beli charger laptop,183000,Pengeluaran,Belanja
-2025-05-06,isi pulsa telkomsel,94000,Pengeluaran,Tagihan
-2025-05-06,beli sabun mandi,244000,Pengeluaran,Belanja
-2025-05-06,beli token busway,52000,Pengeluaran,Transport
-2025-05-06,bayar bensin motor,15000,Pengeluaran,Transport
-2025-05-06,isi bensin pertamax,33000,Pengeluaran,Transport
-2025-05-07,beli deterjen,74000,Pengeluaran,Belanja
-2025-05-07,bayar konsultasi dokter,83000,Pengeluaran,Kesehatan
-2025-05-07,bayar youtube premium,152000,Pengeluaran,Hiburan
-2025-05-07,grab car ke stasiun,53000,Pengeluaran,Transport
-2025-05-08,beli nasi padang,14000,Pengeluaran,Makan
-2025-05-08,beli sate,32000,Pengeluaran,Makan
-2025-05-08,beli tiket konser,186000,Pengeluaran,Hiburan
-2025-05-08,beli bakso,12000,Pengeluaran,Makan
-2025-05-08,honor mengajar les,1250000,Pemasukan,Pemasukan
-2025-05-08,naik ojek online,68000,Pengeluaran,Transport
-2025-05-08,bayar kursus online,295000,Pengeluaran,Pendidikan
-2025-05-08,bayar bensin motor,37000,Pengeluaran,Transport
-2025-05-08,beli pecel lele,34000,Pengeluaran,Makan
-2025-05-08,grab motor ke rumah sakit,68000,Pengeluaran,Transport
-2025-05-08,bayar bensin motor,76000,Pengeluaran,Transport
-2025-05-08,grab motor ke mall,23000,Pengeluaran,Transport
-2025-05-08,nonton film bioskop,195000,Pengeluaran,Hiburan
-2025-05-08,beli tiket konser,143000,Pengeluaran,Hiburan
-2025-05-09,bayar bensin motor,65000,Pengeluaran,Transport
-2025-05-09,beli powerbank,240000,Pengeluaran,Belanja
-2025-05-09,beli komik,193000,Pengeluaran,Hiburan
-2025-05-09,beli obat flu di apotek,79000,Pengeluaran,Kesehatan
-2025-05-09,honor mengajar les,1300000,Pemasukan,Pemasukan
-2025-05-09,isi bensin pertalite,72000,Pengeluaran,Transport
-2025-05-09,makan siang warteg,38000,Pengeluaran,Makan
-2025-05-09,nonton bioskop,151000,Pengeluaran,Hiburan
-2025-05-09,beli celana jeans,346000,Pengeluaran,Belanja
-2025-05-10,isi bensin pertamax,71000,Pengeluaran,Transport
-2025-05-10,beli mie ayam,41000,Pengeluaran,Makan
-2025-05-10,bayar youtube premium,179000,Pengeluaran,Hiburan
-2025-05-10,beli celana jeans,88000,Pengeluaran,Belanja
-2025-05-10,bayar bensin motor,62000,Pengeluaran,Transport
-2025-05-10,beli jus buah,22000,Pengeluaran,Makan
-2025-05-10,isi bensin pertalite,29000,Pengeluaran,Transport
-2025-05-11,beli sepatu tokopedia,252000,Pengeluaran,Belanja
-2025-05-11,makan di warteg,38000,Pengeluaran,Makan
-2025-05-11,fotokopi materi kuliah,250000,Pengeluaran,Pendidikan
-2025-05-11,transfer beasiswa,450000,Pemasukan,Pemasukan
-2025-05-11,beli sate,9000,Pengeluaran,Makan
-2025-05-11,bayar seminar,271000,Pengeluaran,Pendidikan
-2025-05-11,makan malam warung,13000,Pengeluaran,Makan
-2025-05-11,bayar langganan aplikasi,284000,Pengeluaran,Tagihan
-2025-05-12,beli bakso,17000,Pengeluaran,Makan
-2025-05-12,beli es teh,43000,Pengeluaran,Makan
-2025-05-12,jajan gorengan,24000,Pengeluaran,Makan
-2025-05-12,beli alat tulis,267000,Pengeluaran,Pendidikan
-2025-05-12,naik bus trans,42000,Pengeluaran,Transport
-2025-05-12,beli sate,26000,Pengeluaran,Makan
-2025-05-12,naik angkot,17000,Pengeluaran,Transport
-2025-05-12,bayar seminar,230000,Pengeluaran,Pendidikan
-2025-05-12,beli kopi susu,28000,Pengeluaran,Makan
-2025-05-12,beli sandal,165000,Pengeluaran,Belanja
-2025-05-12,makan di warteg,10000,Pengeluaran,Makan
-2025-05-12,main billiard,69000,Pengeluaran,Hiburan
-2025-05-13,beli tas ransel,264000,Pengeluaran,Belanja
-2025-05-13,sarapan nasi uduk,27000,Pengeluaran,Makan
-2025-05-13,beli martabak,30000,Pengeluaran,Makan
-2025-05-13,gojek ke kos,12000,Pengeluaran,Transport
-2025-05-13,bayar puskesmas,189000,Pengeluaran,Kesehatan
-2025-05-13,beli jus buah,38000,Pengeluaran,Makan
-2025-05-13,hasil jualan online,450000,Pemasukan,Pemasukan
-2025-05-13,beli masker kesehatan,43000,Pengeluaran,Kesehatan
-2025-05-13,beli roti bakar,29000,Pengeluaran,Makan
-2025-05-14,makan malam warung,32000,Pengeluaran,Makan
-2025-05-14,bayar wifi indihome,363000,Pengeluaran,Tagihan
-2025-05-14,beli martabak,32000,Pengeluaran,Makan
-2025-05-14,beli kopi susu,29000,Pengeluaran,Makan
-2025-05-14,beli bubble tea,10000,Pengeluaran,Makan
-2025-05-15,beli pecel lele,24000,Pengeluaran,Makan
-2025-05-15,bayar konsultasi dokter,37000,Pengeluaran,Kesehatan
-2025-05-15,naik bus trans,33000,Pengeluaran,Transport
-2025-05-15,naik bus trans,61000,Pengeluaran,Transport
-2025-05-15,beli bakso,25000,Pengeluaran,Makan
-2025-05-15,print dan jilid laporan,315000,Pengeluaran,Pendidikan
-2025-05-15,beli obat maag,89000,Pengeluaran,Kesehatan
-2025-05-15,beli obat flu di apotek,23000,Pengeluaran,Kesehatan
-2025-05-16,top up gopay,334000,Pengeluaran,Tagihan
-2025-05-16,isi bensin pertamax,41000,Pengeluaran,Transport
-2025-05-16,beli jus buah,26000,Pengeluaran,Makan
-2025-05-16,beli sate,22000,Pengeluaran,Makan
-2025-05-16,bayar wifi indihome,547000,Pengeluaran,Tagihan
-2025-05-17,beli buku referensi,205000,Pengeluaran,Pendidikan
-2025-05-17,beli token busway,22000,Pengeluaran,Transport
-2025-05-18,main bowling,132000,Pengeluaran,Hiburan
-2025-05-18,bayar kartu pelajar,95000,Pengeluaran,Tagihan
-2025-05-18,beli ayam geprek,40000,Pengeluaran,Makan
-2025-05-18,naik angkot,50000,Pengeluaran,Transport
-2025-05-18,beli aksesoris hp,141000,Pengeluaran,Belanja
-2025-05-18,bayar parkir motor,9000,Pengeluaran,Transport
-2025-05-18,jajan gorengan,44000,Pengeluaran,Makan
-2025-05-19,naik gojek ke kampus,51000,Pengeluaran,Transport
-2025-05-19,beli deterjen,192000,Pengeluaran,Belanja
-2025-05-19,beli bubble tea,39000,Pengeluaran,Makan
-2025-05-19,makan malam warung,19000,Pengeluaran,Makan
-2025-05-19,bayar spotify premium,44000,Pengeluaran,Hiburan
-2025-05-19,bayar netflix,61000,Pengeluaran,Hiburan
-2025-05-19,naik angkot,40000,Pengeluaran,Transport
-2025-05-19,nonton film bioskop,143000,Pengeluaran,Hiburan
-2025-05-19,bayaran freelance desain,1050000,Pemasukan,Pemasukan
-2025-05-19,beli komik,147000,Pengeluaran,Hiburan
-2025-05-20,grab motor ke mall,48000,Pengeluaran,Transport
-2025-05-20,beli pecel lele,35000,Pengeluaran,Makan
-2025-05-20,bayar youtube premium,22000,Pengeluaran,Hiburan
-2025-05-20,makan di warteg,32000,Pengeluaran,Makan
-2025-05-20,beli martabak,33000,Pengeluaran,Makan
-2025-05-20,isi bensin pertamax,49000,Pengeluaran,Transport
-2025-05-21,beli baju olahraga,71000,Pengeluaran,Belanja
-2025-05-21,beli tiket konser,100000,Pengeluaran,Hiburan
-2025-05-21,beli hand sanitizer,38000,Pengeluaran,Kesehatan
-2025-05-21,naik ojek online,68000,Pengeluaran,Transport
-2025-05-22,beli jus buah,11000,Pengeluaran,Makan
-2025-05-22,isi saldo e-money,334000,Pengeluaran,Tagihan
-2025-05-22,makan siang warteg,14000,Pengeluaran,Makan
-2025-05-22,main billiard,74000,Pengeluaran,Hiburan
-2025-05-22,beli pecel lele,37000,Pengeluaran,Makan
-2025-05-22,beli earphone,309000,Pengeluaran,Belanja
-2025-05-23,bayar seminar,336000,Pengeluaran,Pendidikan
-2025-05-23,isi pulsa telkomsel,388000,Pengeluaran,Tagihan
-2025-05-23,main billiard,85000,Pengeluaran,Hiburan
-2025-05-24,isi saldo e-money,298000,Pengeluaran,Tagihan
-2025-05-24,beli token busway,80000,Pengeluaran,Transport
-2025-05-24,isi pulsa telkomsel,255000,Pengeluaran,Tagihan
-2025-05-24,beli komik,191000,Pengeluaran,Hiburan
-2025-05-24,beli merchandise anime,38000,Pengeluaran,Hiburan
-2025-05-24,beli nasi goreng,42000,Pengeluaran,Makan
-2025-05-24,bayar dokter umum,182000,Pengeluaran,Kesehatan
-2025-05-24,beli obat flu di apotek,79000,Pengeluaran,Kesehatan
-2025-05-24,bayar youtube premium,140000,Pengeluaran,Hiburan
-2025-05-24,beli nasi goreng,18000,Pengeluaran,Makan
-2025-05-25,makan malam warung,45000,Pengeluaran,Makan
-2025-05-25,bayar kos bulanan,783000,Pengeluaran,Tagihan
-2025-05-25,nonton bioskop,175000,Pengeluaran,Hiburan
-2025-05-25,beli minyak kayu putih,54000,Pengeluaran,Kesehatan
-2025-05-25,naik bus trans,45000,Pengeluaran,Transport
-2025-05-25,beli sate,28000,Pengeluaran,Makan
-2025-05-25,main bowling,81000,Pengeluaran,Hiburan
-2025-05-25,beli deterjen,40000,Pengeluaran,Belanja
-2025-05-25,beli roti bakar,9000,Pengeluaran,Makan
-2025-05-25,main game arcade,161000,Pengeluaran,Hiburan
-2025-05-25,beli kopi susu,11000,Pengeluaran,Makan
-2025-05-25,beli nasi goreng,15000,Pengeluaran,Makan
-2025-05-25,bayar kartu pelajar,638000,Pengeluaran,Tagihan
-2025-05-26,beli komik,108000,Pengeluaran,Hiburan
-2025-05-26,makan malam warung,17000,Pengeluaran,Makan
-2025-05-26,print dan jilid laporan,353000,Pengeluaran,Pendidikan
-2025-05-27,beli jurnal ilmiah,348000,Pengeluaran,Pendidikan
-2025-05-27,beli pecel lele,9000,Pengeluaran,Makan
-2025-05-27,beli charger laptop,194000,Pengeluaran,Belanja
-2025-05-27,bayar air pdam,406000,Pengeluaran,Tagihan
-2025-05-27,beli masker kesehatan,187000,Pengeluaran,Kesehatan
-2025-05-27,beli kertas hvs,307000,Pengeluaran,Pendidikan
-2025-05-27,isi bensin pertalite,12000,Pengeluaran,Transport
-2025-05-27,beli token busway,49000,Pengeluaran,Transport
-2025-05-27,isi saldo e-money,663000,Pengeluaran,Tagihan
-2025-05-27,beli earphone,143000,Pengeluaran,Belanja
-2025-05-28,bayar disney plus,188000,Pengeluaran,Hiburan
-2025-05-28,beli es teh,14000,Pengeluaran,Makan
-2025-05-28,naik angkot,28000,Pengeluaran,Transport
-2025-05-28,naik gojek ke kampus,79000,Pengeluaran,Transport
-2025-05-29,bayar spp semester,44000,Pengeluaran,Pendidikan
-2025-05-29,isi bensin pertamax,9000,Pengeluaran,Transport
-2025-05-29,beli alat mandi,261000,Pengeluaran,Belanja
-2025-05-29,beli ayam geprek,28000,Pengeluaran,Makan
-2025-05-29,bayar bensin motor,29000,Pengeluaran,Transport
-2025-05-30,beli roti bakar,39000,Pengeluaran,Makan
-2025-05-30,grab car ke stasiun,45000,Pengeluaran,Transport
-2025-05-30,beli sabun mandi,326000,Pengeluaran,Belanja
-2025-05-30,beli roti bakar,27000,Pengeluaran,Makan
-2025-05-30,naik angkot,30000,Pengeluaran,Transport
-2025-05-30,beli kopi susu,38000,Pengeluaran,Makan
-2025-05-30,beli alat mandi,122000,Pengeluaran,Belanja
-2025-05-30,grab motor ke rumah sakit,40000,Pengeluaran,Transport
-2025-05-30,beli bubble tea,15000,Pengeluaran,Makan
-2025-05-31,beli roti bakar,27000,Pengeluaran,Makan
-2025-05-31,makan malam warung,18000,Pengeluaran,Makan
-2025-05-31,beli martabak,24000,Pengeluaran,Makan
-2025-05-31,nonton film bioskop,136000,Pengeluaran,Hiburan
-2025-05-31,isi bensin pertamax,7000,Pengeluaran,Transport
-2025-05-31,beli powerbank,103000,Pengeluaran,Belanja
-2025-05-31,bayar cicilan hp,554000,Pengeluaran,Tagihan
+tanggal,deskripsi,jumlah,tipe,kategori,id
+2025-03-02,isi bensin pertamax,11000,Pengeluaran,Transport,
+2025-03-02,beli kopi susu,18000,Pengeluaran,Makan,
+2025-03-02,beli buku referensi,292000,Pengeluaran,Pendidikan,
+2025-03-02,makan malam warung,42000,Pengeluaran,Makan,
+2025-03-03,beli roti bakar,10000,Pengeluaran,Makan,
+2025-03-04,naik angkot,38000,Pengeluaran,Transport,
+2025-03-04,beli jus buah,43000,Pengeluaran,Makan,
+2025-03-04,bayar listrik kos,220000,Pengeluaran,Tagihan,
+2025-03-04,naik gojek ke kampus,15000,Pengeluaran,Transport,
+2025-03-04,beli kopi susu,30000,Pengeluaran,Makan,
+2025-03-05,beli baju olahraga,104000,Pengeluaran,Belanja,
+2025-03-05,beli paracetamol,76000,Pengeluaran,Kesehatan,
+2025-03-05,bayar kursus online,342000,Pengeluaran,Pendidikan,
+2025-03-05,beli buku referensi,181000,Pengeluaran,Pendidikan,
+2025-03-06,beli mie ayam,33000,Pengeluaran,Makan,
+2025-03-06,beli kuota internet belajar,392000,Pengeluaran,Pendidikan,
+2025-03-06,main bowling,131000,Pengeluaran,Hiburan,
+2025-03-06,beli komik,159000,Pengeluaran,Hiburan,
+2025-03-06,beli martabak,37000,Pengeluaran,Makan,
+2025-03-07,beli tas ransel,154000,Pengeluaran,Belanja,
+2025-03-07,beli obat maag,45000,Pengeluaran,Kesehatan,
+2025-03-07,beli roti bakar,10000,Pengeluaran,Makan,
+2025-03-07,beli nasi padang,13000,Pengeluaran,Makan,
+2025-03-07,bayar seminar,392000,Pengeluaran,Pendidikan,
+2025-03-08,makan di warteg,38000,Pengeluaran,Makan,
+2025-03-08,beli kuota xl,776000,Pengeluaran,Tagihan,
+2025-03-08,naik ojek online,76000,Pengeluaran,Transport,
+2025-03-08,beli masker kesehatan,74000,Pengeluaran,Kesehatan,
+2025-03-08,bayar bensin motor,18000,Pengeluaran,Transport,
+2025-03-08,bayar konsultasi dokter,126000,Pengeluaran,Kesehatan,
+2025-03-08,naik angkot,29000,Pengeluaran,Transport,
+2025-03-08,makan di kantin,9000,Pengeluaran,Makan,
+2025-03-08,beli kertas hvs,29000,Pengeluaran,Pendidikan,
+2025-03-09,bayar disney plus,41000,Pengeluaran,Hiburan,
+2025-03-09,top up gopay,783000,Pengeluaran,Tagihan,
+2025-03-09,bayar cicilan hp,691000,Pengeluaran,Tagihan,
+2025-03-09,makan siang warteg,44000,Pengeluaran,Makan,
+2025-03-09,print skripsi,193000,Pengeluaran,Pendidikan,
+2025-03-09,naik bus trans,58000,Pengeluaran,Transport,
+2025-03-10,makan siang warteg,23000,Pengeluaran,Makan,
+2025-03-10,print skripsi,199000,Pengeluaran,Pendidikan,
+2025-03-10,jajan gorengan,34000,Pengeluaran,Makan,
+2025-03-10,beli baju di shopee,344000,Pengeluaran,Belanja,
+2025-03-10,bayar kartu pelajar,517000,Pengeluaran,Tagihan,
+2025-03-10,beli jus buah,15000,Pengeluaran,Makan,
+2025-03-10,beli token busway,65000,Pengeluaran,Transport,
+2025-03-10,beli hand sanitizer,40000,Pengeluaran,Kesehatan,
+2025-03-10,bayar langganan aplikasi,163000,Pengeluaran,Tagihan,
+2025-03-11,bayar youtube premium,131000,Pengeluaran,Hiburan,
+2025-03-11,jajan gorengan,18000,Pengeluaran,Makan,
+2025-03-11,beli earphone,206000,Pengeluaran,Belanja,
+2025-03-11,grab motor ke rumah sakit,25000,Pengeluaran,Transport,
+2025-03-11,bayar youtube premium,98000,Pengeluaran,Hiburan,
+2025-03-12,beli ayam geprek,25000,Pengeluaran,Makan,
+2025-03-12,bayar langganan aplikasi,318000,Pengeluaran,Tagihan,
+2025-03-12,beli obat flu di apotek,187000,Pengeluaran,Kesehatan,
+2025-03-12,uang lembur kerja part time,1950000,Pemasukan,Pemasukan,
+2025-03-12,beli pecel lele,28000,Pengeluaran,Makan,
+2025-03-12,beli pecel lele,13000,Pengeluaran,Makan,
+2025-03-12,beli powerbank,200000,Pengeluaran,Belanja,
+2025-03-12,beli alat tulis,207000,Pengeluaran,Pendidikan,
+2025-03-12,beli kopi susu,36000,Pengeluaran,Makan,
+2025-03-13,beli tiket konser,155000,Pengeluaran,Hiburan,
+2025-03-13,beli sepatu tokopedia,358000,Pengeluaran,Belanja,
+2025-03-13,makan di warteg,30000,Pengeluaran,Makan,
+2025-03-13,bayar langganan aplikasi,404000,Pengeluaran,Tagihan,
+2025-03-13,beli tinta printer,74000,Pengeluaran,Pendidikan,
+2025-03-13,beli roti bakar,23000,Pengeluaran,Makan,
+2025-03-13,sarapan nasi uduk,15000,Pengeluaran,Makan,
+2025-03-13,beli sate,9000,Pengeluaran,Makan,
+2025-03-13,beli buku kuliah,21000,Pengeluaran,Pendidikan,
+2025-03-13,beli mie ayam,44000,Pengeluaran,Makan,
+2025-03-14,beli martabak,45000,Pengeluaran,Makan,
+2025-03-14,grab motor ke mall,63000,Pengeluaran,Transport,
+2025-03-14,beli suplemen,60000,Pengeluaran,Kesehatan,
+2025-03-14,beli sabun mandi,238000,Pengeluaran,Belanja,
+2025-03-14,naik gojek ke kampus,47000,Pengeluaran,Transport,
+2025-03-14,bayar parkir motor,61000,Pengeluaran,Transport,
+2025-03-14,beli buku kuliah,325000,Pengeluaran,Pendidikan,
+2025-03-15,makan siang warteg,38000,Pengeluaran,Makan,
+2025-03-15,beli hand sanitizer,157000,Pengeluaran,Kesehatan,
+2025-03-15,bayar listrik kos,478000,Pengeluaran,Tagihan,
+2025-03-15,beli vitamin c,92000,Pengeluaran,Kesehatan,
+2025-03-15,naik kereta commuter,6000,Pengeluaran,Transport,
+2025-03-15,grab motor ke rumah sakit,54000,Pengeluaran,Transport,
+2025-03-15,beli indomie,11000,Pengeluaran,Makan,
+2025-03-15,beli merchandise anime,144000,Pengeluaran,Hiburan,
+2025-03-16,beli tinta printer,382000,Pengeluaran,Pendidikan,
+2025-03-16,jajan gorengan,25000,Pengeluaran,Makan,
+2025-03-16,beli tas ransel,243000,Pengeluaran,Belanja,
+2025-03-16,beli baju di shopee,377000,Pengeluaran,Belanja,
+2025-03-17,naik ojek online,69000,Pengeluaran,Transport,
+2025-03-17,beli jurnal ilmiah,34000,Pengeluaran,Pendidikan,
+2025-03-17,uang bulanan dari orang tua,1700000,Pemasukan,Pemasukan,
+2025-03-17,bayaran freelance desain,1750000,Pemasukan,Pemasukan,
+2025-03-17,gojek ke kos,79000,Pengeluaran,Transport,
+2025-03-17,bayar konsultasi dokter,167000,Pengeluaran,Kesehatan,
+2025-03-17,naik kereta commuter,64000,Pengeluaran,Transport,
+2025-03-18,beli token busway,48000,Pengeluaran,Transport,
+2025-03-18,isi bensin pertamax,78000,Pengeluaran,Transport,
+2025-03-18,beli tinta printer,500000,Pengeluaran,Pendidikan,
+2025-03-18,beli sate,26000,Pengeluaran,Makan,
+2025-03-18,beli martabak,16000,Pengeluaran,Makan,
+2025-03-18,naik kereta commuter,50000,Pengeluaran,Transport,
+2025-03-18,gojek ke kos,15000,Pengeluaran,Transport,
+2025-03-18,print dan jilid laporan,230000,Pengeluaran,Pendidikan,
+2025-03-18,beli indomie,11000,Pengeluaran,Makan,
+2025-03-18,beli obat maag,115000,Pengeluaran,Kesehatan,
+2025-03-18,bayar dokter umum,150000,Pengeluaran,Kesehatan,
+2025-03-19,beli sate,37000,Pengeluaran,Makan,
+2025-03-19,bayar spp semester,110000,Pengeluaran,Pendidikan,
+2025-03-19,uang saku tambahan,750000,Pemasukan,Pemasukan,
+2025-03-19,beli bubble tea,43000,Pengeluaran,Makan,
+2025-03-19,naik kereta commuter,16000,Pengeluaran,Transport,
+2025-03-19,gojek ke kos,20000,Pengeluaran,Transport,
+2025-03-19,beli game steam,194000,Pengeluaran,Hiburan,
+2025-03-19,bayar air pdam,654000,Pengeluaran,Tagihan,
+2025-03-20,fotokopi materi kuliah,401000,Pengeluaran,Pendidikan,
+2025-03-20,beli shampo,59000,Pengeluaran,Belanja,
+2025-03-20,gojek ke kos,37000,Pengeluaran,Transport,
+2025-03-20,beli token busway,31000,Pengeluaran,Transport,
+2025-03-20,beli charger laptop,339000,Pengeluaran,Belanja,
+2025-03-20,beli tas ransel,74000,Pengeluaran,Belanja,
+2025-03-20,beli tiket konser,78000,Pengeluaran,Hiburan,
+2025-03-20,beli baju olahraga,196000,Pengeluaran,Belanja,
+2025-03-20,bayar kursus online,13000,Pengeluaran,Pendidikan,
+2025-03-20,beli bubble tea,30000,Pengeluaran,Makan,
+2025-03-20,bayar youtube premium,168000,Pengeluaran,Hiburan,
+2025-03-21,beli sandal,310000,Pengeluaran,Belanja,
+2025-03-21,grab motor ke mall,12000,Pengeluaran,Transport,
+2025-03-21,karaoke bersama teman,88000,Pengeluaran,Hiburan,
+2025-03-21,makan di warteg,21000,Pengeluaran,Makan,
+2025-03-21,makan di warteg,22000,Pengeluaran,Makan,
+2025-03-21,makan siang warteg,15000,Pengeluaran,Makan,
+2025-03-21,beli deterjen,260000,Pengeluaran,Belanja,
+2025-03-21,beli suplemen,173000,Pengeluaran,Kesehatan,
+2025-03-22,naik angkot,19000,Pengeluaran,Transport,
+2025-03-22,naik kereta commuter,63000,Pengeluaran,Transport,
+2025-03-22,beli aksesoris hp,64000,Pengeluaran,Belanja,
+2025-03-22,beli mie ayam,30000,Pengeluaran,Makan,
+2025-03-22,bayar bensin motor,39000,Pengeluaran,Transport,
+2025-03-22,isi bensin pertamax,6000,Pengeluaran,Transport,
+2025-03-22,beli buku kuliah,87000,Pengeluaran,Pendidikan,
+2025-03-22,main billiard,79000,Pengeluaran,Hiburan,
+2025-03-22,beli kertas hvs,91000,Pengeluaran,Pendidikan,
+2025-03-22,isi bensin pertamax,62000,Pengeluaran,Transport,
+2025-03-22,isi bensin pertalite,75000,Pengeluaran,Transport,
+2025-03-22,naik ojek online,13000,Pengeluaran,Transport,
+2025-03-22,beasiswa prestasi,950000,Pemasukan,Pemasukan,
+2025-03-23,beli kertas hvs,440000,Pengeluaran,Pendidikan,
+2025-03-23,beli paracetamol,136000,Pengeluaran,Kesehatan,
+2025-03-23,grab motor ke rumah sakit,29000,Pengeluaran,Transport,
+2025-03-23,beli nasi padang,29000,Pengeluaran,Makan,
+2025-03-23,beli sepatu tokopedia,51000,Pengeluaran,Belanja,
+2025-03-23,beli jus buah,44000,Pengeluaran,Makan,
+2025-03-23,sarapan nasi uduk,34000,Pengeluaran,Makan,
+2025-03-23,isi bensin pertamax,53000,Pengeluaran,Transport,
+2025-03-24,bayar air pdam,190000,Pengeluaran,Tagihan,
+2025-03-24,beli alat mandi,41000,Pengeluaran,Belanja,
+2025-03-24,isi pulsa telkomsel,456000,Pengeluaran,Tagihan,
+2025-03-24,bayar wifi indihome,458000,Pengeluaran,Tagihan,
+2025-03-25,beli suplemen,99000,Pengeluaran,Kesehatan,
+2025-03-25,bayar konsultasi dokter,77000,Pengeluaran,Kesehatan,
+2025-03-25,bayar kos bulanan,791000,Pengeluaran,Tagihan,
+2025-03-25,makan di warteg,13000,Pengeluaran,Makan,
+2025-03-25,beli aksesoris hp,35000,Pengeluaran,Belanja,
+2025-03-25,gojek ke kos,18000,Pengeluaran,Transport,
+2025-03-26,beli token busway,69000,Pengeluaran,Transport,
+2025-03-26,beli sate,20000,Pengeluaran,Makan,
+2025-03-26,main billiard,149000,Pengeluaran,Hiburan,
+2025-03-26,bayar bensin motor,55000,Pengeluaran,Transport,
+2025-03-26,beli tas ransel,354000,Pengeluaran,Belanja,
+2025-03-27,top up gopay,743000,Pengeluaran,Tagihan,
+2025-03-27,makan di kantin,11000,Pengeluaran,Makan,
+2025-03-27,main game arcade,191000,Pengeluaran,Hiburan,
+2025-03-27,beli kuota xl,436000,Pengeluaran,Tagihan,
+2025-03-28,grab car ke stasiun,66000,Pengeluaran,Transport,
+2025-03-28,beli buku referensi,38000,Pengeluaran,Pendidikan,
+2025-03-28,bayar kos bulanan,28000,Pengeluaran,Tagihan,
+2025-03-29,beli martabak,36000,Pengeluaran,Makan,
+2025-03-29,main game arcade,141000,Pengeluaran,Hiburan,
+2025-03-29,beli indomie,37000,Pengeluaran,Makan,
+2025-03-29,beli mie ayam,45000,Pengeluaran,Makan,
+2025-03-29,beli deterjen,398000,Pengeluaran,Belanja,
+2025-03-29,beli roti bakar,20000,Pengeluaran,Makan,
+2025-03-29,bayar air pdam,676000,Pengeluaran,Tagihan,
+2025-03-29,makan di kantin,29000,Pengeluaran,Makan,
+2025-03-30,bayar seminar,329000,Pengeluaran,Pendidikan,
+2025-03-30,beli sate,35000,Pengeluaran,Makan,
+2025-03-30,beli sabun mandi,210000,Pengeluaran,Belanja,
+2025-03-30,isi bensin pertamax,78000,Pengeluaran,Transport,
+2025-03-30,beli alat tulis,314000,Pengeluaran,Pendidikan,
+2025-03-30,beli roti bakar,30000,Pengeluaran,Makan,
+2025-03-30,isi bensin pertalite,35000,Pengeluaran,Transport,
+2025-03-30,beli hand sanitizer,168000,Pengeluaran,Kesehatan,
+2025-03-30,bayar kursus online,269000,Pengeluaran,Pendidikan,
+2025-03-30,bayar dokter umum,87000,Pengeluaran,Kesehatan,
+2025-03-31,beli sepatu tokopedia,380000,Pengeluaran,Belanja,
+2025-03-31,isi saldo e-money,626000,Pengeluaran,Tagihan,
+2025-03-31,bayar air pdam,331000,Pengeluaran,Tagihan,
+2025-03-31,nonton film bioskop,30000,Pengeluaran,Hiburan,
+2025-03-31,beli roti bakar,13000,Pengeluaran,Makan,
+2025-04-01,beli kopi susu,18000,Pengeluaran,Makan,
+2025-04-01,beli mie ayam,11000,Pengeluaran,Makan,
+2025-04-01,beli nasi padang,31000,Pengeluaran,Makan,
+2025-04-01,hasil jualan online,1750000,Pemasukan,Pemasukan,
+2025-04-01,bayar puskesmas,156000,Pengeluaran,Kesehatan,
+2025-04-01,grab car ke stasiun,63000,Pengeluaran,Transport,
+2025-04-01,beli nasi padang,18000,Pengeluaran,Makan,
+2025-04-01,beli bakso,28000,Pengeluaran,Makan,
+2025-04-01,makan di kantin,14000,Pengeluaran,Makan,
+2025-04-01,grab motor ke mall,50000,Pengeluaran,Transport,
+2025-04-02,naik angkot,42000,Pengeluaran,Transport,
+2025-04-02,beli roti bakar,40000,Pengeluaran,Makan,
+2025-04-02,uang saku tambahan,1900000,Pemasukan,Pemasukan,
+2025-04-02,makan malam warung,35000,Pengeluaran,Makan,
+2025-04-02,print dan jilid laporan,26000,Pengeluaran,Pendidikan,
+2025-04-02,beli jus buah,39000,Pengeluaran,Makan,
+2025-04-02,bayar iuran kos,359000,Pengeluaran,Tagihan,
+2025-04-02,nonton bioskop,87000,Pengeluaran,Hiburan,
+2025-04-02,beli suplemen,186000,Pengeluaran,Kesehatan,
+2025-04-02,beli pecel lele,39000,Pengeluaran,Makan,
+2025-04-02,naik angkot,19000,Pengeluaran,Transport,
+2025-04-02,isi bensin pertamax,66000,Pengeluaran,Transport,
+2025-04-02,beli bakso,13000,Pengeluaran,Makan,
+2025-04-02,makan siang warteg,10000,Pengeluaran,Makan,
+2025-04-03,naik bus trans,23000,Pengeluaran,Transport,
+2025-04-03,beli indomie,38000,Pengeluaran,Makan,
+2025-04-04,makan di kantin,41000,Pengeluaran,Makan,
+2025-04-04,bayar puskesmas,128000,Pengeluaran,Kesehatan,
+2025-04-04,beli tiket konser,139000,Pengeluaran,Hiburan,
+2025-04-04,naik gojek ke kampus,20000,Pengeluaran,Transport,
+2025-04-04,beli nasi padang,34000,Pengeluaran,Makan,
+2025-04-05,grab car ke stasiun,21000,Pengeluaran,Transport,
+2025-04-05,beli roti bakar,23000,Pengeluaran,Makan,
+2025-04-05,print skripsi,83000,Pengeluaran,Pendidikan,
+2025-04-06,grab motor ke rumah sakit,63000,Pengeluaran,Transport,
+2025-04-06,beli paracetamol,11000,Pengeluaran,Kesehatan,
+2025-04-06,beli charger laptop,80000,Pengeluaran,Belanja,
+2025-04-06,beli indomie,30000,Pengeluaran,Makan,
+2025-04-06,beli powerbank,65000,Pengeluaran,Belanja,
+2025-04-07,fotokopi materi kuliah,200000,Pengeluaran,Pendidikan,
+2025-04-07,beli ayam geprek,15000,Pengeluaran,Makan,
+2025-04-07,fotokopi materi kuliah,295000,Pengeluaran,Pendidikan,
+2025-04-07,bayar spp semester,412000,Pengeluaran,Pendidikan,
+2025-04-07,beli roti bakar,29000,Pengeluaran,Makan,
+2025-04-07,beli merchandise anime,137000,Pengeluaran,Hiburan,
+2025-04-07,beli token busway,41000,Pengeluaran,Transport,
+2025-04-07,bayar iuran kos,504000,Pengeluaran,Tagihan,
+2025-04-07,bayar langganan aplikasi,646000,Pengeluaran,Tagihan,
+2025-04-07,beli sate,17000,Pengeluaran,Makan,
+2025-04-07,naik ojek online,70000,Pengeluaran,Transport,
+2025-04-07,beli paracetamol,159000,Pengeluaran,Kesehatan,
+2025-04-08,gojek ke kos,60000,Pengeluaran,Transport,
+2025-04-08,bayar spotify premium,65000,Pengeluaran,Hiburan,
+2025-04-08,naik ojek online,67000,Pengeluaran,Transport,
+2025-04-08,bayar parkir motor,75000,Pengeluaran,Transport,
+2025-04-08,beli earphone,97000,Pengeluaran,Belanja,
+2025-04-08,main billiard,157000,Pengeluaran,Hiburan,
+2025-04-09,beli nasi padang,27000,Pengeluaran,Makan,
+2025-04-09,isi bensin pertalite,21000,Pengeluaran,Transport,
+2025-04-09,beli baju olahraga,233000,Pengeluaran,Belanja,
+2025-04-10,grab car ke stasiun,41000,Pengeluaran,Transport,
+2025-04-10,bayar iuran kos,543000,Pengeluaran,Tagihan,
+2025-04-10,makan di warteg,13000,Pengeluaran,Makan,
+2025-04-10,beli pecel lele,36000,Pengeluaran,Makan,
+2025-04-10,jajan gorengan,31000,Pengeluaran,Makan,
+2025-04-10,beli kopi susu,12000,Pengeluaran,Makan,
+2025-04-11,fotokopi materi kuliah,387000,Pengeluaran,Pendidikan,
+2025-04-11,bayar air pdam,722000,Pengeluaran,Tagihan,
+2025-04-11,bayar bensin motor,46000,Pengeluaran,Transport,
+2025-04-11,beli tiket konser,152000,Pengeluaran,Hiburan,
+2025-04-11,beli mie ayam,21000,Pengeluaran,Makan,
+2025-04-12,beli mie ayam,13000,Pengeluaran,Makan,
+2025-04-12,naik ojek online,40000,Pengeluaran,Transport,
+2025-04-12,beli kuota internet belajar,78000,Pengeluaran,Pendidikan,
+2025-04-12,beli masker kesehatan,164000,Pengeluaran,Kesehatan,
+2025-04-12,beli indomie,33000,Pengeluaran,Makan,
+2025-04-12,beli indomie,44000,Pengeluaran,Makan,
+2025-04-12,naik angkot,38000,Pengeluaran,Transport,
+2025-04-12,print skripsi,219000,Pengeluaran,Pendidikan,
+2025-04-13,naik ojek online,77000,Pengeluaran,Transport,
+2025-04-13,beli martabak,15000,Pengeluaran,Makan,
+2025-04-13,isi saldo e-money,178000,Pengeluaran,Tagihan,
+2025-04-13,beli baju di shopee,114000,Pengeluaran,Belanja,
+2025-04-13,beli ayam geprek,35000,Pengeluaran,Makan,
+2025-04-13,beli mie ayam,35000,Pengeluaran,Makan,
+2025-04-13,beli baju di shopee,364000,Pengeluaran,Belanja,
+2025-04-13,makan di kantin,34000,Pengeluaran,Makan,
+2025-04-13,makan siang warteg,17000,Pengeluaran,Makan,
+2025-04-13,beli sate,45000,Pengeluaran,Makan,
+2025-04-13,bayar disney plus,36000,Pengeluaran,Hiburan,
+2025-04-14,beli kuota xl,411000,Pengeluaran,Tagihan,
+2025-04-14,beli ayam geprek,38000,Pengeluaran,Makan,
+2025-04-14,naik bus trans,59000,Pengeluaran,Transport,
+2025-04-14,beli jus buah,27000,Pengeluaran,Makan,
+2025-04-14,beli martabak,22000,Pengeluaran,Makan,
+2025-04-15,naik ojek online,35000,Pengeluaran,Transport,
+2025-04-15,beli sepatu tokopedia,266000,Pengeluaran,Belanja,
+2025-04-15,beli roti bakar,30000,Pengeluaran,Makan,
+2025-04-15,isi pulsa telkomsel,720000,Pengeluaran,Tagihan,
+2025-04-15,beli paracetamol,21000,Pengeluaran,Kesehatan,
+2025-04-15,beli kopi susu,26000,Pengeluaran,Makan,
+2025-04-15,beli bubble tea,38000,Pengeluaran,Makan,
+2025-04-15,bayar netflix,43000,Pengeluaran,Hiburan,
+2025-04-16,beli celana jeans,28000,Pengeluaran,Belanja,
+2025-04-16,makan di kantin,27000,Pengeluaran,Makan,
+2025-04-16,naik gojek ke kampus,43000,Pengeluaran,Transport,
+2025-04-16,isi saldo e-money,348000,Pengeluaran,Tagihan,
+2025-04-16,beli bubble tea,15000,Pengeluaran,Makan,
+2025-04-16,beli bakso,11000,Pengeluaran,Makan,
+2025-04-17,beli bubble tea,32000,Pengeluaran,Makan,
+2025-04-17,beli jus buah,10000,Pengeluaran,Makan,
+2025-04-17,bayar kartu pelajar,203000,Pengeluaran,Tagihan,
+2025-04-17,beli sepatu tokopedia,247000,Pengeluaran,Belanja,
+2025-04-17,beli ayam geprek,41000,Pengeluaran,Makan,
+2025-04-18,karaoke bersama teman,58000,Pengeluaran,Hiburan,
+2025-04-18,naik angkot,38000,Pengeluaran,Transport,
+2025-04-18,beli es teh,32000,Pengeluaran,Makan,
+2025-04-18,bayar langganan aplikasi,58000,Pengeluaran,Tagihan,
+2025-04-18,naik gojek ke kampus,12000,Pengeluaran,Transport,
+2025-04-18,beli sepatu tokopedia,379000,Pengeluaran,Belanja,
+2025-04-19,beli tinta printer,330000,Pengeluaran,Pendidikan,
+2025-04-19,sarapan nasi uduk,30000,Pengeluaran,Makan,
+2025-04-19,beli powerbank,300000,Pengeluaran,Belanja,
+2025-04-19,beli vitamin c,44000,Pengeluaran,Kesehatan,
+2025-04-19,naik kereta commuter,76000,Pengeluaran,Transport,
+2025-04-20,naik kereta commuter,20000,Pengeluaran,Transport,
+2025-04-20,beli jus buah,33000,Pengeluaran,Makan,
+2025-04-20,beli bakso,28000,Pengeluaran,Makan,
+2025-04-21,beli sate,33000,Pengeluaran,Makan,
+2025-04-21,top up gopay,714000,Pengeluaran,Tagihan,
+2025-04-21,nonton bioskop,73000,Pengeluaran,Hiburan,
+2025-04-21,isi pulsa telkomsel,190000,Pengeluaran,Tagihan,
+2025-04-21,beli kuota xl,76000,Pengeluaran,Tagihan,
+2025-04-22,beli bakso,37000,Pengeluaran,Makan,
+2025-04-22,isi bensin pertamax,53000,Pengeluaran,Transport,
+2025-04-22,beli kopi susu,23000,Pengeluaran,Makan,
+2025-04-22,beli earphone,185000,Pengeluaran,Belanja,
+2025-04-23,beli sate,18000,Pengeluaran,Makan,
+2025-04-23,makan malam warung,23000,Pengeluaran,Makan,
+2025-04-23,gojek ke kos,25000,Pengeluaran,Transport,
+2025-04-23,bayar air pdam,194000,Pengeluaran,Tagihan,
+2025-04-23,main billiard,136000,Pengeluaran,Hiburan,
+2025-04-24,uang lembur kerja part time,1100000,Pemasukan,Pemasukan,
+2025-04-24,fotokopi materi kuliah,12000,Pengeluaran,Pendidikan,
+2025-04-24,beli sepatu tokopedia,259000,Pengeluaran,Belanja,
+2025-04-24,beli hand sanitizer,148000,Pengeluaran,Kesehatan,
+2025-04-24,bayar listrik kos,605000,Pengeluaran,Tagihan,
+2025-04-24,beli flashdisk,48000,Pengeluaran,Pendidikan,
+2025-04-24,naik angkot,76000,Pengeluaran,Transport,
+2025-04-24,beli tinta printer,86000,Pengeluaran,Pendidikan,
+2025-04-25,beli jus buah,34000,Pengeluaran,Makan,
+2025-04-25,beli tinta printer,311000,Pengeluaran,Pendidikan,
+2025-04-25,beli merchandise anime,193000,Pengeluaran,Hiburan,
+2025-04-25,beli ayam geprek,31000,Pengeluaran,Makan,
+2025-04-25,bayar iuran kos,319000,Pengeluaran,Tagihan,
+2025-04-25,nonton bioskop,43000,Pengeluaran,Hiburan,
+2025-04-25,beli hand sanitizer,195000,Pengeluaran,Kesehatan,
+2025-04-26,makan di warteg,18000,Pengeluaran,Makan,
+2025-04-26,naik ojek online,11000,Pengeluaran,Transport,
+2025-04-26,beli kopi susu,14000,Pengeluaran,Makan,
+2025-04-26,bayar seminar,73000,Pengeluaran,Pendidikan,
+2025-04-26,grab motor ke mall,10000,Pengeluaran,Transport,
+2025-04-27,bayar seminar,472000,Pengeluaran,Pendidikan,
+2025-04-27,naik bus trans,41000,Pengeluaran,Transport,
+2025-04-27,beli bakso,24000,Pengeluaran,Makan,
+2025-04-27,beli vitamin c,199000,Pengeluaran,Kesehatan,
+2025-04-27,beli suplemen,128000,Pengeluaran,Kesehatan,
+2025-04-27,grab motor ke mall,18000,Pengeluaran,Transport,
+2025-04-27,bayar spotify premium,34000,Pengeluaran,Hiburan,
+2025-04-27,fotokopi materi kuliah,249000,Pengeluaran,Pendidikan,
+2025-04-27,bayar spotify premium,196000,Pengeluaran,Hiburan,
+2025-04-27,beli kopi susu,31000,Pengeluaran,Makan,
+2025-04-28,bayar seminar,397000,Pengeluaran,Pendidikan,
+2025-04-28,bayar disney plus,144000,Pengeluaran,Hiburan,
+2025-04-28,jajan gorengan,13000,Pengeluaran,Makan,
+2025-04-28,makan malam warung,23000,Pengeluaran,Makan,
+2025-04-28,bayar kartu pelajar,98000,Pengeluaran,Tagihan,
+2025-04-29,beli sabun mandi,166000,Pengeluaran,Belanja,
+2025-04-29,beasiswa prestasi,600000,Pemasukan,Pemasukan,
+2025-04-29,top up gopay,282000,Pengeluaran,Tagihan,
+2025-04-29,naik bus trans,21000,Pengeluaran,Transport,
+2025-04-29,beli tas ransel,125000,Pengeluaran,Belanja,
+2025-04-29,jajan gorengan,12000,Pengeluaran,Makan,
+2025-04-29,beli jurnal ilmiah,69000,Pengeluaran,Pendidikan,
+2025-04-29,beli komik,184000,Pengeluaran,Hiburan,
+2025-04-30,beli sate,40000,Pengeluaran,Makan,
+2025-04-30,naik bus trans,20000,Pengeluaran,Transport,
+2025-04-30,beli kuota internet belajar,207000,Pengeluaran,Pendidikan,
+2025-04-30,beli ayam geprek,17000,Pengeluaran,Makan,
+2025-04-30,beli celana jeans,284000,Pengeluaran,Belanja,
+2025-05-01,isi bensin pertalite,76000,Pengeluaran,Transport,
+2025-05-01,beli alat mandi,169000,Pengeluaran,Belanja,
+2025-05-01,naik bus trans,72000,Pengeluaran,Transport,
+2025-05-01,grab car ke stasiun,14000,Pengeluaran,Transport,
+2025-05-01,beli earphone,390000,Pengeluaran,Belanja,
+2025-05-01,beli bubble tea,28000,Pengeluaran,Makan,
+2025-05-01,bayar parkir motor,44000,Pengeluaran,Transport,
+2025-05-02,beli shampo,302000,Pengeluaran,Belanja,
+2025-05-02,beli tas ransel,222000,Pengeluaran,Belanja,
+2025-05-02,beli baju di shopee,356000,Pengeluaran,Belanja,
+2025-05-02,beli jus buah,29000,Pengeluaran,Makan,
+2025-05-02,beli pecel lele,33000,Pengeluaran,Makan,
+2025-05-03,beli alat mandi,366000,Pengeluaran,Belanja,
+2025-05-03,isi saldo e-money,360000,Pengeluaran,Tagihan,
+2025-05-03,naik angkot,29000,Pengeluaran,Transport,
+2025-05-03,bayar kartu pelajar,774000,Pengeluaran,Tagihan,
+2025-05-03,beli indomie,41000,Pengeluaran,Makan,
+2025-05-03,isi bensin pertamax,62000,Pengeluaran,Transport,
+2025-05-03,bayar cicilan hp,748000,Pengeluaran,Tagihan,
+2025-05-04,beli sate,42000,Pengeluaran,Makan,
+2025-05-04,bayar kartu pelajar,179000,Pengeluaran,Tagihan,
+2025-05-04,bayar kartu pelajar,181000,Pengeluaran,Tagihan,
+2025-05-04,beli mie ayam,9000,Pengeluaran,Makan,
+2025-05-04,beli masker kesehatan,52000,Pengeluaran,Kesehatan,
+2025-05-04,bayar kos bulanan,436000,Pengeluaran,Tagihan,
+2025-05-04,bayar wifi indihome,554000,Pengeluaran,Tagihan,
+2025-05-04,beli obat flu di apotek,169000,Pengeluaran,Kesehatan,
+2025-05-04,makan siang warteg,28000,Pengeluaran,Makan,
+2025-05-04,naik gojek ke kampus,42000,Pengeluaran,Transport,
+2025-05-05,makan di warteg,34000,Pengeluaran,Makan,
+2025-05-05,grab motor ke mall,57000,Pengeluaran,Transport,
+2025-05-05,naik ojek online,40000,Pengeluaran,Transport,
+2025-05-05,transfer dari orang tua,1750000,Pemasukan,Pemasukan,
+2025-05-05,beli martabak,39000,Pengeluaran,Makan,
+2025-05-05,beli ayam geprek,30000,Pengeluaran,Makan,
+2025-05-05,beli tinta printer,473000,Pengeluaran,Pendidikan,
+2025-05-06,makan malam warung,32000,Pengeluaran,Makan,
+2025-05-06,beli charger laptop,183000,Pengeluaran,Belanja,
+2025-05-06,isi pulsa telkomsel,94000,Pengeluaran,Tagihan,
+2025-05-06,beli sabun mandi,244000,Pengeluaran,Belanja,
+2025-05-06,beli token busway,52000,Pengeluaran,Transport,
+2025-05-06,bayar bensin motor,15000,Pengeluaran,Transport,
+2025-05-06,isi bensin pertamax,33000,Pengeluaran,Transport,
+2025-05-07,beli deterjen,74000,Pengeluaran,Belanja,
+2025-05-07,bayar konsultasi dokter,83000,Pengeluaran,Kesehatan,
+2025-05-07,bayar youtube premium,152000,Pengeluaran,Hiburan,
+2025-05-07,grab car ke stasiun,53000,Pengeluaran,Transport,
+2025-05-08,beli nasi padang,14000,Pengeluaran,Makan,
+2025-05-08,beli sate,32000,Pengeluaran,Makan,
+2025-05-08,beli tiket konser,186000,Pengeluaran,Hiburan,
+2025-05-08,beli bakso,12000,Pengeluaran,Makan,
+2025-05-08,honor mengajar les,1250000,Pemasukan,Pemasukan,
+2025-05-08,naik ojek online,68000,Pengeluaran,Transport,
+2025-05-08,bayar kursus online,295000,Pengeluaran,Pendidikan,
+2025-05-08,bayar bensin motor,37000,Pengeluaran,Transport,
+2025-05-08,beli pecel lele,34000,Pengeluaran,Makan,
+2025-05-08,grab motor ke rumah sakit,68000,Pengeluaran,Transport,
+2025-05-08,bayar bensin motor,76000,Pengeluaran,Transport,
+2025-05-08,grab motor ke mall,23000,Pengeluaran,Transport,
+2025-05-08,nonton film bioskop,195000,Pengeluaran,Hiburan,
+2025-05-08,beli tiket konser,143000,Pengeluaran,Hiburan,
+2025-05-09,bayar bensin motor,65000,Pengeluaran,Transport,
+2025-05-09,beli powerbank,240000,Pengeluaran,Belanja,
+2025-05-09,beli komik,193000,Pengeluaran,Hiburan,
+2025-05-09,beli obat flu di apotek,79000,Pengeluaran,Kesehatan,
+2025-05-09,honor mengajar les,1300000,Pemasukan,Pemasukan,
+2025-05-09,isi bensin pertalite,72000,Pengeluaran,Transport,
+2025-05-09,makan siang warteg,38000,Pengeluaran,Makan,
+2025-05-09,nonton bioskop,151000,Pengeluaran,Hiburan,
+2025-05-09,beli celana jeans,346000,Pengeluaran,Belanja,
+2025-05-10,isi bensin pertamax,71000,Pengeluaran,Transport,
+2025-05-10,beli mie ayam,41000,Pengeluaran,Makan,
+2025-05-10,bayar youtube premium,179000,Pengeluaran,Hiburan,
+2025-05-10,beli celana jeans,88000,Pengeluaran,Belanja,
+2025-05-10,bayar bensin motor,62000,Pengeluaran,Transport,
+2025-05-10,beli jus buah,22000,Pengeluaran,Makan,
+2025-05-10,isi bensin pertalite,29000,Pengeluaran,Transport,
+2025-05-11,beli sepatu tokopedia,252000,Pengeluaran,Belanja,
+2025-05-11,makan di warteg,38000,Pengeluaran,Makan,
+2025-05-11,fotokopi materi kuliah,250000,Pengeluaran,Pendidikan,
+2025-05-11,transfer beasiswa,450000,Pemasukan,Pemasukan,
+2025-05-11,beli sate,9000,Pengeluaran,Makan,
+2025-05-11,bayar seminar,271000,Pengeluaran,Pendidikan,
+2025-05-11,makan malam warung,13000,Pengeluaran,Makan,
+2025-05-11,bayar langganan aplikasi,284000,Pengeluaran,Tagihan,
+2025-05-12,beli bakso,17000,Pengeluaran,Makan,
+2025-05-12,beli es teh,43000,Pengeluaran,Makan,
+2025-05-12,jajan gorengan,24000,Pengeluaran,Makan,
+2025-05-12,beli alat tulis,267000,Pengeluaran,Pendidikan,
+2025-05-12,naik bus trans,42000,Pengeluaran,Transport,
+2025-05-12,beli sate,26000,Pengeluaran,Makan,
+2025-05-12,naik angkot,17000,Pengeluaran,Transport,
+2025-05-12,bayar seminar,230000,Pengeluaran,Pendidikan,
+2025-05-12,beli kopi susu,28000,Pengeluaran,Makan,
+2025-05-12,beli sandal,165000,Pengeluaran,Belanja,
+2025-05-12,makan di warteg,10000,Pengeluaran,Makan,
+2025-05-12,main billiard,69000,Pengeluaran,Hiburan,
+2025-05-13,beli tas ransel,264000,Pengeluaran,Belanja,
+2025-05-13,sarapan nasi uduk,27000,Pengeluaran,Makan,
+2025-05-13,beli martabak,30000,Pengeluaran,Makan,
+2025-05-13,gojek ke kos,12000,Pengeluaran,Transport,
+2025-05-13,bayar puskesmas,189000,Pengeluaran,Kesehatan,
+2025-05-13,beli jus buah,38000,Pengeluaran,Makan,
+2025-05-13,hasil jualan online,450000,Pemasukan,Pemasukan,
+2025-05-13,beli masker kesehatan,43000,Pengeluaran,Kesehatan,
+2025-05-13,beli roti bakar,29000,Pengeluaran,Makan,
+2025-05-14,makan malam warung,32000,Pengeluaran,Makan,
+2025-05-14,bayar wifi indihome,363000,Pengeluaran,Tagihan,
+2025-05-14,beli martabak,32000,Pengeluaran,Makan,
+2025-05-14,beli kopi susu,29000,Pengeluaran,Makan,
+2025-05-14,beli bubble tea,10000,Pengeluaran,Makan,
+2025-05-15,beli pecel lele,24000,Pengeluaran,Makan,
+2025-05-15,bayar konsultasi dokter,37000,Pengeluaran,Kesehatan,
+2025-05-15,naik bus trans,33000,Pengeluaran,Transport,
+2025-05-15,naik bus trans,61000,Pengeluaran,Transport,
+2025-05-15,beli bakso,25000,Pengeluaran,Makan,
+2025-05-15,print dan jilid laporan,315000,Pengeluaran,Pendidikan,
+2025-05-15,beli obat maag,89000,Pengeluaran,Kesehatan,
+2025-05-15,beli obat flu di apotek,23000,Pengeluaran,Kesehatan,
+2025-05-16,top up gopay,334000,Pengeluaran,Tagihan,
+2025-05-16,isi bensin pertamax,41000,Pengeluaran,Transport,
+2025-05-16,beli jus buah,26000,Pengeluaran,Makan,
+2025-05-16,beli sate,22000,Pengeluaran,Makan,
+2025-05-16,bayar wifi indihome,547000,Pengeluaran,Tagihan,
+2025-05-17,beli buku referensi,205000,Pengeluaran,Pendidikan,
+2025-05-17,beli token busway,22000,Pengeluaran,Transport,
+2025-05-18,main bowling,132000,Pengeluaran,Hiburan,
+2025-05-18,bayar kartu pelajar,95000,Pengeluaran,Tagihan,
+2025-05-18,beli ayam geprek,40000,Pengeluaran,Makan,
+2025-05-18,naik angkot,50000,Pengeluaran,Transport,
+2025-05-18,beli aksesoris hp,141000,Pengeluaran,Belanja,
+2025-05-18,bayar parkir motor,9000,Pengeluaran,Transport,
+2025-05-18,jajan gorengan,44000,Pengeluaran,Makan,
+2025-05-19,naik gojek ke kampus,51000,Pengeluaran,Transport,
+2025-05-19,beli deterjen,192000,Pengeluaran,Belanja,
+2025-05-19,beli bubble tea,39000,Pengeluaran,Makan,
+2025-05-19,makan malam warung,19000,Pengeluaran,Makan,
+2025-05-19,bayar spotify premium,44000,Pengeluaran,Hiburan,
+2025-05-19,bayar netflix,61000,Pengeluaran,Hiburan,
+2025-05-19,naik angkot,40000,Pengeluaran,Transport,
+2025-05-19,nonton film bioskop,143000,Pengeluaran,Hiburan,
+2025-05-19,bayaran freelance desain,1050000,Pemasukan,Pemasukan,
+2025-05-19,beli komik,147000,Pengeluaran,Hiburan,
+2025-05-20,grab motor ke mall,48000,Pengeluaran,Transport,
+2025-05-20,beli pecel lele,35000,Pengeluaran,Makan,
+2025-05-20,bayar youtube premium,22000,Pengeluaran,Hiburan,
+2025-05-20,makan di warteg,32000,Pengeluaran,Makan,
+2025-05-20,beli martabak,33000,Pengeluaran,Makan,
+2025-05-20,isi bensin pertamax,49000,Pengeluaran,Transport,
+2025-05-21,beli baju olahraga,71000,Pengeluaran,Belanja,
+2025-05-21,beli tiket konser,100000,Pengeluaran,Hiburan,
+2025-05-21,beli hand sanitizer,38000,Pengeluaran,Kesehatan,
+2025-05-21,naik ojek online,68000,Pengeluaran,Transport,
+2025-05-22,beli jus buah,11000,Pengeluaran,Makan,
+2025-05-22,isi saldo e-money,334000,Pengeluaran,Tagihan,
+2025-05-22,makan siang warteg,14000,Pengeluaran,Makan,
+2025-05-22,main billiard,74000,Pengeluaran,Hiburan,
+2025-05-22,beli pecel lele,37000,Pengeluaran,Makan,
+2025-05-22,beli earphone,309000,Pengeluaran,Belanja,
+2025-05-23,bayar seminar,336000,Pengeluaran,Pendidikan,
+2025-05-23,isi pulsa telkomsel,388000,Pengeluaran,Tagihan,
+2025-05-23,main billiard,85000,Pengeluaran,Hiburan,
+2025-05-24,isi saldo e-money,298000,Pengeluaran,Tagihan,
+2025-05-24,beli token busway,80000,Pengeluaran,Transport,
+2025-05-24,isi pulsa telkomsel,255000,Pengeluaran,Tagihan,
+2025-05-24,beli komik,191000,Pengeluaran,Hiburan,
+2025-05-24,beli merchandise anime,38000,Pengeluaran,Hiburan,
+2025-05-24,beli nasi goreng,42000,Pengeluaran,Makan,
+2025-05-24,bayar dokter umum,182000,Pengeluaran,Kesehatan,
+2025-05-24,beli obat flu di apotek,79000,Pengeluaran,Kesehatan,
+2025-05-24,bayar youtube premium,140000,Pengeluaran,Hiburan,
+2025-05-24,beli nasi goreng,18000,Pengeluaran,Makan,
+2025-05-25,makan malam warung,45000,Pengeluaran,Makan,
+2025-05-25,bayar kos bulanan,783000,Pengeluaran,Tagihan,
+2025-05-25,nonton bioskop,175000,Pengeluaran,Hiburan,
+2025-05-25,beli minyak kayu putih,54000,Pengeluaran,Kesehatan,
+2025-05-25,naik bus trans,45000,Pengeluaran,Transport,
+2025-05-25,beli sate,28000,Pengeluaran,Makan,
+2025-05-25,main bowling,81000,Pengeluaran,Hiburan,
+2025-05-25,beli deterjen,40000,Pengeluaran,Belanja,
+2025-05-25,beli roti bakar,9000,Pengeluaran,Makan,
+2025-05-25,main game arcade,161000,Pengeluaran,Hiburan,
+2025-05-25,beli kopi susu,11000,Pengeluaran,Makan,
+2025-05-25,beli nasi goreng,15000,Pengeluaran,Makan,
+2025-05-25,bayar kartu pelajar,638000,Pengeluaran,Tagihan,
+2025-05-26,beli komik,108000,Pengeluaran,Hiburan,
+2025-05-26,makan malam warung,17000,Pengeluaran,Makan,
+2025-05-26,print dan jilid laporan,353000,Pengeluaran,Pendidikan,
+2025-05-27,beli jurnal ilmiah,348000,Pengeluaran,Pendidikan,
+2025-05-27,beli pecel lele,9000,Pengeluaran,Makan,
+2025-05-27,beli charger laptop,194000,Pengeluaran,Belanja,
+2025-05-27,bayar air pdam,406000,Pengeluaran,Tagihan,
+2025-05-27,beli masker kesehatan,187000,Pengeluaran,Kesehatan,
+2025-05-27,beli kertas hvs,307000,Pengeluaran,Pendidikan,
+2025-05-27,isi bensin pertalite,12000,Pengeluaran,Transport,
+2025-05-27,beli token busway,49000,Pengeluaran,Transport,
+2025-05-27,isi saldo e-money,663000,Pengeluaran,Tagihan,
+2025-05-27,beli earphone,143000,Pengeluaran,Belanja,
+2025-05-28,bayar disney plus,188000,Pengeluaran,Hiburan,
+2025-05-28,beli es teh,14000,Pengeluaran,Makan,
+2025-05-28,naik angkot,28000,Pengeluaran,Transport,
+2025-05-28,naik gojek ke kampus,79000,Pengeluaran,Transport,
+2025-05-29,bayar spp semester,44000,Pengeluaran,Pendidikan,
+2025-05-29,isi bensin pertamax,9000,Pengeluaran,Transport,
+2025-05-29,beli alat mandi,261000,Pengeluaran,Belanja,
+2025-05-29,beli ayam geprek,28000,Pengeluaran,Makan,
+2025-05-29,bayar bensin motor,29000,Pengeluaran,Transport,
+2025-05-30,beli roti bakar,39000,Pengeluaran,Makan,
+2025-05-30,grab car ke stasiun,45000,Pengeluaran,Transport,
+2025-05-30,beli sabun mandi,326000,Pengeluaran,Belanja,
+2025-05-30,beli roti bakar,27000,Pengeluaran,Makan,
+2025-05-30,naik angkot,30000,Pengeluaran,Transport,
+2025-05-30,beli kopi susu,38000,Pengeluaran,Makan,
+2025-05-30,beli alat mandi,122000,Pengeluaran,Belanja,
+2025-05-30,grab motor ke rumah sakit,40000,Pengeluaran,Transport,
+2025-05-30,beli bubble tea,15000,Pengeluaran,Makan,
+2025-05-31,beli roti bakar,27000,Pengeluaran,Makan,
+2025-05-31,makan malam warung,18000,Pengeluaran,Makan,
+2025-05-31,beli martabak,24000,Pengeluaran,Makan,
+2025-05-31,nonton film bioskop,136000,Pengeluaran,Hiburan,
+2025-05-31,isi bensin pertamax,7000,Pengeluaran,Transport,
+2025-05-31,beli powerbank,103000,Pengeluaran,Belanja,
+2025-05-31,bayar cicilan hp,554000,Pengeluaran,Tagihan,
+2026-06-10,Beli Tomoro Coffee,20000,Pengeluaran,Makanan & Minuman,1

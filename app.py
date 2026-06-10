@@ -12,7 +12,7 @@ from components.sidebar import render_sidebar
 st.set_page_config(
     page_title="SmartBudget AI",
     page_icon="💰",
-    layout="wide",
+    layout="centered",
     initial_sidebar_state="expanded",
 )
 
@@ -72,12 +72,12 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
     
-    st.page_link("app.py", label="🏠  Beranda", use_container_width=True)
-    st.page_link("pages/1_Dashboard.py", label="📊  Dashboard", use_container_width=True)
-    st.page_link("pages/2_Input_Transaksi.py", label="➕  Input Transaksi", use_container_width=True)
-    st.page_link("pages/3_Analisis.py", label="📈  Analisis", use_container_width=True)
-    st.page_link("pages/4_Prediksi.py", label="🔮  Prediksi", use_container_width=True)
-    st.page_link("pages/5_AI_Advisor.py", label="💬  AI Advisor", use_container_width=True)
+    st.page_link("app.py", label="🏠  Beranda", width='stretch')
+    st.page_link("pages/1_Dashboard.py", label="📊  Dashboard", width='stretch')
+    st.page_link("pages/2_Input_Transaksi.py", label="➕  Input Transaksi", width='stretch')
+    st.page_link("pages/3_Analisis.py", label="📈  Analisis", width='stretch')
+    st.page_link("pages/4_Prediksi.py", label="🔮  Prediksi", width='stretch')
+    st.page_link("pages/5_AI_Advisor.py", label="💬  AI Advisor", width='stretch')
     
     st.divider()
     st.markdown("""
@@ -154,7 +154,7 @@ with col1:
         if st.button(
             "📊 Buka Dashboard",
             key="go_dashboard",
-            use_container_width=True
+            width='stretch'
         ):
             st.switch_page("pages/1_Dashboard.py")
 
@@ -172,7 +172,7 @@ with col2:
         if st.button(
             "🔮 Lihat Prediksi",
             key="go_prediksi",
-            use_container_width=True
+            width='stretch'
         ):
             st.switch_page("pages/4_Prediksi.py")
 
@@ -190,7 +190,7 @@ with col3:
         if st.button(
             "💬 Tanya AI",
             key="go_ai_advisor",
-            use_container_width=True
+            width='stretch'
         ):
             st.switch_page("pages/5_AI_Advisor.py")
 

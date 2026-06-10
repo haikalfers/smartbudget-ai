@@ -50,7 +50,9 @@ df_filtered = filter_by_period(df, periode)
 summary = get_summary(df_filtered)
 
 # ─── Metric Cards ──────────────────────────────────────────────────────────────
-col1, col2, col3, col4 = st.columns(4)
+# Responsive: 2x2 grid on desktop, stacks via CSS on mobile
+col1, col2 = st.columns(2)
+col3, col4 = st.columns(2)
 
 saldo = summary["saldo"]
 saldo_delta = "✅ Positif" if saldo >= 0 else "⚠️ Negatif"
@@ -90,6 +92,7 @@ if df_filtered.empty:
     st.stop()
 
 # ─── Charts Row ────────────────────────────────────────────────────────────────
+# Responsive: 2 columns on desktop, responsive CSS handles mobile
 col_left, col_right = st.columns(2, gap="medium")
 
 with col_left:
@@ -121,7 +124,7 @@ with col_left:
                 "showarrow": False,
             }],
         )
-        st.plotly_chart(fig_pie, use_container_width=True, config={"displayModeBar": False})
+        st.plotly_chart(fig_pie, width='stretch', config={"displayModeBar": False})
     else:
         st.info("Belum ada data pengeluaran.")
 
@@ -155,7 +158,7 @@ with col_right:
         )
         fig_tren.update_xaxes(showgrid=False)
         fig_tren.update_yaxes(gridcolor="#e2e8f0", gridwidth=0.5)
-        st.plotly_chart(fig_tren, use_container_width=True, config={"displayModeBar": False})
+        st.plotly_chart(fig_tren, width='stretch', config={"displayModeBar": False})
     else:
         st.info("Belum ada data tren bulanan.")
 
@@ -199,7 +202,7 @@ if not recent.empty:
     
     st.dataframe(
         display_cols,
-        use_container_width=True,
+        width='stretch',
         hide_index=True,
         column_config={
             "Tipe": st.column_config.TextColumn(width="small"),

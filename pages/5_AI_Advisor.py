@@ -22,7 +22,7 @@ from styles import GLOBAL_CSS
 from components.sidebar import render_sidebar
 
 # ─── Setup ─────────────────────────────────────────────────────────────────────
-st.set_page_config(page_title="AI Advisor | SmartBudget AI", page_icon="💬", layout="wide")
+st.set_page_config(page_title="AI Advisor | SmartBudget AI", page_icon="💬", layout="centered")
 init_session_state()
 render_sidebar()
 st.markdown(GLOBAL_CSS, unsafe_allow_html=True)
@@ -74,6 +74,30 @@ st.markdown("""
     white-space: pre-wrap;
     max-height: 180px;
     overflow-y: auto;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .quick-btn-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        margin-bottom: 1rem;
+    }
+    .chat-container {
+        padding: 1rem;
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quick-btn-grid {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+    .chat-container {
+        padding: 0.85rem;
+        min-height: 280px;
+    }
 }
 </style>
 """, unsafe_allow_html=True)
@@ -164,7 +188,7 @@ with col_side:
 
     # ── Hapus Riwayat ──────────────────────────────────────────────────────────
     st.markdown("<br>", unsafe_allow_html=True)
-    if st.button("🗑️  Hapus Riwayat Chat", use_container_width=True):
+    if st.button("🗑️  Hapus Riwayat Chat", width='stretch'):
         st.session_state.chat_history = []
         clear_chat_history()
         st.toast("Riwayat chat dihapus!", icon="✅")
@@ -225,7 +249,7 @@ with col_main:
             if st.button(
                 f"{icon}  {prompt}",
                 key=f"quick_{prompt[:15]}",
-                use_container_width=True,
+                width='stretch',
             ):
                 process_prompt(prompt)
 

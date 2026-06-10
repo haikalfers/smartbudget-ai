@@ -22,7 +22,7 @@ from styles import GLOBAL_CSS, PLOTLY_THEME
 from components.sidebar import render_sidebar
 
 # ─── Setup ─────────────────────────────────────────────────────────────────────
-st.set_page_config(page_title="Analisis | SmartBudget AI", page_icon="📈", layout="wide")
+st.set_page_config(page_title="Analisis | SmartBudget AI", page_icon="📈", layout="centered")
 init_session_state()
 render_sidebar()
 st.markdown(GLOBAL_CSS, unsafe_allow_html=True)
@@ -53,7 +53,9 @@ st.markdown("""
 <div style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.06)">
 """, unsafe_allow_html=True)
 
+# Responsive filter columns: CSS media queries handle stacking
 col_filter1, col_filter2 = st.columns(2)
+
 with col_filter1:
     periode = st.selectbox(
         "📅 Periode",
@@ -76,7 +78,10 @@ if tipe_filter:
 summary = get_summary(df_filtered)
 
 # ─── Summary Strip ─────────────────────────────────────────────────────────────
-col1, col2, col3, col4 = st.columns(4)
+# Responsive metric cards: 2x2 grid, CSS media queries handle mobile
+col1, col2 = st.columns(2)
+col3, col4 = st.columns(2)
+
 with col1:
     st.metric("💳 Saldo", format_rupiah(summary["saldo"]))
 with col2:
@@ -129,7 +134,7 @@ with tab1:
                     "showarrow": False,
                 }],
             )
-            st.plotly_chart(fig_donut, use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(fig_donut, width='stretch', config={"displayModeBar": False})
         
         with col2:
             st.markdown('<div class="sb-section-title">Nominal per Kategori</div>', unsafe_allow_html=True)
@@ -153,7 +158,7 @@ with tab1:
             fig_bar.update_traces(marker_line_width=0)
             fig_bar.update_xaxes(showgrid=True, gridcolor="#e2e8f0", gridwidth=0.5)
             fig_bar.update_yaxes(showgrid=False)
-            st.plotly_chart(fig_bar, use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(fig_bar, width='stretch', config={"displayModeBar": False})
         
         # ─── Tabel Kategori ────────────────────────────────────────────────────
         st.markdown('<div class="sb-section-title">📋 Tabel Ringkasan Kategori</div>', unsafe_allow_html=True)
@@ -170,7 +175,7 @@ with tab1:
         
         st.dataframe(
             display_df,
-            use_container_width=True,
+            width='stretch',
             hide_index=True,
             column_config={
                 "% dari Total": st.column_config.ProgressColumn(
@@ -223,7 +228,7 @@ with tab2:
         )
         fig_area.update_xaxes(showgrid=False)
         fig_area.update_yaxes(gridcolor="#e2e8f0", gridwidth=0.5)
-        st.plotly_chart(fig_area, use_container_width=True, config={"displayModeBar": False})
+        st.plotly_chart(fig_area, width='stretch', config={"displayModeBar": False})
         
         st.markdown('<div class="sb-section-title">Saldo Bersih per Bulan</div>', unsafe_allow_html=True)
         
@@ -246,7 +251,7 @@ with tab2:
         )
         fig_saldo.update_xaxes(showgrid=False)
         fig_saldo.update_yaxes(gridcolor="#e2e8f0", gridwidth=0.5)
-        st.plotly_chart(fig_saldo, use_container_width=True, config={"displayModeBar": False})
+        st.plotly_chart(fig_saldo, width='stretch', config={"displayModeBar": False})
 
 # ── Tab 3: Detail Transaksi ────────────────────────────────────────────────────
 with tab3:
@@ -283,7 +288,7 @@ with tab3:
     display_final = df_display[["tanggal_fmt", "deskripsi", "kategori", "tipe", "jumlah_fmt"]].copy()
     display_final.columns = ["Tanggal", "Deskripsi", "Kategori", "Tipe", "Jumlah"]
     
-    st.dataframe(display_final, use_container_width=True, hide_index=True)
+    st.dataframe(display_final, width='stretch', hide_index=True)
     
     st.markdown("<br>", unsafe_allow_html=True)
     csv = df_detail.to_csv(index=False).encode("utf-8")

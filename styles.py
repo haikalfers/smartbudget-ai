@@ -339,6 +339,170 @@ hr {
     align-items: center;
     gap: 6px;
 }
+
+/* ═══════════════════════════════════════════════════
+   MOBILE RESPONSIVENESS (max-width: 768px)
+═══════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    /* PAGE LAYOUT */
+    [data-testid="stAppViewContainer"] {
+        padding: 0 !important;
+    }
+    [data-testid="stAppViewContainer"] > .main {
+        padding: 1rem 1rem !important;
+    }
+    
+    /* SIDEBAR */
+    [data-testid="stSidebar"] {
+        width: 280px !important;
+    }
+    
+    /* PAGE HEADER */
+    .sb-page-header h1 {
+        font-size: 1.35rem !important;
+    }
+    .sb-page-header p {
+        font-size: 0.8rem !important;
+    }
+    
+    /* METRIC CARDS */
+    [data-testid="metric-container"] {
+        padding: 0.9rem 1rem !important;
+    }
+    [data-testid="stMetricValue"] {
+        font-size: 1.25rem !important;
+    }
+    [data-testid="stMetricLabel"] {
+        font-size: 0.7rem !important;
+    }
+    
+    /* BUTTONS */
+    .stButton > button {
+        font-size: 0.8rem !important;
+        padding: 0.5rem 0.8rem !important;
+    }
+    
+    /* FORM INPUTS */
+    .stTextInput > div > div > input,
+    .stNumberInput > div > div > input,
+    .stDateInput > div > div > input,
+    .stSelectbox > div > div,
+    .stTextArea textarea {
+        font-size: 0.85rem !important;
+    }
+    
+    /* RADIO BUTTONS */
+    .stRadio > div {
+        flex-direction: column !important;
+    }
+    .stRadio label {
+        font-size: 0.8rem !important;
+        padding: 8px 10px !important;
+        width: 100% !important;
+    }
+    
+    /* TABS */
+    [data-testid="stTabs"] [data-baseweb="tab"] {
+        padding: 8px 12px !important;
+        font-size: 0.8rem !important;
+    }
+    
+    /* DATAFRAME TABLE */
+    [data-testid="stDataFrame"] th,
+    [data-testid="stDataFrame"] td {
+        padding: 6px 8px !important;
+        font-size: 0.75rem !important;
+    }
+    
+    /* SECTION TITLE */
+    .sb-section-title {
+        font-size: 0.85rem !important;
+    }
+    
+    /* BADGES */
+    .sb-badge {
+        font-size: 0.65rem !important;
+        padding: 2px 6px !important;
+    }
+    
+    /* CUSTOM CARD */
+    .sb-card {
+        padding: 1rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    /* CUSTOM TABLE GRID */
+    [style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════
+   EXTRA SMALL DEVICES (max-width: 480px)
+═══════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+    /* SIDEBAR WIDTH */
+    [data-testid="stSidebar"] {
+        width: 250px !important;
+    }
+    
+    /* PAGE LAYOUT */
+    [data-testid="stAppViewContainer"] > .main {
+        padding: 0.75rem 0.75rem !important;
+    }
+    
+    /* PAGE HEADER */
+    .sb-page-header {
+        margin-bottom: 1rem !important;
+    }
+    .sb-page-header h1 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.15rem !important;
+    }
+    .sb-page-header p {
+        font-size: 0.75rem !important;
+    }
+    
+    /* METRIC CARDS STACK */
+    [data-testid="metric-container"] {
+        padding: 0.8rem 0.9rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    [data-testid="stMetricValue"] {
+        font-size: 1.1rem !important;
+    }
+    
+    /* BUTTONS */
+    .stButton > button {
+        font-size: 0.75rem !important;
+        padding: 0.4rem 0.6rem !important;
+    }
+    
+    /* FORM LABELS */
+    .stTextInput label,
+    .stNumberInput label,
+    .stDateInput label,
+    .stSelectbox label,
+    .stRadio label {
+        font-size: 0.75rem !important;
+    }
+    
+    /* RADIO BUTTONS - FULL WIDTH */
+    .stRadio label {
+        padding: 6px 8px !important;
+    }
+    
+    /* TABS */
+    [data-testid="stTabs"] [data-baseweb="tab"] {
+        padding: 6px 10px !important;
+        font-size: 0.75rem !important;
+    }
+    
+    /* HIDE CHART LEGEND IF NEEDED */
+    .plotly-graph-div {
+        height: auto !important;
+    }
+}
 </style>
 """
 

@@ -56,12 +56,12 @@ def render_sidebar():
 
         # Use page_link for native navigation
         try:
-            st.page_link("app.py", label="🏠  Beranda", use_container_width=True)
-            st.page_link("pages/1_Dashboard.py", label="📊  Dashboard", use_container_width=True)
-            st.page_link("pages/2_Input_Transaksi.py", label="➕  Input Transaksi", use_container_width=True)
-            st.page_link("pages/3_Analisis.py", label="📈  Analisis", use_container_width=True)
-            st.page_link("pages/4_Prediksi.py", label="🔮  Prediksi", use_container_width=True)
-            st.page_link("pages/5_AI_Advisor.py", label="💬  AI Advisor", use_container_width=True)
+            st.page_link("app.py", label="🏠  Beranda", width='stretch')
+            st.page_link("pages/1_Dashboard.py", label="📊  Dashboard", width='stretch')
+            st.page_link("pages/2_Input_Transaksi.py", label="➕  Input Transaksi", width='stretch')
+            st.page_link("pages/3_Analisis.py", label="📈  Analisis", width='stretch')
+            st.page_link("pages/4_Prediksi.py", label="🔮  Prediksi", width='stretch')
+            st.page_link("pages/5_AI_Advisor.py", label="💬  AI Advisor", width='stretch')
         except Exception:
             # Fallback rendering (if st.page_link not available)
             links = [

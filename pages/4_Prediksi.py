@@ -19,7 +19,7 @@ from styles import GLOBAL_CSS, PLOTLY_THEME
 from components.sidebar import render_sidebar
 
 # ─── Setup ─────────────────────────────────────────────────────────────────────
-st.set_page_config(page_title="Prediksi | SmartBudget AI", page_icon="🔮", layout="wide")
+st.set_page_config(page_title="Prediksi | SmartBudget AI", page_icon="🔮", layout="centered")
 init_session_state()
 render_sidebar()
 st.markdown(GLOBAL_CSS, unsafe_allow_html=True)
@@ -283,7 +283,7 @@ fig.update_layout(
 fig.update_xaxes(showgrid=False)
 fig.update_yaxes(gridcolor="#e2e8f0", gridwidth=0.5)
 
-st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+st.plotly_chart(fig, width='stretch', config={"displayModeBar": False})
 
 # ─── Analisis & Insight ────────────────────────────────────────────────────────
 col_analisis, col_tips = st.columns(2, gap="medium")
@@ -380,4 +380,4 @@ with st.expander("📋 Tabel Detail Prediksi", expanded=False):
         "normal": "Skenario Normal",
         "optimis": "Skenario Optimis",
     })
-    st.dataframe(display_df[["Bulan", "Skenario Pesimis", "Skenario Normal", "Skenario Optimis"]], use_container_width=True, hide_index=True)
+    st.dataframe(display_df[["Bulan", "Skenario Pesimis", "Skenario Normal", "Skenario Optimis"]], width='stretch', hide_index=True)

@@ -14,5 +14,29 @@
   {
     "role": "assistant",
     "content": "🚨 Kondisi keuanganmu saat ini memang memerlukan perhatian khusus! 🤔\n\nBerikut beberapa rekomendasi penghematan yang bisa kamu lakukan:\n\n1. **Kurangi pengeluaran tidak perlu**: Identifikasi pengeluaran yang tidak penting dan kurangi atau hapuskan. Contohnya, jika kamu sering makan di luar, coba masak sendiri di rumah 🍳.\n2. **Prioritaskan kebutuhan pokok**: Pastikan kamu memprioritaskan kebutuhan pokok seperti makan, kesehatan, dan tempat tinggal 🏠.\n3. **Cari cara untuk menghemat biaya**: Cari cara untuk menghemat biaya, seperti dengan menggunakan transportasi umum atau berjalan kaki 🚶‍♂️.\n4. **Buat anggaran yang realistis**: Buat anggaran yang realistis dan pastikan kamu tidak melebihi batas anggaranmu 📊.\n\nPerlu diingat bahwa menghemat uang memerlukan disiplin dan kesabaran. Namun, dengan membuat perubahan kecil dan konsisten, kamu bisa mencapai tujuan keuanganmu 🎉.\n\nApa yang kamu ingin lakukan pertama kali untuk menghemat uangmu? 🤔"
+  },
+  {
+    "role": "user",
+    "content": "gimana tentang keuanganku minggu ini"
+  },
+  {
+    "role": "assistant",
+    "content": "🚨 Kondisi keuanganmu minggu ini memang memerlukan perhatian khusus! 🤔\n\nDari data keuanganmu, terlihat bahwa total pengeluaranmu sangat tinggi, yaitu Rp 75.871.000, sedangkan total pemasukanmu hanya Rp 18.700.000. Ini berarti bahwa kamu memiliki defisit keuangan sebesar Rp 57.171.000 📉.\n\nKategori pengeluaran terbesar adalah Tagihan, Belanja, dan Pendidikan. Kamu juga memiliki banyak transaksi kecil-kecil, seperti membeli makanan dan transportasi 🚶‍♂️.\n\nUntuk mengatasi defisit keuangan ini, kamu perlu melakukan beberapa hal:\n\n1. **Mengurangi pengeluaran tidak perlu**: Identifikasi pengeluaran yang tidak penting dan kurangi atau hapuskan 📊.\n2. **Membuat anggaran yang realistis**: Buat anggaran yang realistis dan pastikan kamu tidak melebihi batas anggaranmu 📊.\n3. **Mencari cara untuk meningkatkan pemasukan**: Cari cara untuk meningkatkan pemasukanmu, seperti dengan melakukan pekerjaan sampingan atau meningkatkan gaji 📈.\n\nApa yang kamu ingin lakukan pertama kali untuk mengatasi defisit keuanganmu? 🤔\n\nPerlu diingat bahwa saya bukanlah penasihat keuangan profesional, jadi pastikan kamu untuk berkonsultasi dengan ahli keuangan jika kamu memerlukan saran yang lebih spesifik 🤝."
+  },
+  {
+    "role": "user",
+    "content": "Apakah kondisi keuanganku sehat?"
+  },
+  {
+    "role": "assistant",
+    "content": "🚨 Kondisi keuanganmu saat ini tidak sehat 🤕. Dari hasil analisis, terlihat bahwa kamu memiliki defisit keuangan sebesar Rp 57.171.000, yang berarti bahwa pengeluaranmu melebihi pemasukanmu 📉.\n\nKategori pengeluaran terbesar adalah Tagihan, Belanja, dan Pendidikan, yang menunjukkan bahwa kamu perlu memperhatikan pengeluaranmu di kategori-kategori ini 📊. Rata-rata pengeluaran harianmu juga cukup tinggi, yaitu Rp 833.747 📈.\n\nTren bulanan terakhir juga menunjukkan bahwa kamu memiliki defisit keuangan yang konsisten, dengan saldo bersih yang negatif pada setiap bulan 📊.\n\nUntuk mengatasi kondisi keuangan ini, kamu perlu melakukan beberapa hal:\n\n1. **Mengurangi pengeluaran tidak perlu**: Identifikasi pengeluaran yang tidak penting dan kurangi atau hapuskan 📊.\n2. **Membuat anggaran yang realistis**: Buat anggaran yang realistis dan pastikan kamu tidak melebihi batas anggaranmu 📊.\n3. **Mencari cara untuk meningkatkan pemasukan**: Cari cara untuk meningkatkan pemasukanmu, seperti dengan melakukan pekerjaan sampingan atau meningkatkan gaji 📈.\n\nApa yang kamu ingin lakukan pertama kali untuk mengatasi kondisi keuanganmu? 🤔"
+  },
+  {
+    "role": "user",
+    "content": "Kategori apa yang paling boros?"
+  },
+  {
+    "role": "assistant",
+    "content": "🚨 Kategori pengeluaran terbesar dan paling boros adalah **Tagihan**, dengan total pengeluaran sebesar Rp 26.177.000 (34,5% dari total pengeluaran) 📊.\n\nNamun, perlu diingat bahwa kategori **Belanja** dan **Pendidikan** juga memiliki pengeluaran yang cukup tinggi, yaitu Rp 13.750.000 (18,1%) dan Rp 13.533.000 (17,8%) 📈.\n\nUntuk mengatasi kondisi keuangan ini, kamu perlu memperhatikan pengeluaranmu di kategori-kategori ini dan mencari cara untuk menghemat pengeluaran 📊. Berikut beberapa saran:\n\n* **Tagihan**: Coba untuk mengatur prioritas pengeluaranmu dan memastikan bahwa kamu tidak melebihi batas anggaranmu 📊.\n* **Belanja**: Coba untuk mengurangi pengeluaran tidak perlu dan memilih barang yang lebih murah 🛍️.\n* **Pendidikan**: Coba untuk mencari cara untuk menghemat biaya pendidikan, seperti dengan menggunakan sumber daya online atau memanfaatkan beasiswa 📚.\n\nApa yang kamu ingin lakukan pertama kali untuk mengatasi kondisi keuanganmu? 🤔"
   }
 ]
