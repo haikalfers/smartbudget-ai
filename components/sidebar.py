@@ -70,8 +70,9 @@ def render_sidebar():
                 ("🔮  Prediksi", "pages/3_Prediksi.py"),
                 ("💬  AI Advisor", "pages/4_AI_Advisor.py"),
             ]
+            st.markdown("⚠️ Navigation tidak tersedia. Gunakan menu top bar.")
             for label, path in links:
-                st.markdown(f"<div style='margin:6px 0'><a href='?page={path}' style='text-decoration:none;color:inherit;padding:8px 10px;display:block;border-radius:8px;background:rgba(255,255,255,0.02)'>{label}</a></div>", unsafe_allow_html=True)
+                st.markdown(f"- {label}")
 
         st.divider()
         st.markdown("""

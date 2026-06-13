@@ -19,7 +19,10 @@ st.set_page_config(
 from utils.data_utils import init_session_state, get_summary, format_rupiah, load_transactions
 from styles import GLOBAL_CSS
 from utils.init_styles import apply_global_styles
+from components.sidebar import render_sidebar
+
 init_session_state()
+render_sidebar()
 
 # ─── Auto-train Models (Opsi 3: fallback jika .pkl tidak ada) ────────────────
 # .pkl di-commit ke GitHub → startup normal cepat.
@@ -58,26 +61,9 @@ if "models_ready" not in st.session_state:
 # ─── CSS Global ───────────────────────────────────────────────────────────────
 apply_global_styles()  # Load GLOBAL_CSS dari styles.py
 
+# ─── Konten Utama ─────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-    /* Metric cards */
-    [data-testid="metric-container"] {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        border-radius: 12px;
-        padding: 16px;
-        border: 1px solid #e0e0e0;
-    }
-    /* Sidebar branding */
-    .sidebar-brand {
-        text-align: center;
-        padding: 10px 0 20px 0;
-        border-bottom: 1px solid #e0e0e0;
-        margin-bottom: 10px;
-    }
-    /* Status badge */
-    .badge-ok   { background: #d4edda; color: #155724; padding: 3px 10px; border-radius: 20px; font-size: 0.85em; }
-    .badge-warn { background: #fff3cd; color: #856404; padding: 3px 10px; border-radius: 20px; font-size: 0.85em; }
-    .badge-err  { background: #f8d7da; color: #721c24; padding: 3px 10px; border-radius: 20px; font-size: 0.85em; }
     /* Hero section */
     .hero-container {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -90,96 +76,6 @@ st.markdown("""
     .hero-container h1 { font-size: 2.5rem; margin: 0; }
     .hero-container p  { font-size: 1.1rem; opacity: 0.9; margin-top: 8px; }
 </style>
-""", unsafe_allow_html=True)
-
-# ─── Sidebar ──────────────────────────────────────────────────────────────────
-with st.sidebar:
-    st.markdown("""
-    <div class="sidebar-brand">
-        <h2>💰 SmartBudget AI</h2>
-        <p style="color: #666; font-size: 0.85em; margin: 0;">Manajemen Keuangan Mahasiswa</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Status sistem
-    st.markdown("#### 🔧 Status Sistem")
-    _status = {}
-
-    # Cek model klasifikasi
-    try:
-        from utils.classifier_utils import is_classifier_ready
-        _status["Classifier"] = ("✅ Siap", "ok") if is_classifier_ready() else ("⚠️ Belum", "warn")
-    except ImportError:
-        _status["Classifier"] = ("❌ Error", "err")
-
-    # Cek model prediksi
-    try:
-        from utils.predictor_utils import is_predictor_ready
-        _status["Predictor"] = ("✅ Siap", "ok") if is_predictor_ready() else ("⚠️ Belum", "warn")
-    except ImportError:
-        _status["Predictor"] = ("❌ Error", "err")
-
-    # Cek Groq API
-    try:
-        _groq_key = st.secrets.get("GROQ_API_KEY", "")
-        _status["Groq API"] = ("✅ Ada", "ok") if _groq_key else ("⚠️ Belum", "warn")
-    except Exception:
-        _status["Groq API"] = ("⚠️ Error", "warn")
-
-    # Render status dengan styling yang lebih baik
-    st.markdown("""
-    <style>
-    .status-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 6px 8px;
-        margin: 3px 0;
-        background: rgba(255,255,255,0.05);
-        border-radius: 6px;
-        font-size: 0.8rem;
-        word-break: break-word;
-    }
-    .status-label { font-weight: 500; color: rgba(255,255,255,0.7); flex: 1; }
-    .status-badge { font-weight: 600; white-space: nowrap; margin-left: 8px; }
-    </style>
-    """, unsafe_allow_html=True)
-
-    for nama, (teks, level) in _status.items():
-        st.markdown(
-            f'<div class="status-item"><span class="status-label">{nama}</span><span class="status-badge">{teks}</span></div>',
-            unsafe_allow_html=True
-        )
-
-    st.divider()
-
-    # ─── Menu Navigasi ────────────────────────────────────────────────────────
-    st.markdown("""
-    <div style="margin-top:20px">
-        <div style="font-size:0.68rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;padding:0 4px">Menu</div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.page_link("app.py", label="Beranda", icon="🏠")
-    st.page_link("pages/1_Insights_Keuangan.py", label="Insights Keuangan", icon="📈")
-    st.page_link("pages/2_Input_Transaksi.py", label="Input Transaksi", icon="➕")
-    st.page_link("pages/3_Prediksi.py", label="Prediksi", icon="🔮")
-    st.page_link("pages/4_AI_Advisor.py", label="AI Advisor", icon="💬")
-
-    st.divider()
-    df_sidebar = load_transactions()
-    if not df_sidebar.empty:
-        ring = get_summary(df_sidebar)
-        st.markdown("#### 📊 Ringkasan Cepat")
-        col1, col2 = st.columns(2)
-        with col1:
-            st.metric("Saldo", format_rupiah(ring["saldo"]))
-        with col2:
-            st.metric("Transaksi", ring["jumlah_transaksi"])
-        st.metric("Total Pengeluaran", format_rupiah(ring["total_pengeluaran"]))
-
-# ─── Konten Utama ─────────────────────────────────────────────────────────────
-st.markdown("""
 <div class="hero-container">
     <h1>💰 SmartBudget AI</h1>
     <p>Aplikasi manajemen keuangan cerdas untuk mahasiswa — berbasis AI & Machine Learning</p>
