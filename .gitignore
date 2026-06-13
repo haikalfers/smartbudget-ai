@@ -28,6 +28,9 @@ data/training_klasifikasi.csv
 
 # IDE
 .vscode/
+
+# Old/Backup pages (don't track in git)
+pages/_old_*.py
 .idea/
 *.swp
 
