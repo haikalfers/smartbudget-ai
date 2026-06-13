@@ -38,5 +38,13 @@
   {
     "role": "assistant",
     "content": "🚨 Kategori pengeluaran terbesar dan paling boros adalah **Tagihan**, dengan total pengeluaran sebesar Rp 26.177.000 (34,5% dari total pengeluaran) 📊.\n\nNamun, perlu diingat bahwa kategori **Belanja** dan **Pendidikan** juga memiliki pengeluaran yang cukup tinggi, yaitu Rp 13.750.000 (18,1%) dan Rp 13.533.000 (17,8%) 📈.\n\nUntuk mengatasi kondisi keuangan ini, kamu perlu memperhatikan pengeluaranmu di kategori-kategori ini dan mencari cara untuk menghemat pengeluaran 📊. Berikut beberapa saran:\n\n* **Tagihan**: Coba untuk mengatur prioritas pengeluaranmu dan memastikan bahwa kamu tidak melebihi batas anggaranmu 📊.\n* **Belanja**: Coba untuk mengurangi pengeluaran tidak perlu dan memilih barang yang lebih murah 🛍️.\n* **Pendidikan**: Coba untuk mencari cara untuk menghemat biaya pendidikan, seperti dengan menggunakan sumber daya online atau memanfaatkan beasiswa 📚.\n\nApa yang kamu ingin lakukan pertama kali untuk mengatasi kondisi keuanganmu? 🤔"
+  },
+  {
+    "role": "user",
+    "content": "hai"
+  },
+  {
+    "role": "assistant",
+    "content": "Hai! 🙋‍♂️\n\nTerima kasih untuk membagikan data keuanganmu 📊. Dari data yang kamu berikan, saya dapat melihat bahwa kamu memiliki beberapa masalah keuangan yang perlu diatasi 🤔.\n\nPertama, total pengeluaranmu sangat tinggi, yaitu Rp 75.871.000, sedangkan total pemasukanmu hanya Rp 18.700.000 📉. Ini berarti bahwa kamu memiliki defisit keuangan sebesar Rp 57.171.000 🚨.\n\nKategori pengeluaran terbesar adalah **Tagihan**, dengan total pengeluaran sebesar Rp 26.177.000 (34,5% dari total pengeluaran) 📊. Kemudian, **Belanja** dan **Pendidikan** juga memiliki pengeluaran yang cukup tinggi, yaitu Rp 13.750.000 (18,1%) dan Rp 13.533.000 (17,8%) 📈.\n\nRata-rata pengeluaran harianmu juga cukup tinggi, yaitu Rp 833.747 📊. Ini berarti bahwa kamu perlu memperhatikan pengeluaranmu setiap hari dan mencari cara untuk menghemat pengeluaran 📊.\n\nDari 10 transaksi terakhir, saya dapat melihat bahwa kamu memiliki beberapa pengeluaran yang tidak perlu, seperti membeli powerbank dan makan malam warung 📊. Kamu juga memiliki beberapa pengeluaran yang dapat dikurangi, seperti naik angkot dan grab car 🚶‍♂️.\n\nApa yang kamu ingin lakukan pertama kali untuk mengatasi kondisi keuanganmu? 🤔"
   }
 ]

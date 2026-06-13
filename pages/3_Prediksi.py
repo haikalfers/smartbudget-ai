@@ -1,5 +1,5 @@
 """
-pages/4_Prediksi.py
+pages/3_Prediksi.py
 Halaman Prediksi Keuangan — UI/UX didesain ulang.
 """
 

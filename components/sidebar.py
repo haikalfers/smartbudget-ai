@@ -57,20 +57,18 @@ def render_sidebar():
         # Use page_link for native navigation
         try:
             st.page_link("app.py", label="🏠  Beranda", width='stretch')
-            st.page_link("pages/1_Dashboard.py", label="📊  Dashboard", width='stretch')
+            st.page_link("pages/1_Insights_Keuangan.py", label="📈  Insights Keuangan", width='stretch')
             st.page_link("pages/2_Input_Transaksi.py", label="➕  Input Transaksi", width='stretch')
-            st.page_link("pages/3_Analisis.py", label="📈  Analisis", width='stretch')
-            st.page_link("pages/4_Prediksi.py", label="🔮  Prediksi", width='stretch')
-            st.page_link("pages/5_AI_Advisor.py", label="💬  AI Advisor", width='stretch')
+            st.page_link("pages/3_Prediksi.py", label="🔮  Prediksi", width='stretch')
+            st.page_link("pages/4_AI_Advisor.py", label="💬  AI Advisor", width='stretch')
         except Exception:
             # Fallback rendering (if st.page_link not available)
             links = [
                 ("🏠  Beranda", "app.py"),
-                ("📊  Dashboard", "pages/1_Dashboard.py"),
+                ("�  Insights Keuangan", "pages/1_Insights_Keuangan.py"),
                 ("➕  Input Transaksi", "pages/2_Input_Transaksi.py"),
-                ("📈  Analisis", "pages/3_Analisis.py"),
-                ("🔮  Prediksi", "pages/4_Prediksi.py"),
-                ("💬  AI Advisor", "pages/5_AI_Advisor.py"),
+                ("🔮  Prediksi", "pages/3_Prediksi.py"),
+                ("💬  AI Advisor", "pages/4_AI_Advisor.py"),
             ]
             for label, path in links:
                 st.markdown(f"<div style='margin:6px 0'><a href='?page={path}' style='text-decoration:none;color:inherit;padding:8px 10px;display:block;border-radius:8px;background:rgba(255,255,255,0.02)'>{label}</a></div>", unsafe_allow_html=True)

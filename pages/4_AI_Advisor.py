@@ -1,5 +1,5 @@
 """
-pages/5_AI_Advisor.py
+pages/4_AI_Advisor.py
 Halaman Chatbot AI Advisor — UI/UX didesain ulang.
 """
 
