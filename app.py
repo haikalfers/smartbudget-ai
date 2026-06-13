@@ -121,7 +121,7 @@ if df.empty:
     with col3:
         st.markdown("### 💬 Tanya AI Advisor")
         st.markdown("Chat dengan AI Advisor untuk saran keuangan personal berbasis datamu.")
-        st.page_link("pages/5_AI_Advisor.py", label="Buka AI Advisor →", icon="💬")
+        st.page_link("pages/4_AI_Advisor.py", label="Buka AI Advisor →", icon="💬")
 
     st.divider()
 
