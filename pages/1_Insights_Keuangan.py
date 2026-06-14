@@ -50,7 +50,7 @@ col_filter1, col_filter2, col_filter3 = st.columns(3)
 with col_filter1:
     periode = st.selectbox(
         "📅 Filter Periode",
-        ["7 Hari", "30 Hari", "3 Bulan", "6 Bulan", "Semua"],
+        ["Bulan Ini", "7 Hari", "30 Hari", "3 Bulan", "6 Bulan", "Semua"],
         index=1,
     )
 

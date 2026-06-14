@@ -256,20 +256,41 @@ def filter_by_period(df: pd.DataFrame, periode: str) -> pd.DataFrame:
 
     Args:
         df: DataFrame transaksi
-        periode: '7 Hari', '30 Hari', '3 Bulan', '6 Bulan', 'Semua'
+        periode: 'Bulan Ini', '7 Hari', '30 Hari', '3 Bulan', '6 Bulan', 'Semua'
     """
-    if df.empty or periode == "Semua":
+    if df.empty:
+        return df
+
+    # normalisasi input
+    p = (periode or "Semua").strip().lower()
+
+    # pastikan kolom tanggal bertipe datetime
+    df = df.copy()
+    df["tanggal"] = pd.to_datetime(df["tanggal"], errors="coerce")
+
+    if p in ("semua", "all"):
         return df
 
     today = pd.Timestamp.now()
+
+    # Khusus: Bulan Ini -> hanya transaksi dengan bulan & tahun yang sama
+    if p in ("bulan ini", "bulan_ini", "this month", "this_month"):
+        bulan_ini = today.month
+        tahun_ini = today.year
+        return df[
+            (df["tanggal"].dt.month == bulan_ini)
+            & (df["tanggal"].dt.year == tahun_ini)
+        ]
+
+    # Map untuk interval relatif
     period_map = {
-        "7 Hari": today - pd.Timedelta(days=7),
-        "30 Hari": today - pd.Timedelta(days=30),
-        "3 Bulan": today - pd.Timedelta(days=90),
-        "6 Bulan": today - pd.Timedelta(days=180),
+        "7 hari": today - pd.Timedelta(days=7),
+        "30 hari": today - pd.Timedelta(days=30),
+        "3 bulan": today - pd.Timedelta(days=90),
+        "6 bulan": today - pd.Timedelta(days=180),
     }
 
-    cutoff = period_map.get(periode, today - pd.Timedelta(days=30))
+    cutoff = period_map.get(p, today - pd.Timedelta(days=30))
     return df[df["tanggal"] >= cutoff]
 
 
